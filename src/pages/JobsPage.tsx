@@ -267,15 +267,12 @@ export const JobsPage: React.FC<JobsPageProps> = ({
             return (
               <button
                 key={c.code}
+                type="button"
                 onClick={() => {
-                  if (c.name === 'Remote / Global') {
-                    setLocation('Remote');
-                    setWorkplaceType('All');
-                  } else {
-                    setLocation(c.name);
-                  }
+                  setLocation(c.name === 'Remote / Global' ? 'Remote' : c.name);
+                  setVisibleCount(10);
                 }}
-                className={`px-3 py-1.5 text-xs rounded-lg whitespace-nowrap transition-colors border flex items-center gap-1.5 font-semibold ${
+                className={`px-3 py-1.5 text-xs rounded-lg whitespace-nowrap transition-colors border flex items-center gap-1.5 font-semibold cursor-pointer ${
                   isMatch
                     ? 'bg-slate-900 border-slate-900 text-white shadow-xs'
                     : 'bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-300'
@@ -324,11 +321,7 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                       key={wp}
                       type="button"
                       onClick={() => {
-                        const next = isActive && wp !== 'All' ? 'All' : wp;
-                        setWorkplaceType(next);
-                        if (next !== 'All' && location.toLowerCase() === 'remote') {
-                          setLocation('');
-                        }
+                        setWorkplaceType(wp);
                         setVisibleCount(10);
                       }}
                       className={`py-2 px-3 text-xs text-left border rounded-lg transition-all duration-150 font-semibold cursor-pointer active:scale-95 ${
@@ -357,7 +350,7 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                       key={emp}
                       type="button"
                       onClick={() => {
-                        setEmploymentType(isActive && emp !== 'All Types' ? 'All Types' : emp);
+                        setEmploymentType(emp);
                         setVisibleCount(10);
                       }}
                       className={`w-full py-2 px-3 text-xs text-left border rounded-lg transition-all duration-150 flex items-center justify-between font-medium cursor-pointer active:scale-[0.99] ${
@@ -387,7 +380,7 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                       key={lvl}
                       type="button"
                       onClick={() => {
-                        setExperienceLevel(isActive && lvl !== 'All Levels' ? 'All Levels' : lvl);
+                        setExperienceLevel(lvl);
                         setVisibleCount(10);
                       }}
                       className={`w-full py-2 px-3 text-xs text-left border rounded-lg transition-all duration-150 flex items-center justify-between font-medium cursor-pointer active:scale-[0.99] ${
@@ -413,7 +406,7 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                 <button
                   type="button"
                   onClick={() => setMobileFilterOpen(false)}
-                  className="text-slate-600 p-1"
+                  className="text-slate-600 p-1 cursor-pointer"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -432,14 +425,10 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                           key={wp}
                           type="button"
                           onClick={() => {
-                            const next = isActive && wp !== 'All' ? 'All' : wp;
-                            setWorkplaceType(next);
-                            if (next !== 'All' && location.toLowerCase() === 'remote') {
-                              setLocation('');
-                            }
+                            setWorkplaceType(wp);
                             setVisibleCount(10);
                           }}
-                          className={`py-2 px-3 text-xs rounded-lg border font-semibold ${
+                          className={`py-2 px-3 text-xs rounded-lg border font-semibold cursor-pointer ${
                             isActive
                               ? 'border-slate-900 bg-slate-900 text-white'
                               : 'border-slate-200 bg-white text-slate-700'
@@ -464,10 +453,10 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                           key={emp}
                           type="button"
                           onClick={() => {
-                            setEmploymentType(isActive && emp !== 'All Types' ? 'All Types' : emp);
+                            setEmploymentType(emp);
                             setVisibleCount(10);
                           }}
-                          className={`py-2 px-3 text-xs rounded-lg border font-semibold ${
+                          className={`py-2 px-3 text-xs rounded-lg border font-semibold cursor-pointer ${
                             isActive
                               ? 'border-slate-900 bg-slate-900 text-white'
                               : 'border-slate-200 bg-white text-slate-700'
@@ -492,10 +481,10 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                           key={lvl}
                           type="button"
                           onClick={() => {
-                            setExperienceLevel(isActive && lvl !== 'All Levels' ? 'All Levels' : lvl);
+                            setExperienceLevel(lvl);
                             setVisibleCount(10);
                           }}
-                          className={`py-2 px-3 text-xs rounded-lg border font-semibold ${
+                          className={`py-2 px-3 text-xs rounded-lg border font-semibold cursor-pointer ${
                             isActive
                               ? 'border-slate-900 bg-slate-900 text-white'
                               : 'border-slate-200 bg-white text-slate-700'

@@ -17,7 +17,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'North America',
     cities: ['New York', 'San Francisco', 'Chicago', 'Austin', 'Seattle'],
     region: 'Americas',
-    mandatesCount: 24,
+    mandatesCount: 39,
     featuredRole: 'Principal Distributed Systems Architect'
   },
   {
@@ -27,7 +27,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'Europe / EMEA',
     cities: ['London', 'Manchester', 'Edinburgh'],
     region: 'Europe',
-    mandatesCount: 7,
+    mandatesCount: 14,
     featuredRole: 'Managing Director – European Private Equity'
   },
   {
@@ -37,7 +37,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'North America',
     cities: ['Toronto', 'Vancouver', 'Montreal'],
     region: 'Americas',
-    mandatesCount: 5,
+    mandatesCount: 11,
     featuredRole: 'Principal Cloud Architect'
   },
   {
@@ -47,7 +47,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'European Union',
     cities: ['Berlin', 'Frankfurt', 'Munich'],
     region: 'Europe',
-    mandatesCount: 5,
+    mandatesCount: 9,
     featuredRole: 'VP of Autonomous Robotics'
   },
   {
@@ -57,18 +57,8 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'Middle East (GCC)',
     cities: ['Dubai (DIFC / DWC)', 'Abu Dhabi'],
     region: 'Middle East',
-    mandatesCount: 5,
+    mandatesCount: 8,
     featuredRole: 'EVP – Global Infrastructure'
-  },
-  {
-    code: 'SG',
-    name: 'Singapore',
-    flag: '🇸🇬',
-    badge: 'Asia-Pacific',
-    cities: ['Marina Bay Financial Centre', 'CBD'],
-    region: 'Asia-Pacific',
-    mandatesCount: 3,
-    featuredRole: 'Head of APAC Quantitative Trading'
   },
   {
     code: 'AU',
@@ -77,8 +67,18 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'Oceania',
     cities: ['Sydney', 'Melbourne', 'Brisbane'],
     region: 'Asia-Pacific',
-    mandatesCount: 3,
+    mandatesCount: 7,
     featuredRole: 'Director of Renewable Energy Supply Chain'
+  },
+  {
+    code: 'SG',
+    name: 'Singapore',
+    flag: '🇸🇬',
+    badge: 'Asia-Pacific',
+    cities: ['Marina Bay Financial Centre', 'CBD'],
+    region: 'Asia-Pacific',
+    mandatesCount: 4,
+    featuredRole: 'Head of APAC Quantitative Trading'
   },
   {
     code: 'GLOBAL',
@@ -87,7 +87,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'Worldwide',
     cities: ['Anywhere', 'Distributed', 'Worldwide'],
     region: 'Global',
-    mandatesCount: 10,
-    featuredRole: 'Senior Staff Full-Stack Cloud Engineer'
+    mandatesCount: 24,
+    featuredRole: 'Staff Distributed Systems & Rust Core Engineer'
   }
 ];

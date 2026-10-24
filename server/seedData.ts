@@ -1127,9 +1127,22 @@ export const INITIAL_JOBS: Job[] = [
       "Backtest high-frequency execution strategies against historic L2 order-book dynamics.",
       "Work with C++ core architects to minimize latency budgets down to single-digit microseconds."
     ],
-    "skills": ["C++", "Python", "Quantitative Research", "Statistical Arbitrage", "Market Microstructure"],
-    "qualifications": ["M.S. or Ph.D. in Physics, Mathematics, Financial Engineering, or Computer Science.", "4+ years quantitative research experience at a premier trading firm or hedge fund."],
-    "benefits": ["Highly competitive performance bonus pool", "Private medical and dental care", "Central London Mayfair office with bespoke catering"],
+    "skills": [
+      "C++",
+      "Python",
+      "Quantitative Research",
+      "Statistical Arbitrage",
+      "Market Microstructure"
+    ],
+    "qualifications": [
+      "M.S. or Ph.D. in Physics, Mathematics, Financial Engineering, or Computer Science.",
+      "4+ years quantitative research experience at a premier trading firm or hedge fund."
+    ],
+    "benefits": [
+      "Highly competitive performance bonus pool",
+      "Private medical and dental care",
+      "Central London Mayfair office with bespoke catering"
+    ],
     "status": "Active",
     "featured": true,
     "applicantsCount": 11,
@@ -1155,9 +1168,21 @@ export const INITIAL_JOBS: Job[] = [
       "Ensure FCA and European banking compliance across ISO 20022 messaging rails.",
       "Lead cross-functional squad of 18 engineers, designers, and compliance officers."
     ],
-    "skills": ["Product Strategy", "Fintech Rails", "Cross-Border Payments", "FCA Regulations", "API Architecture"],
-    "qualifications": ["8+ years in product management with at least 3 years at Director or Group PM level in fintech."],
-    "benefits": ["Generous equity participation", "Flexible hybrid schedule (2 days London office)", "Comprehensive pension scheme with 8% match"],
+    "skills": [
+      "Product Strategy",
+      "Fintech Rails",
+      "Cross-Border Payments",
+      "FCA Regulations",
+      "API Architecture"
+    ],
+    "qualifications": [
+      "8+ years in product management with at least 3 years at Director or Group PM level in fintech."
+    ],
+    "benefits": [
+      "Generous equity participation",
+      "Flexible hybrid schedule (2 days London office)",
+      "Comprehensive pension scheme with 8% match"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 16,
@@ -1183,9 +1208,22 @@ export const INITIAL_JOBS: Job[] = [
       "Harmonize collaborative robotics with machine vision quality inspection cameras.",
       "Serve as chief technical liaison to German automotive OEM customers."
     ],
-    "skills": ["Siemens TIA Portal", "Beckhoff TwinCAT", "Industrial Robotics", "SCADA", "Safety Systems"],
-    "qualifications": ["Degree in Mechatronics or Electrical Engineering.", "7+ years designing automated manufacturing or robotic systems in DACH region."],
-    "benefits": ["30 days paid vacation", "Company car lease subsidy or public transport ticket", "German language training support"],
+    "skills": [
+      "Siemens TIA Portal",
+      "Beckhoff TwinCAT",
+      "Industrial Robotics",
+      "SCADA",
+      "Safety Systems"
+    ],
+    "qualifications": [
+      "Degree in Mechatronics or Electrical Engineering.",
+      "7+ years designing automated manufacturing or robotic systems in DACH region."
+    ],
+    "benefits": [
+      "30 days paid vacation",
+      "Company car lease subsidy or public transport ticket",
+      "German language training support"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 9,
@@ -1211,9 +1249,22 @@ export const INITIAL_JOBS: Job[] = [
       "Deploy inference microservices on Kubernetes clusters processing over 50,000 image frames per minute.",
       "Maintain active CI/CD model evaluation benchmarks against drift and edge cases."
     ],
-    "skills": ["PyTorch", "Computer Vision", "TensorRT / ONNX", "Docker / Kubernetes", "Python / C++"],
-    "qualifications": ["M.S. or B.S. in Computer Science, Machine Learning, or related field.", "4+ years engineering production deep learning models."],
-    "benefits": ["Full Canadian extended health & dental benefits", "Downtown Toronto office with top-tier equipment stipend", "Generous RRSP matching"],
+    "skills": [
+      "PyTorch",
+      "Computer Vision",
+      "TensorRT / ONNX",
+      "Docker / Kubernetes",
+      "Python / C++"
+    ],
+    "qualifications": [
+      "M.S. or B.S. in Computer Science, Machine Learning, or related field.",
+      "4+ years engineering production deep learning models."
+    ],
+    "benefits": [
+      "Full Canadian extended health & dental benefits",
+      "Downtown Toronto office with top-tier equipment stipend",
+      "Generous RRSP matching"
+    ],
     "status": "Active",
     "featured": true,
     "applicantsCount": 18,
@@ -1239,9 +1290,23 @@ export const INITIAL_JOBS: Job[] = [
       "Prepare confidential information memoranda (CIM) and board-level management presentations.",
       "Oversee transaction due diligence workstreams alongside international legal and accounting counsels."
     ],
-    "skills": ["M&A Execution", "Financial Modeling (LBO/DCF)", "Valuation", "Due Diligence", "Client Advisory"],
-    "qualifications": ["4-6 years in bulge-bracket investment banking or top-tier advisory boutique.", "Bachelors degree in Finance or Economics; CFA is a distinct advantage."],
-    "benefits": ["Tax-free compensation package", "Annual executive performance bonus", "Comprehensive international healthcare + relocation support", "DIFC Gate Precinct premium office access"],
+    "skills": [
+      "M&A Execution",
+      "Financial Modeling (LBO/DCF)",
+      "Valuation",
+      "Due Diligence",
+      "Client Advisory"
+    ],
+    "qualifications": [
+      "4-6 years in bulge-bracket investment banking or top-tier advisory boutique.",
+      "Bachelors degree in Finance or Economics; CFA is a distinct advantage."
+    ],
+    "benefits": [
+      "Tax-free compensation package",
+      "Annual executive performance bonus",
+      "Comprehensive international healthcare + relocation support",
+      "DIFC Gate Precinct premium office access"
+    ],
     "status": "Active",
     "featured": true,
     "applicantsCount": 14,
@@ -1267,9 +1332,22 @@ export const INITIAL_JOBS: Job[] = [
       "Oversee cold-chain pharmaceutical and perishable transit handling facilities.",
       "Negotiate airport landing slots, fuel hedging contracts, and ground service SLA agreements."
     ],
-    "skills": ["Air Cargo Management", "Aviation Operations", "Cold Chain Logistics", "Safety Compliance", "Vendor SLA Negotiations"],
-    "qualifications": ["10+ years executive aviation or air freight logistics management experience.", "Proven leadership of large multi-national operational teams in the Middle East."],
-    "benefits": ["Tax-free compensation structure", "Annual housing allowance + flight tickets home", "Full family private health coverage"],
+    "skills": [
+      "Air Cargo Management",
+      "Aviation Operations",
+      "Cold Chain Logistics",
+      "Safety Compliance",
+      "Vendor SLA Negotiations"
+    ],
+    "qualifications": [
+      "10+ years executive aviation or air freight logistics management experience.",
+      "Proven leadership of large multi-national operational teams in the Middle East."
+    ],
+    "benefits": [
+      "Tax-free compensation structure",
+      "Annual housing allowance + flight tickets home",
+      "Full family private health coverage"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 7,
@@ -1295,9 +1373,22 @@ export const INITIAL_JOBS: Job[] = [
       "Design zero-knowledge and multi-party computation (MPC) key custody frameworks.",
       "Coordinate white-hat bounty programs and emergency circuit-breaker protocols with MAS compliance."
     ],
-    "skills": ["Solidity / Rust", "Smart Contract Auditing", "EVM Internals", "Formal Verification", "Cryptographic Protocols"],
-    "qualifications": ["5+ years cybersecurity experience with 3+ years dedicated to Web3/smart contract auditing.", "Track record identifying critical vulnerabilities in production DeFi protocols."],
-    "benefits": ["Top-tier Singapore CPF contribution package", "Marina Bay Financial Centre prime office location", "Annual executive conference and travel grant"],
+    "skills": [
+      "Solidity / Rust",
+      "Smart Contract Auditing",
+      "EVM Internals",
+      "Formal Verification",
+      "Cryptographic Protocols"
+    ],
+    "qualifications": [
+      "5+ years cybersecurity experience with 3+ years dedicated to Web3/smart contract auditing.",
+      "Track record identifying critical vulnerabilities in production DeFi protocols."
+    ],
+    "benefits": [
+      "Top-tier Singapore CPF contribution package",
+      "Marina Bay Financial Centre prime office location",
+      "Annual executive conference and travel grant"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 12,
@@ -1323,9 +1414,22 @@ export const INITIAL_JOBS: Job[] = [
       "Integrate autonomous telemetry with remote operations command centers in Melbourne and Perth.",
       "Conduct environmental impact assessments and technical safety hazard analyses (HAZOP)."
     ],
-    "skills": ["Renewable Microgrids", "High-Voltage Systems", "Autonomous Vehicles", "Mining Technology", "HAZOP"],
-    "qualifications": ["Degree in Electrical, Mining, or Renewable Systems Engineering.", "8+ years delivering large-scale industrial electrification or autonomous plant systems."],
-    "benefits": ["12% Superannuation fund contribution", "Melbourne CBD central office + flexible hybrid arrangements", "Comprehensive wellness & family health insurance"],
+    "skills": [
+      "Renewable Microgrids",
+      "High-Voltage Systems",
+      "Autonomous Vehicles",
+      "Mining Technology",
+      "HAZOP"
+    ],
+    "qualifications": [
+      "Degree in Electrical, Mining, or Renewable Systems Engineering.",
+      "8+ years delivering large-scale industrial electrification or autonomous plant systems."
+    ],
+    "benefits": [
+      "12% Superannuation fund contribution",
+      "Melbourne CBD central office + flexible hybrid arrangements",
+      "Comprehensive wellness & family health insurance"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 10,
@@ -1351,9 +1455,22 @@ export const INITIAL_JOBS: Job[] = [
       "Optimize real-time WebSocket state distribution and client caching across browser clients worldwide.",
       "Establish developer tooling, linting rules, and automated integration test pipelines."
     ],
-    "skills": ["TypeScript / React", "Go / Node.js", "GraphQL / gRPC", "Kubernetes", "Distributed Systems"],
-    "qualifications": ["7+ years building production full-stack web applications and cloud backends.", "Demonstrated autonomy and communication in fully distributed / remote organizations."],
-    "benefits": ["100% remote work from anywhere in the world", "$3,500 home office and equipment setup budget", "Annual global company retreat (all expenses paid)"],
+    "skills": [
+      "TypeScript / React",
+      "Go / Node.js",
+      "GraphQL / gRPC",
+      "Kubernetes",
+      "Distributed Systems"
+    ],
+    "qualifications": [
+      "7+ years building production full-stack web applications and cloud backends.",
+      "Demonstrated autonomy and communication in fully distributed / remote organizations."
+    ],
+    "benefits": [
+      "100% remote work from anywhere in the world",
+      "$3,500 home office and equipment setup budget",
+      "Annual global company retreat (all expenses paid)"
+    ],
     "status": "Active",
     "featured": true,
     "applicantsCount": 29,
@@ -1379,9 +1496,22 @@ export const INITIAL_JOBS: Job[] = [
       "Liaise directly with attending medical oncologists to adjust supportive care protocols.",
       "Document encounter metrics within HIPAA-compliant electronic health records."
     ],
-    "skills": ["Telehealth", "Clinical Nursing / BSN", "Patient Triage", "HIPAA Compliance", "Oncology Care"],
-    "qualifications": ["Active RN or Nurse Practitioner license.", "3+ years clinical patient care experience with telehealth background."],
-    "benefits": ["Flexible 20 hours/week schedule", "Comprehensive home workspace stipend", "Continuing medical education reimbursement"],
+    "skills": [
+      "Telehealth",
+      "Clinical Nursing / BSN",
+      "Patient Triage",
+      "HIPAA Compliance",
+      "Oncology Care"
+    ],
+    "qualifications": [
+      "Active RN or Nurse Practitioner license.",
+      "3+ years clinical patient care experience with telehealth background."
+    ],
+    "benefits": [
+      "Flexible 20 hours/week schedule",
+      "Comprehensive home workspace stipend",
+      "Continuing medical education reimbursement"
+    ],
     "status": "Active",
     "featured": true,
     "applicantsCount": 15,
@@ -1407,9 +1537,22 @@ export const INITIAL_JOBS: Job[] = [
       "Moderate developer Discord and community forum technical queries.",
       "Collaborate with core engineering squads to review upcoming API deprecations and RFCs."
     ],
-    "skills": ["Technical Writing", "TypeScript / Python", "REST APIs / OpenAPI", "Markdown / Docusaurus", "Community Management"],
-    "qualifications": ["2+ years technical writing or developer relations experience.", "Proven ability to write sample code and understand microservice architectures."],
-    "benefits": ["2 days/week flexible hours", "London Tech City hub access", "Annual tech equipment allowance"],
+    "skills": [
+      "Technical Writing",
+      "TypeScript / Python",
+      "REST APIs / OpenAPI",
+      "Markdown / Docusaurus",
+      "Community Management"
+    ],
+    "qualifications": [
+      "2+ years technical writing or developer relations experience.",
+      "Proven ability to write sample code and understand microservice architectures."
+    ],
+    "benefits": [
+      "2 days/week flexible hours",
+      "London Tech City hub access",
+      "Annual tech equipment allowance"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 18,
@@ -1435,9 +1578,22 @@ export const INITIAL_JOBS: Job[] = [
       "Audit discretionary investment mandates against client risk investment policy statements.",
       "Draft quarterly compliance advisory briefings for the Chief Compliance Officer."
     ],
-    "skills": ["Wealth Management Compliance", "CIRO / OSC Regulations", "AML / KYC", "Trust Structures", "Risk Audits"],
-    "qualifications": ["5+ years Canadian wealth compliance or securities legal experience.", "Canadian Securities Course (CSC) or legal qualification."],
-    "benefits": ["Pro-rated corporate retirement matching", "Flexible hybrid schedule (15-20 hrs/week)", "Downtown Toronto transit pass"],
+    "skills": [
+      "Wealth Management Compliance",
+      "CIRO / OSC Regulations",
+      "AML / KYC",
+      "Trust Structures",
+      "Risk Audits"
+    ],
+    "qualifications": [
+      "5+ years Canadian wealth compliance or securities legal experience.",
+      "Canadian Securities Course (CSC) or legal qualification."
+    ],
+    "benefits": [
+      "Pro-rated corporate retirement matching",
+      "Flexible hybrid schedule (15-20 hrs/week)",
+      "Downtown Toronto transit pass"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 9,
@@ -1463,9 +1619,22 @@ export const INITIAL_JOBS: Job[] = [
       "Write engaging LinkedIn posts highlighting engineering milestones and client testimonials.",
       "Monitor engagement metrics and generate monthly reach analytics reports."
     ],
-    "skills": ["Social Media Management", "Content Creation", "Video Editing (Premiere / CapCut)", "Copywriting", "Analytics"],
-    "qualifications": ["Demonstrated passion for technology, robotics, or engineering storytelling.", "Portfolio or examples of managing social or creator accounts."],
-    "benefits": ["100% remote flexibility", "Creative software subscriptions paid", "Career advancement into full-time marketing roles"],
+    "skills": [
+      "Social Media Management",
+      "Content Creation",
+      "Video Editing (Premiere / CapCut)",
+      "Copywriting",
+      "Analytics"
+    ],
+    "qualifications": [
+      "Demonstrated passion for technology, robotics, or engineering storytelling.",
+      "Portfolio or examples of managing social or creator accounts."
+    ],
+    "benefits": [
+      "100% remote flexibility",
+      "Creative software subscriptions paid",
+      "Career advancement into full-time marketing roles"
+    ],
     "status": "Active",
     "featured": true,
     "applicantsCount": 24,
@@ -1491,9 +1660,22 @@ export const INITIAL_JOBS: Job[] = [
       "Coordinate high-end dining, private chauffeur bookings, and bespoke itinerary requests.",
       "Ensure flawless protocol and hospitality standards adhering to regional cultural norms."
     ],
-    "skills": ["VIP Concierge", "Event Hospitality", "Executive Protocol", "Multilingual Communication", "Client Care"],
-    "qualifications": ["2+ years luxury hospitality, airline first-class, or high-end event experience in the UAE.", "Fluent English; Arabic, French, or Russian is a plus."],
-    "benefits": ["Tax-free remuneration", "Downtown Dubai iconic location access", "Flexible event-based schedule"],
+    "skills": [
+      "VIP Concierge",
+      "Event Hospitality",
+      "Executive Protocol",
+      "Multilingual Communication",
+      "Client Care"
+    ],
+    "qualifications": [
+      "2+ years luxury hospitality, airline first-class, or high-end event experience in the UAE.",
+      "Fluent English; Arabic, French, or Russian is a plus."
+    ],
+    "benefits": [
+      "Tax-free remuneration",
+      "Downtown Dubai iconic location access",
+      "Flexible event-based schedule"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 16,
@@ -1519,9 +1701,22 @@ export const INITIAL_JOBS: Job[] = [
       "Build automated performance benchmarking suites testing gRPC latency across cloud zones.",
       "Present an end-of-summer capstone project to executive engineering leadership."
     ],
-    "skills": ["Go", "Python", "Docker / Linux", "Computer Science Fundamentals", "Data Structures"],
-    "qualifications": ["Currently enrolled in B.S./M.S. in Computer Science, Software Engineering, or related discipline.", "Graduation date between Fall 2026 and Summer 2028."],
-    "benefits": ["Competitive hourly stipend ($40-50/hr equivalent)", "Corporate housing subsidy in SF", "Direct mentorship and return full-time offer potential"],
+    "skills": [
+      "Go",
+      "Python",
+      "Docker / Linux",
+      "Computer Science Fundamentals",
+      "Data Structures"
+    ],
+    "qualifications": [
+      "Currently enrolled in B.S./M.S. in Computer Science, Software Engineering, or related discipline.",
+      "Graduation date between Fall 2026 and Summer 2028."
+    ],
+    "benefits": [
+      "Competitive hourly stipend ($40-50/hr equivalent)",
+      "Corporate housing subsidy in SF",
+      "Direct mentorship and return full-time offer potential"
+    ],
     "status": "Active",
     "featured": true,
     "applicantsCount": 42,
@@ -1547,9 +1742,22 @@ export const INITIAL_JOBS: Job[] = [
       "Test statistical hypotheses regarding intraday momentum and mean-reversion signals.",
       "Participate in weekly quant research seminars and algorithmic strategy reviews."
     ],
-    "skills": ["Python / C++", "Linear Algebra & Statistics", "Time Series Modeling", "Jupyter", "Financial Data"],
-    "qualifications": ["Pursuing degree in Mathematics, Physics, Econometrics, or Engineering.", "Strong mathematical curiosity and programming aptitude."],
-    "benefits": ["Generous internship compensation (£45k-60k pro-rata)", "Mayfair London office perks + private gym access", "Direct conversion to full-time Quantitative Analyst graduate scheme"],
+    "skills": [
+      "Python / C++",
+      "Linear Algebra & Statistics",
+      "Time Series Modeling",
+      "Jupyter",
+      "Financial Data"
+    ],
+    "qualifications": [
+      "Pursuing degree in Mathematics, Physics, Econometrics, or Engineering.",
+      "Strong mathematical curiosity and programming aptitude."
+    ],
+    "benefits": [
+      "Generous internship compensation (£45k-60k pro-rata)",
+      "Mayfair London office perks + private gym access",
+      "Direct conversion to full-time Quantitative Analyst graduate scheme"
+    ],
     "status": "Active",
     "featured": true,
     "applicantsCount": 35,
@@ -1575,9 +1783,22 @@ export const INITIAL_JOBS: Job[] = [
       "Perform differential gene expression analysis and pathway enrichment visualizations.",
       "Collaborate with wet-lab scientists to validate computational target predictions."
     ],
-    "skills": ["Python / R", "Bioinformatics", "RNA-Seq Data", "Bioconductor", "Genomics"],
-    "qualifications": ["Degree progress in Bioinformatics, Computational Biology, or Biochemistry.", "Familiarity with genomic databases (NCBI, Ensembl, UniProt)."],
-    "benefits": ["Hands-on biotech lab & compute cluster access", "Cambridge biotech hub networking", "Housing stipend for out-of-state students"],
+    "skills": [
+      "Python / R",
+      "Bioinformatics",
+      "RNA-Seq Data",
+      "Bioconductor",
+      "Genomics"
+    ],
+    "qualifications": [
+      "Degree progress in Bioinformatics, Computational Biology, or Biochemistry.",
+      "Familiarity with genomic databases (NCBI, Ensembl, UniProt)."
+    ],
+    "benefits": [
+      "Hands-on biotech lab & compute cluster access",
+      "Cambridge biotech hub networking",
+      "Housing stipend for out-of-state students"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 28,
@@ -1603,9 +1824,22 @@ export const INITIAL_JOBS: Job[] = [
       "Assemble wiring harnesses and test motor servo controllers under engineer guidance.",
       "Log cycle times and calibrate robotic end-effectors for precision repeatability."
     ],
-    "skills": ["CAD (SolidWorks/NX)", "Robotics Kinematics", "Mechatronics", "Basic PLC", "Sensors & Actuators"],
-    "qualifications": ["Student in Mechanical, Electrical, or Mechatronics Engineering at European university.", "Proficiency in English; conversational German is advantageous."],
-    "benefits": ["Practical master/bachelor thesis sponsorship", "Munich public transit ticket included", "Subsidized corporate cafeteria"],
+    "skills": [
+      "CAD (SolidWorks/NX)",
+      "Robotics Kinematics",
+      "Mechatronics",
+      "Basic PLC",
+      "Sensors & Actuators"
+    ],
+    "qualifications": [
+      "Student in Mechanical, Electrical, or Mechatronics Engineering at European university.",
+      "Proficiency in English; conversational German is advantageous."
+    ],
+    "benefits": [
+      "Practical master/bachelor thesis sponsorship",
+      "Munich public transit ticket included",
+      "Subsidized corporate cafeteria"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 21,
@@ -1631,9 +1865,22 @@ export const INITIAL_JOBS: Job[] = [
       "Build real-time supply chain dashboard widgets in Tableau and Power BI.",
       "Support trade lane managers during quarterly ocean carrier rate negotiations."
     ],
-    "skills": ["SQL / Python", "Data Visualization (Tableau/Power BI)", "Maritime Logistics", "Excel Modeling", "Supply Chain"],
-    "qualifications": ["Studying Supply Chain Management, Business Analytics, or Industrial Engineering.", "Analytical rigor and interest in global trade flows."],
-    "benefits": ["Central Singapore office location", "Fast-track pipeline to Maritime Graduate Associate Program", "Mentorship from Global Operations Vice President"],
+    "skills": [
+      "SQL / Python",
+      "Data Visualization (Tableau/Power BI)",
+      "Maritime Logistics",
+      "Excel Modeling",
+      "Supply Chain"
+    ],
+    "qualifications": [
+      "Studying Supply Chain Management, Business Analytics, or Industrial Engineering.",
+      "Analytical rigor and interest in global trade flows."
+    ],
+    "benefits": [
+      "Central Singapore office location",
+      "Fast-track pipeline to Maritime Graduate Associate Program",
+      "Mentorship from Global Operations Vice President"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 19,
@@ -1659,9 +1906,22 @@ export const INITIAL_JOBS: Job[] = [
       "Audit Kubernetes cluster RBAC, service mesh mTLS, and secrets management with HashiCorp Vault.",
       "Deliver executive board risk assessment and SOC 2 Type II audit readiness documentation."
     ],
-    "skills": ["Zero-Trust Architecture", "AWS / GCP Security", "Kubernetes mTLS", "HashiCorp Vault", "SOC 2 Compliance"],
-    "qualifications": ["10+ years cybersecurity experience with prior contractor/consulting track record.", "CISSP, CCSP, or AWS Certified Security Specialty."],
-    "benefits": ["Lucrative hourly/day rate ($120-150/hr equivalent)", "100% remote autonomy", "Contract extension or advisory retainer potential"],
+    "skills": [
+      "Zero-Trust Architecture",
+      "AWS / GCP Security",
+      "Kubernetes mTLS",
+      "HashiCorp Vault",
+      "SOC 2 Compliance"
+    ],
+    "qualifications": [
+      "10+ years cybersecurity experience with prior contractor/consulting track record.",
+      "CISSP, CCSP, or AWS Certified Security Specialty."
+    ],
+    "benefits": [
+      "Lucrative hourly/day rate ($120-150/hr equivalent)",
+      "100% remote autonomy",
+      "Contract extension or advisory retainer potential"
+    ],
     "status": "Active",
     "featured": true,
     "applicantsCount": 14,
@@ -1687,9 +1947,22 @@ export const INITIAL_JOBS: Job[] = [
       "Integrate native bridge modules for hardware security enclave biometric signing.",
       "Optimize bundle size and achieve smooth 60fps gesture transitions."
     ],
-    "skills": ["React Native", "TypeScript", "iOS / Android Native Bridges", "State Management (Zustand/Redux)", "Mobile CI/CD"],
-    "qualifications": ["5+ years mobile development experience with at least 3 years in React Native.", "Published high-traffic mobile apps in the App Store and Google Play."],
-    "benefits": ["Competitive day-rate contract terms (initial 9-month term)", "Modern Sydney CBD tech hub access", "Immediate project kickoff"],
+    "skills": [
+      "React Native",
+      "TypeScript",
+      "iOS / Android Native Bridges",
+      "State Management (Zustand/Redux)",
+      "Mobile CI/CD"
+    ],
+    "qualifications": [
+      "5+ years mobile development experience with at least 3 years in React Native.",
+      "Published high-traffic mobile apps in the App Store and Google Play."
+    ],
+    "benefits": [
+      "Competitive day-rate contract terms (initial 9-month term)",
+      "Modern Sydney CBD tech hub access",
+      "Immediate project kickoff"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 11,
@@ -1715,9 +1988,22 @@ export const INITIAL_JOBS: Job[] = [
       "Draft comprehensive financial due diligence reports for investment committee review.",
       "Model post-merger synergy realization timelines and tax treaty impacts."
     ],
-    "skills": ["Quality of Earnings (QofE)", "Financial Due Diligence", "EBITDA Normalization", "M&A Accounting", "Financial Modeling"],
-    "qualifications": ["ACA, ACCA, or CFA qualified with Big 4 transaction services background.", "4+ years focused on private equity or corporate transaction advisory."],
-    "benefits": ["Premium consulting day rate", "Mayfair office hot-desking + hybrid working", "High-profile deal exposure across UK & Western Europe"],
+    "skills": [
+      "Quality of Earnings (QofE)",
+      "Financial Due Diligence",
+      "EBITDA Normalization",
+      "M&A Accounting",
+      "Financial Modeling"
+    ],
+    "qualifications": [
+      "ACA, ACCA, or CFA qualified with Big 4 transaction services background.",
+      "4+ years focused on private equity or corporate transaction advisory."
+    ],
+    "benefits": [
+      "Premium consulting day rate",
+      "Mayfair office hot-desking + hybrid working",
+      "High-profile deal exposure across UK & Western Europe"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 13,
@@ -1743,9 +2029,22 @@ export const INITIAL_JOBS: Job[] = [
       "Review CDISC SDTM and ADaM dataset compliance against FDA guidance documents.",
       "Prepare responses to FDA Type C and Pre-NDA clinical inquiries."
     ],
-    "skills": ["FDA Regulatory Affairs", "Biostatistics", "CDISC SDTM / ADaM", "eCTD Submissions", "Clinical Trials"],
-    "qualifications": ["Ph.D. or M.S. in Biostatistics or Regulatory Science.", "6+ years biotech/pharma experience navigating successful FDA filings."],
-    "benefits": ["Flexible 12-month retainer engagement", "100% remote flexibility", "High-impact drug launch milestone bonuses"],
+    "skills": [
+      "FDA Regulatory Affairs",
+      "Biostatistics",
+      "CDISC SDTM / ADaM",
+      "eCTD Submissions",
+      "Clinical Trials"
+    ],
+    "qualifications": [
+      "Ph.D. or M.S. in Biostatistics or Regulatory Science.",
+      "6+ years biotech/pharma experience navigating successful FDA filings."
+    ],
+    "benefits": [
+      "Flexible 12-month retainer engagement",
+      "100% remote flexibility",
+      "High-impact drug launch milestone bonuses"
+    ],
     "status": "Active",
     "featured": true,
     "applicantsCount": 8,
@@ -1771,9 +2070,22 @@ export const INITIAL_JOBS: Job[] = [
       "Coordinate master data cleansing and cutover validation across 12 European cross-dock centers.",
       "Train regional logistics operations directors on new automated booking workflows."
     ],
-    "skills": ["SAP S/4HANA", "SAP TM / EWM", "Data Migration", "Supply Chain Architecture", "Process Re-engineering"],
-    "qualifications": ["7+ years SAP consulting with at least 2 full-lifecycle S/4HANA implementations in logistics.", "German & English bilingual communication."],
-    "benefits": ["Top European day-rate terms (12-month mandate)", "Frankfurt commercial hub office", "Travel & living allowance provided"],
+    "skills": [
+      "SAP S/4HANA",
+      "SAP TM / EWM",
+      "Data Migration",
+      "Supply Chain Architecture",
+      "Process Re-engineering"
+    ],
+    "qualifications": [
+      "7+ years SAP consulting with at least 2 full-lifecycle S/4HANA implementations in logistics.",
+      "German & English bilingual communication."
+    ],
+    "benefits": [
+      "Top European day-rate terms (12-month mandate)",
+      "Frankfurt commercial hub office",
+      "Travel & living allowance provided"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 10,
@@ -1799,9 +2111,22 @@ export const INITIAL_JOBS: Job[] = [
       "Liaise with hospital institutional review boards (IRB) for protocol amendment approvals.",
       "Assist Clinical Project Managers with investigator meeting preparations."
     ],
-    "skills": ["Good Clinical Practice (GCP)", "Clinical Trial Coordination", "eTMF / CTMS", "Regulatory Compliance", "Health Canada Guidelines"],
-    "qualifications": ["B.S. in Life Sciences, Pharmacology, or Health Administration.", "1-2 years clinical research experience or postgraduate clinical research certificate."],
-    "benefits": ["Canadian health & wellness benefits", "Hybrid schedule (2 days office)", "Tuition assistance for clinical project management certification"],
+    "skills": [
+      "Good Clinical Practice (GCP)",
+      "Clinical Trial Coordination",
+      "eTMF / CTMS",
+      "Regulatory Compliance",
+      "Health Canada Guidelines"
+    ],
+    "qualifications": [
+      "B.S. in Life Sciences, Pharmacology, or Health Administration.",
+      "1-2 years clinical research experience or postgraduate clinical research certificate."
+    ],
+    "benefits": [
+      "Canadian health & wellness benefits",
+      "Hybrid schedule (2 days office)",
+      "Tuition assistance for clinical project management certification"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 22,
@@ -1827,9 +2152,22 @@ export const INITIAL_JOBS: Job[] = [
       "Draft product one-pagers, case study summaries, and conference collateral.",
       "Coordinate executive attendee registrations for North American robotics expos."
     ],
-    "skills": ["HubSpot / Salesforce", "B2B Marketing", "Lead Qualification", "Email Marketing", "Copywriting"],
-    "qualifications": ["Bachelor's degree in Marketing, Business, or Communications.", "Strong written communication and eagerness to learn B2B enterprise technology sales."],
-    "benefits": ["Comprehensive medical & dental coverage", "Manhattan collaborative office with rooftop lounge", "Fast-track promotion to Growth Manager within 18 months"],
+    "skills": [
+      "HubSpot / Salesforce",
+      "B2B Marketing",
+      "Lead Qualification",
+      "Email Marketing",
+      "Copywriting"
+    ],
+    "qualifications": [
+      "Bachelor's degree in Marketing, Business, or Communications.",
+      "Strong written communication and eagerness to learn B2B enterprise technology sales."
+    ],
+    "benefits": [
+      "Comprehensive medical & dental coverage",
+      "Manhattan collaborative office with rooftop lounge",
+      "Fast-track promotion to Growth Manager within 18 months"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 26,
@@ -1855,9 +2193,22 @@ export const INITIAL_JOBS: Job[] = [
       "Audit search conversion rates and optimize on-site product discovery filters.",
       "Collaborate with fulfillment teams to flag stock shortages and coordinate supplier reorders."
     ],
-    "skills": ["Shopify Plus", "E-Commerce Merchandising", "Product Taxonomy", "Excel / VLOOKUP", "Catalog Management"],
-    "qualifications": ["Bachelor's degree or 1+ year e-commerce retail operations experience.", "Detail-oriented mindset with strong quantitative aptitude."],
-    "benefits": ["100% remote flexibility with home office setup grant", "401(k) matching", "Generous brand employee discount program"],
+    "skills": [
+      "Shopify Plus",
+      "E-Commerce Merchandising",
+      "Product Taxonomy",
+      "Excel / VLOOKUP",
+      "Catalog Management"
+    ],
+    "qualifications": [
+      "Bachelor's degree or 1+ year e-commerce retail operations experience.",
+      "Detail-oriented mindset with strong quantitative aptitude."
+    ],
+    "benefits": [
+      "100% remote flexibility with home office setup grant",
+      "401(k) matching",
+      "Generous brand employee discount program"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 20,
@@ -1883,9 +2234,22 @@ export const INITIAL_JOBS: Job[] = [
       "Record telemetry diagnostics and log bug tickets for firmware engineering pods.",
       "Execute endurance test cycles across simulated warehouse floor obstacle courses."
     ],
-    "skills": ["Hardware Diagnostics", "Sensor Calibration (LiDAR/Cameras)", "Linux CLI", "Multimeter & Oscilloscope", "Documentation"],
-    "qualifications": ["Associate degree in Electronics, Robotics, or Military technical background.", "Comfortable reading electrical schematics and working in advanced hardware labs."],
-    "benefits": ["Full healthcare benefits", "Overtime eligibility + shift differentials", "Career development into Lead Robotics Field Engineer"],
+    "skills": [
+      "Hardware Diagnostics",
+      "Sensor Calibration (LiDAR/Cameras)",
+      "Linux CLI",
+      "Multimeter & Oscilloscope",
+      "Documentation"
+    ],
+    "qualifications": [
+      "Associate degree in Electronics, Robotics, or Military technical background.",
+      "Comfortable reading electrical schematics and working in advanced hardware labs."
+    ],
+    "benefits": [
+      "Full healthcare benefits",
+      "Overtime eligibility + shift differentials",
+      "Career development into Lead Robotics Field Engineer"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 17,
@@ -1911,9 +2275,22 @@ export const INITIAL_JOBS: Job[] = [
       "Investigate data access anomalies and maintain audit logs for federal compliance regulators.",
       "Lead annual HIPAA data hygiene training for all biostatistical and software staff."
     ],
-    "skills": ["HIPAA / HITECH Compliance", "Health Data Privacy", "Audit Logging", "Risk Assessments", "Information Security"],
-    "qualifications": ["3-5 years data privacy or compliance experience in healthcare or health-tech.", "CHPS, CIPP/US, or HCISPP certification."],
-    "benefits": ["100% remote flexibility", "Generous paid time off + wellness stipend", "401(k) with 5% employer match"],
+    "skills": [
+      "HIPAA / HITECH Compliance",
+      "Health Data Privacy",
+      "Audit Logging",
+      "Risk Assessments",
+      "Information Security"
+    ],
+    "qualifications": [
+      "3-5 years data privacy or compliance experience in healthcare or health-tech.",
+      "CHPS, CIPP/US, or HCISPP certification."
+    ],
+    "benefits": [
+      "100% remote flexibility",
+      "Generous paid time off + wellness stipend",
+      "401(k) with 5% employer match"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 12,
@@ -1939,9 +2316,22 @@ export const INITIAL_JOBS: Job[] = [
       "Conduct technical discovery calls with Chief Technology Officers and VP Engineering leads.",
       "Negotiate master services agreements alongside corporate legal teams."
     ],
-    "skills": ["B2B SaaS Sales", "Enterprise Quota Attainment", "Pipeline Generation", "Contract Negotiation", "MEDDPICC"],
-    "qualifications": ["3-5 years quota-carrying SaaS software sales experience with demonstrated president's club track record.", "Strong enterprise relationship acumen."],
-    "benefits": ["Uncapped commission structure with realistic OTE of $240,000+", "Comprehensive tier-one healthcare", "Midtown Manhattan premium office"],
+    "skills": [
+      "B2B SaaS Sales",
+      "Enterprise Quota Attainment",
+      "Pipeline Generation",
+      "Contract Negotiation",
+      "MEDDPICC"
+    ],
+    "qualifications": [
+      "3-5 years quota-carrying SaaS software sales experience with demonstrated president's club track record.",
+      "Strong enterprise relationship acumen."
+    ],
+    "benefits": [
+      "Uncapped commission structure with realistic OTE of $240,000+",
+      "Comprehensive tier-one healthcare",
+      "Midtown Manhattan premium office"
+    ],
     "status": "Active",
     "featured": true,
     "applicantsCount": 27,
@@ -1967,9 +2357,22 @@ export const INITIAL_JOBS: Job[] = [
       "A/B test subject lines, creative visuals, and personalized product recommendation algorithms.",
       "Partner with data science squads to reduce 90-day customer churn by over 18%."
     ],
-    "skills": ["Klaviyo / Omnisend", "Email Marketing Strategy", "Customer Lifecycle / LTV", "A/B Testing", "Cohort Analytics"],
-    "qualifications": ["3-6 years dedicated e-commerce retention or lifecycle marketing experience.", "Proven track record managing email revenue programs exceeding $10M annual GMV."],
-    "benefits": ["100% remote working flexibility", "Annual learning & conference stipend", "Comprehensive medical, dental, and vision"],
+    "skills": [
+      "Klaviyo / Omnisend",
+      "Email Marketing Strategy",
+      "Customer Lifecycle / LTV",
+      "A/B Testing",
+      "Cohort Analytics"
+    ],
+    "qualifications": [
+      "3-6 years dedicated e-commerce retention or lifecycle marketing experience.",
+      "Proven track record managing email revenue programs exceeding $10M annual GMV."
+    ],
+    "benefits": [
+      "100% remote working flexibility",
+      "Annual learning & conference stipend",
+      "Comprehensive medical, dental, and vision"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 19,
@@ -1995,9 +2398,22 @@ export const INITIAL_JOBS: Job[] = [
       "Calibrate dynamic pricing engines across Global Distribution Systems (GDS) and OTAs.",
       "Present weekly forecast and revenue maximization recommendations to General Managers."
     ],
-    "skills": ["RevPAR Maximization", "Hospitality Revenue Management", "Dynamic Pricing", "OTA / GDS Distribution", "Data Analytics"],
-    "qualifications": ["3-5 years hospitality revenue management or airline yield analytics experience in GCC.", "Proficiency in IDeaS RMS, Opera PMS, or Duetto."],
-    "benefits": ["100% tax-free compensation", "Annual flight ticket allowance", "Luxury accommodation discounts globally"],
+    "skills": [
+      "RevPAR Maximization",
+      "Hospitality Revenue Management",
+      "Dynamic Pricing",
+      "OTA / GDS Distribution",
+      "Data Analytics"
+    ],
+    "qualifications": [
+      "3-5 years hospitality revenue management or airline yield analytics experience in GCC.",
+      "Proficiency in IDeaS RMS, Opera PMS, or Duetto."
+    ],
+    "benefits": [
+      "100% tax-free compensation",
+      "Annual flight ticket allowance",
+      "Luxury accommodation discounts globally"
+    ],
     "status": "Active",
     "featured": false,
     "applicantsCount": 14,
@@ -2023,9 +2439,22 @@ export const INITIAL_JOBS: Job[] = [
       "Unify brand voice, global public relations, and high-profile industry event sponsorships.",
       "Direct an international team of 24 marketing specialists across London, New York, and Singapore."
     ],
-    "skills": ["Global Brand Strategy", "Executive Leadership", "Performance Marketing", "Public Relations", "Marketing Mix Modeling"],
-    "qualifications": ["12+ years marketing leadership with prior VP or CMO experience in financial or enterprise technology.", "Demonstrated history scaling global enterprise brand equity."],
-    "benefits": ["Executive equity stock options", "Global business travel budget", "Flexible worldwide remote status"],
+    "skills": [
+      "Global Brand Strategy",
+      "Executive Leadership",
+      "Performance Marketing",
+      "Public Relations",
+      "Marketing Mix Modeling"
+    ],
+    "qualifications": [
+      "12+ years marketing leadership with prior VP or CMO experience in financial or enterprise technology.",
+      "Demonstrated history scaling global enterprise brand equity."
+    ],
+    "benefits": [
+      "Executive equity stock options",
+      "Global business travel budget",
+      "Flexible worldwide remote status"
+    ],
     "status": "Active",
     "featured": true,
     "applicantsCount": 31,
@@ -2051,13 +2480,1666 @@ export const INITIAL_JOBS: Job[] = [
       "Drive annual property revenue targets exceeding $65M across lodging, culinary, and spa verticals.",
       "Maintain active relations with luxury asset owners, municipal stakeholders, and international tour operators."
     ],
-    "skills": ["Luxury Resort Operations", "P&L Management", "Forbes 5-Star Standards", "Hospitality Leadership", "Culinary & Spa Management"],
-    "qualifications": ["10+ years hospitality leadership with at least 4 years as General Manager or Managing Director at 5-star properties.", "Proven track record of high guest satisfaction and profitable P&L stewardship."],
-    "benefits": ["Comprehensive executive benefits and relocation package", "Annual performance incentive bonus up to 35%", "Top-tier family medical & retirement plans"],
+    "skills": [
+      "Luxury Resort Operations",
+      "P&L Management",
+      "Forbes 5-Star Standards",
+      "Hospitality Leadership",
+      "Culinary & Spa Management"
+    ],
+    "qualifications": [
+      "10+ years hospitality leadership with at least 4 years as General Manager or Managing Director at 5-star properties.",
+      "Proven track record of high guest satisfaction and profitable P&L stewardship."
+    ],
+    "benefits": [
+      "Comprehensive executive benefits and relocation package",
+      "Annual performance incentive bonus up to 35%",
+      "Top-tier family medical & retirement plans"
+    ],
     "status": "Active",
     "featured": true,
     "applicantsCount": 18,
     "postedDate": "2026-10-22"
+  },
+  {
+    "id": "job-156",
+    "title": "Clinical Nurse Specialist – Critical Care & ICU",
+    "company": "BioHealth Diagnostics",
+    "companyLogoColor": "bg-rose-600",
+    "location": "London (Westminster), United Kingdom",
+    "country": "United Kingdom",
+    "workplaceType": "On-site",
+    "employmentType": "Full-time",
+    "industry": "Healthcare",
+    "experienceLevel": "Mid-level",
+    "salaryMin": 55000,
+    "salaryMax": 72000,
+    "salaryCurrency": "GBP",
+    "description": "Provide advanced specialized patient care in tertiary critical care units, mentoring junior staff and optimizing clinical protocols.",
+    "responsibilities": [
+      "Direct intensive patient monitoring and clinical intervention protocols.",
+      "Lead clinical handover and multidisciplinary case reviews with consultant physicians.",
+      "Ensure strict compliance with UK Healthcare Quality Commission (CQC) standards."
+    ],
+    "skills": [
+      "ICU / Critical Care",
+      "Patient Monitoring",
+      "NMC Registered Nurse",
+      "Clinical Leadership",
+      "Emergency Response"
+    ],
+    "qualifications": [
+      "NMC active nursing pin and 4+ years acute intensive care experience.",
+      "Postgraduate certificate in Intensive Care Nursing."
+    ],
+    "benefits": [
+      "NHS-aligned pension and generous overtime allowance",
+      "Relocation assistance for qualified nurses",
+      "Comprehensive continuing professional development"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 16,
+    "postedDate": "2026-10-22"
+  },
+  {
+    "id": "job-157",
+    "title": "Contract Clinical Research Coordinator (12-Month Mandate)",
+    "company": "BioHealth Diagnostics",
+    "companyLogoColor": "bg-rose-600",
+    "location": "Boston, MA",
+    "country": "United States",
+    "workplaceType": "Hybrid",
+    "employmentType": "Contract",
+    "industry": "Healthcare",
+    "experienceLevel": "Senior",
+    "salaryMin": 95000,
+    "salaryMax": 125000,
+    "salaryCurrency": "USD",
+    "description": "Manage Phase II and III oncology and immunology clinical trials, ensuring GCP adherence and timely patient recruitment.",
+    "responsibilities": [
+      "Oversee clinical trial patient enrollment, informed consent, and adverse event reporting.",
+      "Liaise with FDA inspectors, IRB committees, and institutional principal investigators.",
+      "Maintain electronic data capture (EDC) accuracy across clinical study endpoints."
+    ],
+    "skills": [
+      "Good Clinical Practice (GCP)",
+      "Clinical Trial Management",
+      "IRB / FDA Submissions",
+      "EDC Platforms (Medidata Rave)",
+      "Oncology Studies"
+    ],
+    "qualifications": [
+      "5+ years coordinating clinical trials in hospital or pharma settings.",
+      "CCRC, CCRA, or SoCRA certification."
+    ],
+    "benefits": [
+      "High competitive hourly contracting rate",
+      "Potential for multi-year program extension",
+      "Hybrid Boston location flexibility"
+    ],
+    "status": "Active",
+    "featured": true,
+    "applicantsCount": 12,
+    "postedDate": "2026-10-23"
+  },
+  {
+    "id": "job-158",
+    "title": "Part-time Telehealth Consulting Physician (Cardiology)",
+    "company": "BioHealth Diagnostics",
+    "companyLogoColor": "bg-rose-600",
+    "location": "Toronto, ON",
+    "country": "Canada",
+    "workplaceType": "Remote",
+    "employmentType": "Part-time",
+    "industry": "Healthcare",
+    "experienceLevel": "Senior",
+    "salaryMin": 80000,
+    "salaryMax": 110000,
+    "salaryCurrency": "CAD",
+    "description": "Conduct remote cardiovascular patient assessments, review digital ECG telemetry, and guide preventative cardiology management for Canadian patients.",
+    "responsibilities": [
+      "Review remote ambulatory ECG and cardiac telemetry data via certified digital health portal.",
+      "Conduct synchronous video consultations for non-emergency cardiology reviews.",
+      "Collaborate with general practitioners to tailor secondary prevention medication regimens."
+    ],
+    "skills": [
+      "Preventative Cardiology",
+      "Telemedicine Consultation",
+      "ECG Diagnostics",
+      "Patient Care",
+      "EMR Documentation"
+    ],
+    "qualifications": [
+      "Licensed Physician (MD) in Canada with cardiology specialization.",
+      "Active provincial medical license with zero restrictions."
+    ],
+    "benefits": [
+      "Completely flexible 15-20 hours/week scheduling",
+      "100% remote tele-health platform",
+      "Malpractice insurance coverage included"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 9,
+    "postedDate": "2026-10-21"
+  },
+  {
+    "id": "job-159",
+    "title": "Healthcare Data Analytics & Informatics Intern",
+    "company": "BioHealth Diagnostics",
+    "companyLogoColor": "bg-rose-600",
+    "location": "Chicago, IL",
+    "country": "United States",
+    "workplaceType": "Hybrid",
+    "employmentType": "Internship",
+    "industry": "Healthcare",
+    "experienceLevel": "Entry-level",
+    "salaryMin": 48000,
+    "salaryMax": 62000,
+    "salaryCurrency": "USD",
+    "description": "Support epidemiology analytics, patient outcomes benchmarking, and hospital bed occupancy modeling using modern health informatics tools.",
+    "responsibilities": [
+      "Cleanse and analyze anonymized patient electronic health records (EHR).",
+      "Build visual clinical quality dashboards in Tableau and Python.",
+      "Assist health economists in calculating treatment efficacy metrics."
+    ],
+    "skills": [
+      "Python / R",
+      "EHR Data (Epic / Cerner)",
+      "Healthcare Informatics",
+      "SQL Querying",
+      "Biostatistics"
+    ],
+    "qualifications": [
+      "Current student or recent graduate in Health Informatics, Biostatistics, or Data Science.",
+      "Solid analytical foundation and HIPAA awareness."
+    ],
+    "benefits": [
+      "Direct mentorship under Chief Medical Informatics Officer",
+      "Hybrid working model with modern downtown Chicago office",
+      "Full-time junior analyst conversion path"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 22,
+    "postedDate": "2026-10-20"
+  },
+  {
+    "id": "job-160",
+    "title": "Medical Laboratory Technologist – Molecular Pathology",
+    "company": "BioHealth Diagnostics",
+    "companyLogoColor": "bg-rose-600",
+    "location": "Sydney (New South Wales), Australia",
+    "country": "Australia",
+    "workplaceType": "On-site",
+    "employmentType": "Full-time",
+    "industry": "Healthcare",
+    "experienceLevel": "Mid-level",
+    "salaryMin": 85000,
+    "salaryMax": 110000,
+    "salaryCurrency": "AUD",
+    "description": "Perform diagnostic PCR, Next-Generation Sequencing (NGS), and molecular profiling assays supporting precision oncology treatments.",
+    "responsibilities": [
+      "Operate Illumina NGS sequencing platforms and automated liquid handling robotics.",
+      "Validate molecular assay quality controls and report diagnostic genetic variants.",
+      "Maintain NATA accreditation and Australian laboratory compliance records."
+    ],
+    "skills": [
+      "Molecular Biology",
+      "Next-Generation Sequencing (NGS)",
+      "PCR Diagnostics",
+      "NATA Compliance",
+      "Quality Control"
+    ],
+    "qualifications": [
+      "Degree in Medical Laboratory Science, Genetics, or Molecular Biology.",
+      "AIMS accredited or eligible with 2+ years diagnostic lab experience."
+    ],
+    "benefits": [
+      "State-of-the-art diagnostic laboratory environment",
+      "Generous Australian superannuation contributions (11.5%)",
+      "Annual training and conference attendance funding"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 11,
+    "postedDate": "2026-10-21"
+  },
+  {
+    "id": "job-161",
+    "title": "Senior Industrial Automation & PLC Systems Engineer",
+    "company": "Apex Robotics Systems",
+    "companyLogoColor": "bg-amber-600",
+    "location": "Stuttgart / Munich, Germany",
+    "country": "Germany",
+    "workplaceType": "Hybrid",
+    "employmentType": "Full-time",
+    "industry": "Manufacturing",
+    "experienceLevel": "Senior",
+    "salaryMin": 92000,
+    "salaryMax": 120000,
+    "salaryCurrency": "EUR",
+    "description": "Design and deploy industrial automation architectures, Siemens PLC logic, and robotic assembly cells for next-generation electric vehicle powertrains.",
+    "responsibilities": [
+      "Program Siemens S7-1500 and TIA Portal automation logic for high-speed robotic production lines.",
+      "Commission KUKA and ABB 6-axis robotic arms for automated precision joining.",
+      "Lead root-cause troubleshooting for production cell cycle time optimization."
+    ],
+    "skills": [
+      "Siemens TIA Portal",
+      "PLC Programming",
+      "KUKA / ABB Robotics",
+      "SCADA / HMI Systems",
+      "Industry 4.0"
+    ],
+    "qualifications": [
+      "5+ years automation engineering in automotive or heavy manufacturing.",
+      "German and English technical proficiency."
+    ],
+    "benefits": [
+      "German 30-day paid vacation",
+      "Company electric car leasing program",
+      "Performance profit-sharing scheme"
+    ],
+    "status": "Active",
+    "featured": true,
+    "applicantsCount": 15,
+    "postedDate": "2026-10-22"
+  },
+  {
+    "id": "job-162",
+    "title": "Contract Manufacturing Quality Control Auditor (6-Month)",
+    "company": "Apex Robotics Systems",
+    "companyLogoColor": "bg-amber-600",
+    "location": "Detroit, MI",
+    "country": "United States",
+    "workplaceType": "On-site",
+    "employmentType": "Contract",
+    "industry": "Manufacturing",
+    "experienceLevel": "Mid-level",
+    "salaryMin": 80000,
+    "salaryMax": 105000,
+    "salaryCurrency": "USD",
+    "description": "Conduct rigorous ISO 9001 and IATF 16949 quality audits on incoming Tier-1 automotive mechanical components and sub-assemblies.",
+    "responsibilities": [
+      "Perform precision dimensional inspections using CMM and laser scanning tools.",
+      "Audit supplier manufacturing processes and issue Non-Conformance Reports (NCR).",
+      "Drive supplier 8D root-cause corrective action investigations."
+    ],
+    "skills": [
+      "ISO 9001 / IATF 16949",
+      "CMM Inspection",
+      "PPAP / APQP",
+      "8D Problem Solving",
+      "GD&T Blueprint Reading"
+    ],
+    "qualifications": [
+      "3+ years quality engineering or auditing in manufacturing plant environments.",
+      "ASQ Certified Quality Auditor (CQA) preferred."
+    ],
+    "benefits": [
+      "Competitive weekly contracting payments",
+      "Overtime premium rates",
+      "Opportunity for direct permanent manufacturer hire"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 13,
+    "postedDate": "2026-10-23"
+  },
+  {
+    "id": "job-163",
+    "title": "Part-time Additive Manufacturing & 3D Print Technician",
+    "company": "Apex Robotics Systems",
+    "companyLogoColor": "bg-amber-600",
+    "location": "Sheffield / Leeds, United Kingdom",
+    "country": "United Kingdom",
+    "workplaceType": "On-site",
+    "employmentType": "Part-time",
+    "industry": "Manufacturing",
+    "experienceLevel": "Entry-level",
+    "salaryMin": 28000,
+    "salaryMax": 36000,
+    "salaryCurrency": "GBP",
+    "description": "Operate direct metal laser sintering (DMLS) and industrial polymer 3D printers, performing post-processing and precision inspection for aerospace prototypes.",
+    "responsibilities": [
+      "Prepare CAD build files and configure laser sintering printing parameters.",
+      "Manage powder recycling, printer maintenance, and heat-treatment post-processing.",
+      "Perform coordinate measuring inspections on finished lightweight aerospace brackets."
+    ],
+    "skills": [
+      "Additive Manufacturing",
+      "3D CAD (SolidWorks/Creo)",
+      "Post-Processing",
+      "CNC Machining Basics",
+      "Material Handling"
+    ],
+    "qualifications": [
+      "Technical diploma or practical experience with industrial 3D printing.",
+      "Strong attention to physical quality and shop-floor safety."
+    ],
+    "benefits": [
+      "Flexible 20 hours/week shift schedule",
+      "Hands-on experience with cutting-edge aerospace titanium printers",
+      "Full safety equipment and training provided"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 18,
+    "postedDate": "2026-10-20"
+  },
+  {
+    "id": "job-164",
+    "title": "Robotics & Mechatronics Engineering Intern",
+    "company": "Apex Robotics Systems",
+    "companyLogoColor": "bg-amber-600",
+    "location": "Austin, TX",
+    "country": "United States",
+    "workplaceType": "On-site",
+    "employmentType": "Internship",
+    "industry": "Manufacturing",
+    "experienceLevel": "Entry-level",
+    "salaryMin": 52000,
+    "salaryMax": 65000,
+    "salaryCurrency": "USD",
+    "description": "Collaborate with senior roboticists to design, wire, and test custom end-of-arm tooling and vision-guided robotic picking cells.",
+    "responsibilities": [
+      "Assist in 3D CAD modeling of robotic grippers and sensor mounting brackets.",
+      "Assemble wiring harnesses and test pneumatic actuator circuits.",
+      "Log cycle test data and assist in computer vision camera calibration."
+    ],
+    "skills": [
+      "Mechatronics",
+      "SolidWorks",
+      "Basic Electronics / Wiring",
+      "Python / C++",
+      "Pneumatics"
+    ],
+    "qualifications": [
+      "Undergraduate student in Mechanical, Electrical, or Mechatronics Engineering.",
+      "Demonstrated hands-on prototyping projects."
+    ],
+    "benefits": [
+      "Paid internship with housing stipend assistance for out-of-state candidates",
+      "Fast-track graduate hiring consideration",
+      "Mentorship from Principal Robotics Engineers"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 27,
+    "postedDate": "2026-10-19"
+  },
+  {
+    "id": "job-165",
+    "title": "Enterprise SaaS Account Executive – EMEA Expansion",
+    "company": "Vertex Dynamics",
+    "companyLogoColor": "bg-blue-600",
+    "location": "London, United Kingdom",
+    "country": "United Kingdom",
+    "workplaceType": "Hybrid",
+    "employmentType": "Full-time",
+    "industry": "Sales & Marketing",
+    "experienceLevel": "Senior",
+    "salaryMin": 110000,
+    "salaryMax": 155000,
+    "salaryCurrency": "GBP",
+    "description": "Drive net-new enterprise ARR across UK and European Tier-1 enterprises, closing high-value cloud data governance solutions.",
+    "responsibilities": [
+      "Own full sales cycle from discovery to C-suite contract negotiation for $150k+ ACV deals.",
+      "Partner with solutions architects to deliver custom technical proofs-of-concept (POC).",
+      "Consistently exceed quarterly quota while maintaining accurate Salesforce pipeline hygiene."
+    ],
+    "skills": [
+      "Enterprise B2B SaaS",
+      "MEDDPICC Sales Methodology",
+      "Quota Attainment",
+      "C-Suite Negotiation",
+      "Salesforce CRM"
+    ],
+    "qualifications": [
+      "5+ years quota-carrying SaaS sales experience with average deal size >$100k.",
+      "Demonstrated track record of 100%+ annual quota achievement."
+    ],
+    "benefits": [
+      "Uncapped commission structure with 50/50 OTE split (£250k+ realistic OTE)",
+      "Private medical & dental for candidate and family",
+      "Central London luxury tech hub office"
+    ],
+    "status": "Active",
+    "featured": true,
+    "applicantsCount": 23,
+    "postedDate": "2026-10-23"
+  },
+  {
+    "id": "job-166",
+    "title": "Contract B2B Content Marketing Specialist (6-Month Mandate)",
+    "company": "Meridian Capital Group",
+    "companyLogoColor": "bg-emerald-600",
+    "location": "New York, NY",
+    "country": "United States",
+    "workplaceType": "Remote",
+    "employmentType": "Contract",
+    "industry": "Sales & Marketing",
+    "experienceLevel": "Mid-level",
+    "salaryMin": 85000,
+    "salaryMax": 110000,
+    "salaryCurrency": "USD",
+    "description": "Author authoritative executive whitepapers, case studies, and SEO-optimized thought leadership for institutional financial technology products.",
+    "responsibilities": [
+      "Interview subject matter experts and author in-depth fintech industry reports.",
+      "Execute organic search keyword strategies to boost organic inbound buyer traffic.",
+      "Produce engaging LinkedIn executive thought leadership copy for company leadership."
+    ],
+    "skills": [
+      "B2B Copywriting",
+      "Fintech / SaaS Storytelling",
+      "SEO Optimization",
+      "Whitepaper Production",
+      "Content Strategy"
+    ],
+    "qualifications": [
+      "3+ years creating B2B content for financial services or enterprise tech.",
+      "Strong portfolio of published whitepapers and analytical case studies."
+    ],
+    "benefits": [
+      "Flexible remote workflow",
+      "Competitive contracting hourly rate ($55-70/hr)",
+      "High visibility with senior executive stakeholders"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 17,
+    "postedDate": "2026-10-22"
+  },
+  {
+    "id": "job-167",
+    "title": "Part-time Social Media & Community Growth Manager",
+    "company": "Horizon Retail Innovations",
+    "companyLogoColor": "bg-purple-600",
+    "location": "Toronto, ON",
+    "country": "Canada",
+    "workplaceType": "Remote",
+    "employmentType": "Part-time",
+    "industry": "Sales & Marketing",
+    "experienceLevel": "Entry-level",
+    "salaryMin": 34000,
+    "salaryMax": 46000,
+    "salaryCurrency": "CAD",
+    "description": "Engage digital communities, manage social media scheduling, and grow brand presence across LinkedIn, X, and YouTube for emerging retail tech brands.",
+    "responsibilities": [
+      "Curate and schedule weekly multi-channel content calendar across platforms.",
+      "Monitor comments, engage with industry community influencers, and track brand sentiment.",
+      "Analyze weekly engagement analytics and present actionable content iteration findings."
+    ],
+    "skills": [
+      "Social Media Management",
+      "Canva / Figma",
+      "Copywriting",
+      "Community Engagement",
+      "Social Analytics (Sprout/Buffer)"
+    ],
+    "qualifications": [
+      "1-2 years experience running social channels for brands or agencies.",
+      "Sharp creative eye and excellent written English."
+    ],
+    "benefits": [
+      "100% remote working hours (15-20 hrs/week)",
+      "Flexible work window across North American timezones",
+      "Software tool subscriptions provided"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 29,
+    "postedDate": "2026-10-21"
+  },
+  {
+    "id": "job-168",
+    "title": "Junior Sales Development Representative (SDR)",
+    "company": "Vertex Dynamics",
+    "companyLogoColor": "bg-blue-600",
+    "location": "Chicago, IL",
+    "country": "United States",
+    "workplaceType": "Hybrid",
+    "employmentType": "Full-time",
+    "industry": "Sales & Marketing",
+    "experienceLevel": "Entry-level",
+    "salaryMin": 55000,
+    "salaryMax": 70000,
+    "salaryCurrency": "USD",
+    "description": "Generate outbound qualified sales opportunities for senior enterprise account executives across high-growth manufacturing and retail accounts.",
+    "responsibilities": [
+      "Conduct multi-touch cold outreach campaigns via phone, email, and LinkedIn Sales Navigator.",
+      "Qualify inbound marketing leads against target account ICP criteria.",
+      "Book 15+ qualified enterprise demo meetings monthly for account executives."
+    ],
+    "skills": [
+      "Cold Outreach",
+      "Salesforce / HubSpot",
+      "LinkedIn Sales Navigator",
+      "Active Listening",
+      "Prospecting"
+    ],
+    "qualifications": [
+      "Bachelor's degree or 1 year customer-facing or sales experience.",
+      "High curiosity, resilience, and excellent verbal communication."
+    ],
+    "benefits": [
+      "Base + monthly commission ($85k-$95k total realistic first-year OTE)",
+      "Rapid promotion track to Account Executive in 12-18 months",
+      "Modern downtown Chicago loop office"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 34,
+    "postedDate": "2026-10-23"
+  },
+  {
+    "id": "job-169",
+    "title": "Performance Digital Marketing & Paid Acquisition Intern",
+    "company": "Nexus Freight Logistics",
+    "companyLogoColor": "bg-slate-700",
+    "location": "Singapore (Marina Bay)",
+    "country": "Singapore",
+    "workplaceType": "Hybrid",
+    "employmentType": "Internship",
+    "industry": "Sales & Marketing",
+    "experienceLevel": "Entry-level",
+    "salaryMin": 36000,
+    "salaryMax": 48000,
+    "salaryCurrency": "SGD",
+    "description": "Support paid search, Google Ads campaigns, and LinkedIn account-based marketing experiments for international freight forwarding services.",
+    "responsibilities": [
+      "Audit Google Ads search query reports and optimize negative keyword lists.",
+      "Design landing page split tests in Unbounce to improve conversion rates.",
+      "Extract weekly CAC and ROAS metrics into marketing leadership dashboards."
+    ],
+    "skills": [
+      "Google Ads / PPC",
+      "Google Analytics 4",
+      "Excel Modeling",
+      "A/B Testing",
+      "Conversion Rate Optimization"
+    ],
+    "qualifications": [
+      "Current university student or fresh graduate in Marketing, Business, or Economics.",
+      "Enthusiasm for data-driven digital advertising."
+    ],
+    "benefits": [
+      "Monthly internship stipend",
+      "Singapore central business district office location",
+      "Opportunity to transition to full-time Associate Growth Manager"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 21,
+    "postedDate": "2026-10-20"
+  },
+  {
+    "id": "job-170",
+    "title": "Director of International Business Development (APAC & GCC)",
+    "company": "Meridian Capital Group",
+    "companyLogoColor": "bg-emerald-600",
+    "location": "Dubai (DIFC), United Arab Emirates",
+    "country": "United Arab Emirates",
+    "workplaceType": "Hybrid",
+    "employmentType": "Full-time",
+    "industry": "Sales & Marketing",
+    "experienceLevel": "Lead / Executive",
+    "salaryMin": 180000,
+    "salaryMax": 240000,
+    "salaryCurrency": "USD",
+    "description": "Spearhead regional business development alliances, sovereign wealth fund introductions, and enterprise fintech partnerships across GCC and Southeast Asia.",
+    "responsibilities": [
+      "Establish senior relationships with regional institutional family offices and government-backed entities.",
+      "Structure multi-million dollar cross-border commercial distribution partnerships.",
+      "Lead international BD roadshows across Abu Dhabi, Riyadh, and Singapore."
+    ],
+    "skills": [
+      "International Business Development",
+      "C-Level Deal Structuring",
+      "GCC Regional Market Knowledge",
+      "Sovereign Wealth Relations",
+      "Executive Presence"
+    ],
+    "qualifications": [
+      "8+ years senior business development leadership in finance or technology.",
+      "Extensive professional network across GCC or APAC."
+    ],
+    "benefits": [
+      "100% tax-free executive compensation",
+      "High-tier executive performance bonus",
+      "Annual international travel and family schooling allowance"
+    ],
+    "status": "Active",
+    "featured": true,
+    "applicantsCount": 16,
+    "postedDate": "2026-10-24"
+  },
+  {
+    "id": "job-171",
+    "title": "Regional Distribution Center Operations Manager",
+    "company": "Nexus Freight Logistics",
+    "companyLogoColor": "bg-slate-700",
+    "location": "Dallas / Fort Worth, TX",
+    "country": "United States",
+    "workplaceType": "On-site",
+    "employmentType": "Full-time",
+    "industry": "Logistics & Supply Chain",
+    "experienceLevel": "Senior",
+    "salaryMin": 120000,
+    "salaryMax": 155000,
+    "salaryCurrency": "USD",
+    "description": "Lead 24/7 operations across a 500,000 sq ft high-throughput fulfillment center, optimizing safety, inventory accuracy, and on-time outbound dispatch.",
+    "responsibilities": [
+      "Manage 120+ warehouse staff, supervisors, and automated material handling personnel.",
+      "Implement Lean Six Sigma continuous improvement projects to eliminate sorting bottlenecks.",
+      "Maintain 99.8% customer order fulfillment SLA and rigorous OSHA compliance."
+    ],
+    "skills": [
+      "Warehouse Management Systems (WMS)",
+      "Lean Six Sigma",
+      "Distribution Operations",
+      "OSHA Safety",
+      "Labor Planning"
+    ],
+    "qualifications": [
+      "6+ years warehouse or distribution management experience.",
+      "Proven track record managing large facility budgets and headcounts."
+    ],
+    "benefits": [
+      "Annual performance bonus up to 25%",
+      "Comprehensive healthcare, 401(k) with 6% company match",
+      "Company vehicle allowance"
+    ],
+    "status": "Active",
+    "featured": true,
+    "applicantsCount": 15,
+    "postedDate": "2026-10-23"
+  },
+  {
+    "id": "job-172",
+    "title": "Contract Global Customs Compliance & Tariff Specialist",
+    "company": "Nexus Freight Logistics",
+    "companyLogoColor": "bg-slate-700",
+    "location": "Rotterdam / Amsterdam, Netherlands",
+    "country": "Germany",
+    "workplaceType": "Remote",
+    "employmentType": "Contract",
+    "industry": "Logistics & Supply Chain",
+    "experienceLevel": "Senior",
+    "salaryMin": 85000,
+    "salaryMax": 115000,
+    "salaryCurrency": "EUR",
+    "description": "Ensure international maritime and air cargo customs compliance, Harmonized System (HS) code classifications, and import/export regulatory adherence.",
+    "responsibilities": [
+      "Audit international shipping documentation, commercial invoices, and origin certificates.",
+      "Review HS tariff classifications across complex industrial machinery imports.",
+      "Mitigate European customs audit exposure and expedite port clearing clearance."
+    ],
+    "skills": [
+      "Customs Compliance",
+      "HS Tariff Classification",
+      "EU Import/Export Regulations",
+      "Incoterms 2020",
+      "Trade Compliance"
+    ],
+    "qualifications": [
+      "Licensed Customs Broker or 5+ years international freight customs specialist experience.",
+      "Deep fluency in European Union customs code."
+    ],
+    "benefits": [
+      "Lucrative daily contracting rate",
+      "100% remote flexibility across European timezones",
+      "Potential for multi-year trade advisory renewal"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 11,
+    "postedDate": "2026-10-22"
+  },
+  {
+    "id": "job-173",
+    "title": "Part-time Freight Dispatcher & Fleet Tracking Coordinator",
+    "company": "Nexus Freight Logistics",
+    "companyLogoColor": "bg-slate-700",
+    "location": "Calgary, AB",
+    "country": "Canada",
+    "workplaceType": "Remote",
+    "employmentType": "Part-time",
+    "industry": "Logistics & Supply Chain",
+    "experienceLevel": "Entry-level",
+    "salaryMin": 32000,
+    "salaryMax": 42000,
+    "salaryCurrency": "CAD",
+    "description": "Coordinate truckload dispatching, monitor GPS driver tracking, and communicate transit updates to regional logistics brokers across western Canada.",
+    "responsibilities": [
+      "Assign cross-provincial haul routes and monitor electronic logging device (ELD) hours.",
+      "Communicate delivery check-calls and resolve weather transit delays in real-time.",
+      "Update TMS shipping statuses and verify proof-of-delivery (POD) documentation."
+    ],
+    "skills": [
+      "Freight Dispatching",
+      "ELD Compliance",
+      "Customer Service",
+      "TMS Platforms",
+      "Route Planning"
+    ],
+    "qualifications": [
+      "1+ years dispatch or freight customer service experience.",
+      "Organized, calm under fast-paced logistics communication."
+    ],
+    "benefits": [
+      "Flexible evening or weekend shifts (20 hrs/week)",
+      "Fully remote home office setup",
+      "Competitive hourly pay with overtime opportunities"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 22,
+    "postedDate": "2026-10-21"
+  },
+  {
+    "id": "job-174",
+    "title": "Procurement & Strategic Sourcing Associate",
+    "company": "Nexus Freight Logistics",
+    "companyLogoColor": "bg-slate-700",
+    "location": "Sydney, Australia",
+    "country": "Australia",
+    "workplaceType": "Hybrid",
+    "employmentType": "Full-time",
+    "industry": "Logistics & Supply Chain",
+    "experienceLevel": "Mid-level",
+    "salaryMin": 85000,
+    "salaryMax": 110000,
+    "salaryCurrency": "AUD",
+    "description": "Negotiate vendor contracts, evaluate raw material suppliers, and mitigate supply chain disruptions across Australian and Asian manufacturing partners.",
+    "responsibilities": [
+      "Execute competitive RFPs and negotiate pricing agreements for packaging and freight services.",
+      "Assess supplier risk profiles, delivery reliability, and ESG sustainability metrics.",
+      "Collaborate with manufacturing leads to ensure uninterrupted factory supply continuity."
+    ],
+    "skills": [
+      "Strategic Sourcing",
+      "Vendor Negotiation",
+      "RFP / Tender Management",
+      "Supplier Risk Analysis",
+      "SAP / Coupa"
+    ],
+    "qualifications": [
+      "3-5 years procurement or purchasing experience in industrial or logistics sectors.",
+      "Strong negotiation and financial contract analysis skills."
+    ],
+    "benefits": [
+      "Hybrid Sydney harbor-side office",
+      "11.5% Australian superannuation fund",
+      "Generous annual wellness stipend"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 14,
+    "postedDate": "2026-10-23"
+  },
+  {
+    "id": "job-175",
+    "title": "International Supply Chain Operations Intern",
+    "company": "Nexus Freight Logistics",
+    "companyLogoColor": "bg-slate-700",
+    "location": "London (Canary Wharf), United Kingdom",
+    "country": "United Kingdom",
+    "workplaceType": "Hybrid",
+    "employmentType": "Internship",
+    "industry": "Logistics & Supply Chain",
+    "experienceLevel": "Entry-level",
+    "salaryMin": 28000,
+    "salaryMax": 36000,
+    "salaryCurrency": "GBP",
+    "description": "Support international container tracking, import documentation filing, and carrier transit performance auditing for major UK retail clients.",
+    "responsibilities": [
+      "Track containerized ocean shipments and update client status portals.",
+      "Verify shipping line detention and demurrage invoices against contracted allowances.",
+      "Assist trade lane managers in compiling monthly port congestion reports."
+    ],
+    "skills": [
+      "Supply Chain Analytics",
+      "Ocean Freight Basics",
+      "Excel (VLOOKUP / Pivots)",
+      "Logistics Tracking",
+      "Customer Communication"
+    ],
+    "qualifications": [
+      "Enrolled in or recent graduate of Supply Chain, Logistics, or International Trade degrees.",
+      "Keen analytical curiosity and attention to detail."
+    ],
+    "benefits": [
+      "London Canary Wharf financial center office",
+      "Structured mentorship and career training workshops",
+      "High rate of graduate full-time hire conversion"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 26,
+    "postedDate": "2026-10-20"
+  },
+  {
+    "id": "job-176",
+    "title": "Executive Chef – Fine Dining & Luxury Culinary Operations",
+    "company": "Apex Robotics Systems",
+    "companyLogoColor": "bg-amber-600",
+    "location": "London (Mayfair), United Kingdom",
+    "country": "United Kingdom",
+    "workplaceType": "On-site",
+    "employmentType": "Full-time",
+    "industry": "Hospitality",
+    "experienceLevel": "Senior",
+    "salaryMin": 85000,
+    "salaryMax": 115000,
+    "salaryCurrency": "GBP",
+    "description": "Direct Michelin-caliber culinary direction, seasonal menu development, and kitchen brigade leadership for an iconic luxury Mayfair private club.",
+    "responsibilities": [
+      "Curate bespoke seasonal tasting menus emphasizing sustainable British and European ingredients.",
+      "Lead and mentor a brigade of 25 culinary professionals maintaining immaculate kitchen standards.",
+      "Manage kitchen gross profit margins, inventory waste minimization, and food hygiene compliance."
+    ],
+    "skills": [
+      "Culinary Leadership",
+      "Menu Engineering",
+      "Kitchen P&L / Cost Control",
+      "Michelin-Caliber Standards",
+      "Food Safety (HACCP)"
+    ],
+    "qualifications": [
+      "Proven experience as Executive Chef or Head Chef in acclaimed 5-star hotel or Michelin-starred restaurant.",
+      "Passionate culinary creative vision and team leadership."
+    ],
+    "benefits": [
+      "Industry-leading base compensation with performance bonus",
+      "Private healthcare and dining privileges across international luxury properties",
+      "Relocation support for internationally recognized chefs"
+    ],
+    "status": "Active",
+    "featured": true,
+    "applicantsCount": 20,
+    "postedDate": "2026-10-22"
+  },
+  {
+    "id": "job-177",
+    "title": "Luxury VIP Guest Relations & Clefs d'Or Concierge Lead",
+    "company": "Apex Robotics Systems",
+    "companyLogoColor": "bg-amber-600",
+    "location": "Dubai (Palm Jumeirah), United Arab Emirates",
+    "country": "United Arab Emirates",
+    "workplaceType": "On-site",
+    "employmentType": "Full-time",
+    "industry": "Hospitality",
+    "experienceLevel": "Mid-level",
+    "salaryMin": 60000,
+    "salaryMax": 82000,
+    "salaryCurrency": "USD",
+    "description": "Deliver world-class personalized experiences for ultra-high-net-worth guests, diplomats, and royal family delegations at a landmark beachfront resort.",
+    "responsibilities": [
+      "Fulfill bespoke high-touch guest requests, private yacht charters, and exclusive reservations.",
+      "Coordinate private aviation arrivals, VIP protocol greetings, and discreet security liaison.",
+      "Anticipate returning guest preferences and maintain meticulously detailed preference dossiers."
+    ],
+    "skills": [
+      "VIP Concierge Services",
+      "Les Clefs d'Or Standards",
+      "Luxury Guest Relations",
+      "Discretion & Protocol",
+      "Multilingual Communication"
+    ],
+    "qualifications": [
+      "3+ years senior concierge or VIP guest relations at luxury 5-star hotel.",
+      "Clefs d'Or membership or candidacy highly regarded."
+    ],
+    "benefits": [
+      "100% tax-free compensation with luxury service gratuities",
+      "Furnished accommodation or housing allowance provided",
+      "Global travel discounts across luxury hotel portfolios"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 15,
+    "postedDate": "2026-10-23"
+  },
+  {
+    "id": "job-178",
+    "title": "Contract Hospitality Event & Banquet Producer (Seasonal)",
+    "company": "Apex Robotics Systems",
+    "companyLogoColor": "bg-amber-600",
+    "location": "New York, NY",
+    "country": "United States",
+    "workplaceType": "On-site",
+    "employmentType": "Contract",
+    "industry": "Hospitality",
+    "experienceLevel": "Mid-level",
+    "salaryMin": 65000,
+    "salaryMax": 85000,
+    "salaryCurrency": "USD",
+    "description": "Produce luxury galas, international corporate summits, and high-profile fashion banquets across premier Manhattan hospitality venues.",
+    "responsibilities": [
+      "Manage end-to-end banquet logistics, floorplans, audio-visual staging, and vendor coordination.",
+      "Direct floor captains and banquet service staff during high-profile 500+ guest seated dinners.",
+      "Reconcile final event billing, client feedback surveys, and vendor invoicing."
+    ],
+    "skills": [
+      "Banquet Operations",
+      "Event Production",
+      "Client Relationship Management",
+      "F&B Cost Control",
+      "Floor Staff Leadership"
+    ],
+    "qualifications": [
+      "3+ years event or banquet management in luxury hotel or premier event venue.",
+      "Calm, proactive problem-solver in high-energy event environments."
+    ],
+    "benefits": [
+      "Generous contracting day rate with overtime pay",
+      "Meals provided by award-winning banquet culinary team",
+      "Opportunity for ongoing seasonal and annual retainers"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 17,
+    "postedDate": "2026-10-21"
+  },
+  {
+    "id": "job-179",
+    "title": "Part-time Sommelier & Beverage Program Specialist",
+    "company": "Apex Robotics Systems",
+    "companyLogoColor": "bg-amber-600",
+    "location": "San Francisco, CA",
+    "country": "United States",
+    "workplaceType": "On-site",
+    "employmentType": "Part-time",
+    "industry": "Hospitality",
+    "experienceLevel": "Senior",
+    "salaryMin": 45000,
+    "salaryMax": 60000,
+    "salaryCurrency": "USD",
+    "description": "Guide tableside fine wine pairings, train restaurant dining service staff, and curate artisanal wine cellar inventory for a Michelin-starred dining destination.",
+    "responsibilities": [
+      "Present personalized tableside wine pairings for daily multi-course tasting menus.",
+      "Conduct weekly staff wine education seminars and sensory tasting masterclasses.",
+      "Oversee cellar inventory, temperature-controlled storage, and rare vintage sourcing."
+    ],
+    "skills": [
+      "Wine Curation & Pairing",
+      "Sommelier Service",
+      "Cellar Management",
+      "Staff Education",
+      "Beverage Cost Management"
+    ],
+    "qualifications": [
+      "Certified Sommelier (Court of Master Sommeliers or WSET Level 3+).",
+      "3+ years sommelier service in acclaimed fine-dining restaurants."
+    ],
+    "benefits": [
+      "Competitive hourly rate plus pooled service gratuities ($65-$85/hr effective)",
+      "Prime weekend and evening scheduling (15-20 hrs/week)",
+      "Exclusive vineyard tasting trip access"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 13,
+    "postedDate": "2026-10-22"
+  },
+  {
+    "id": "job-180",
+    "title": "Front Desk & Guest Experience Coordinator",
+    "company": "Apex Robotics Systems",
+    "companyLogoColor": "bg-amber-600",
+    "location": "Toronto (Downtown), Canada",
+    "country": "Canada",
+    "workplaceType": "On-site",
+    "employmentType": "Full-time",
+    "industry": "Hospitality",
+    "experienceLevel": "Entry-level",
+    "salaryMin": 44000,
+    "salaryMax": 56000,
+    "salaryCurrency": "CAD",
+    "description": "Serve as the warm welcoming face of a premier boutique luxury hotel, managing guest check-ins, room assignments, and seamless concierge inquiries.",
+    "responsibilities": [
+      "Execute seamless guest check-ins, room upgrades, and billing settlements using Opera PMS.",
+      "Resolve guest inquiries and special service requests promptly with exceptional empathy.",
+      "Coordinate with housekeeping and engineering teams to ensure pristine guest room preparation."
+    ],
+    "skills": [
+      "Opera PMS",
+      "Customer Empathy",
+      "Guest Check-in",
+      "Conflict Resolution",
+      "Professional Communication"
+    ],
+    "qualifications": [
+      "Diploma or degree in Hospitality or 1+ years high-end customer service experience.",
+      "Warm, composed demeanor and strong attention to detail."
+    ],
+    "benefits": [
+      "Full medical, dental, and prescription drug coverage",
+      "Discounted worldwide hotel stays",
+      "Clear pathway to Front Office Supervisor within 12 months"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 25,
+    "postedDate": "2026-10-20"
+  },
+  {
+    "id": "job-181",
+    "title": "Hospitality Management & Hotel Operations Intern",
+    "company": "Apex Robotics Systems",
+    "companyLogoColor": "bg-amber-600",
+    "location": "Munich, Germany",
+    "country": "Germany",
+    "workplaceType": "On-site",
+    "employmentType": "Internship",
+    "industry": "Hospitality",
+    "experienceLevel": "Entry-level",
+    "salaryMin": 28000,
+    "salaryMax": 36000,
+    "salaryCurrency": "EUR",
+    "description": "Rotate through rooms division, food & beverage operations, and front office management at a historic European 5-star city center hotel.",
+    "responsibilities": [
+      "Shadow department heads across housekeeping, guest relations, and culinary banquet logistics.",
+      "Assist in night audit reports and daily hotel room revenue reconciliation.",
+      "Support guest service inquiries in both German and English."
+    ],
+    "skills": [
+      "Hotel Operations",
+      "Guest Service Excellence",
+      "Opera PMS Basics",
+      "Multitasking",
+      "German & English"
+    ],
+    "qualifications": [
+      "Currently studying Hospitality Management, Tourism, or Business Administration.",
+      "Strong passion for European luxury hotel traditions."
+    ],
+    "benefits": [
+      "Paid internship stipend with duty meals included",
+      "Comprehensive rotation certificate recognized internationally",
+      "Fast-track interview for post-graduate management trainee program"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 19,
+    "postedDate": "2026-10-19"
+  },
+  {
+    "id": "job-182",
+    "title": "Director of Spa & Wellness Operations",
+    "company": "Apex Robotics Systems",
+    "companyLogoColor": "bg-amber-600",
+    "location": "Sydney (Double Bay), Australia",
+    "country": "Australia",
+    "workplaceType": "On-site",
+    "employmentType": "Full-time",
+    "industry": "Hospitality",
+    "experienceLevel": "Lead / Executive",
+    "salaryMin": 140000,
+    "salaryMax": 180000,
+    "salaryCurrency": "AUD",
+    "description": "Lead all facets of a premier urban luxury wellness sanctuary, overseeing holistic treatments, premium skincare retail, and a team of 30 therapists.",
+    "responsibilities": [
+      "Drive annual spa revenues of $8M+ through bespoke wellness memberships and treatment programs.",
+      "Recruit, train, and inspire registered therapists, estheticians, and holistic wellness coaches.",
+      "Curate ultra-luxury skincare brand partnerships and retail merchandising displays."
+    ],
+    "skills": [
+      "Spa & Wellness Leadership",
+      "Retail Merchandising",
+      "Treatment Menu Development",
+      "P&L Management",
+      "Forbes Standards"
+    ],
+    "qualifications": [
+      "5+ years leadership in premier 5-star hotel spa or international wellness retreat.",
+      "Deep knowledge of modern wellness therapies, holistic health, and luxury retail."
+    ],
+    "benefits": [
+      "Executive bonus scheme up to 20%",
+      "11.5% Australian superannuation package",
+      "Generous wellness, spa, and beauty treatment allowances"
+    ],
+    "status": "Active",
+    "featured": true,
+    "applicantsCount": 14,
+    "postedDate": "2026-10-23"
+  },
+  {
+    "id": "job-183",
+    "title": "Head of Omnichannel Retail Operations & Store Development",
+    "company": "Horizon Retail Innovations",
+    "companyLogoColor": "bg-purple-600",
+    "location": "New York, NY",
+    "country": "United States",
+    "workplaceType": "Hybrid",
+    "employmentType": "Full-time",
+    "industry": "Retail & E-commerce",
+    "experienceLevel": "Lead / Executive",
+    "salaryMin": 190000,
+    "salaryMax": 245000,
+    "salaryCurrency": "USD",
+    "description": "Direct brick-and-mortar retail rollout and digital omnichannel integration across 28 flagship stores in North America.",
+    "responsibilities": [
+      "Oversee store P&L performance, lease negotiations, and store design build-outs.",
+      "Unify in-store POS with digital e-commerce customer profiles for seamless VIP omnichannel shopping.",
+      "Lead 4 regional directors and an organization of 250 retail team members."
+    ],
+    "skills": [
+      "Omnichannel Strategy",
+      "Retail Store P&L",
+      "Store Expansion",
+      "POS & ERP Systems",
+      "Executive Team Leadership"
+    ],
+    "qualifications": [
+      "8+ years senior retail operations leadership for recognized premium fashion or lifestyle brands.",
+      "Proven ability scaling retail footprints profitably."
+    ],
+    "benefits": [
+      "Executive equity incentive package",
+      "Comprehensive family healthcare & 401(k) match",
+      "Generous brand executive clothing allowance"
+    ],
+    "status": "Active",
+    "featured": true,
+    "applicantsCount": 16,
+    "postedDate": "2026-10-23"
+  },
+  {
+    "id": "job-184",
+    "title": "Senior Shopify Plus Technical Architect",
+    "company": "Horizon Retail Innovations",
+    "companyLogoColor": "bg-purple-600",
+    "location": "Remote / North America",
+    "country": "United States",
+    "workplaceType": "Remote",
+    "employmentType": "Full-time",
+    "industry": "Retail & E-commerce",
+    "experienceLevel": "Senior",
+    "salaryMin": 140000,
+    "salaryMax": 175000,
+    "salaryCurrency": "USD",
+    "description": "Architect high-converting headless Shopify Plus storefronts, custom checkout extensions, and ERP integration microservices handling $50M+ annual GMV.",
+    "responsibilities": [
+      "Build modular Liquid and React/Hydrogen headless storefront components.",
+      "Architect custom Shopify Functions for dynamic pricing, tiered discounts, and bundle logic.",
+      "Optimize storefront performance, Core Web Vitals (LCP < 1.8s), and third-party app scripts."
+    ],
+    "skills": [
+      "Shopify Plus",
+      "Hydrogen / React / TypeScript",
+      "Shopify Functions & APIs",
+      "Core Web Vitals",
+      "Headless Commerce"
+    ],
+    "qualifications": [
+      "5+ years modern frontend development with at least 3 years dedicated to enterprise Shopify Plus.",
+      "Deep familiarity with Shopify Graph and Storefront APIs."
+    ],
+    "benefits": [
+      "100% remote flexibility with home office setup budget",
+      "Annual tech hardware refreshment",
+      "Comprehensive health and 401(k) matching"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 22,
+    "postedDate": "2026-10-22"
+  },
+  {
+    "id": "job-185",
+    "title": "Contract E-Commerce UX/UI Designer (3-Month Mandate)",
+    "company": "Horizon Retail Innovations",
+    "companyLogoColor": "bg-purple-600",
+    "location": "London, United Kingdom",
+    "country": "United Kingdom",
+    "workplaceType": "Remote",
+    "employmentType": "Contract",
+    "industry": "Retail & E-commerce",
+    "experienceLevel": "Mid-level",
+    "salaryMin": 65000,
+    "salaryMax": 85000,
+    "salaryCurrency": "GBP",
+    "description": "Redesign the mobile product detail page (PDP), category filtering UI, and 1-click checkout flow for a high-growth luxury lifestyle brand.",
+    "responsibilities": [
+      "Produce high-fidelity Figma design systems, interactive prototypes, and micro-interactions.",
+      "Conduct unmoderated user testing sessions to uncover shopping basket friction points.",
+      "Hand off clean design tokens and specs to frontend engineers in React and CSS."
+    ],
+    "skills": [
+      "Figma Design Systems",
+      "E-Commerce Mobile UX",
+      "Conversion Rate Optimization (CRO)",
+      "Interactive Prototyping",
+      "User Research"
+    ],
+    "qualifications": [
+      "3+ years UX/UI design experience specifically focused on transactional e-commerce.",
+      "Stunning portfolio exhibiting clean typography and conversion-centered design."
+    ],
+    "benefits": [
+      "Competitive weekly contracting rates (£350-450/day)",
+      "100% remote working hours",
+      "Fast-turnaround high-impact brand case study"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 19,
+    "postedDate": "2026-10-21"
+  },
+  {
+    "id": "job-186",
+    "title": "Part-time E-Commerce Catalog & Product Merchandiser",
+    "company": "Horizon Retail Innovations",
+    "companyLogoColor": "bg-purple-600",
+    "location": "Vancouver, BC",
+    "country": "Canada",
+    "workplaceType": "Remote",
+    "employmentType": "Part-time",
+    "industry": "Retail & E-commerce",
+    "experienceLevel": "Entry-level",
+    "salaryMin": 32000,
+    "salaryMax": 42000,
+    "salaryCurrency": "CAD",
+    "description": "Maintain product taxonomy, upload imagery, and optimize search tags across thousands of lifestyle SKUs on digital storefronts.",
+    "responsibilities": [
+      "Upload high-resolution photography, product copy, and technical specifications into PIM/Shopify.",
+      "Organize seasonal collection pages and configure smart search facet filters.",
+      "Audit live product listings to eliminate broken links, pricing errors, or out-of-stock discrepancies."
+    ],
+    "skills": [
+      "Product Information Management (PIM)",
+      "Shopify Administration",
+      "Excel Data Cleansing",
+      "SEO Tagging",
+      "Detail Oriented"
+    ],
+    "qualifications": [
+      "1+ years digital merchandising or retail catalog administration.",
+      "Meticulous eye for data accuracy and visual presentation."
+    ],
+    "benefits": [
+      "Flexible 15-20 hours/week schedule",
+      "100% remote working flexibility",
+      "Generous 40% store employee merchandise discount"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 24,
+    "postedDate": "2026-10-20"
+  },
+  {
+    "id": "job-187",
+    "title": "Flagship Luxury Boutique Store Director",
+    "company": "Horizon Retail Innovations",
+    "companyLogoColor": "bg-purple-600",
+    "location": "Dubai (Mall of the Emirates), United Arab Emirates",
+    "country": "United Arab Emirates",
+    "workplaceType": "On-site",
+    "employmentType": "Full-time",
+    "industry": "Retail & E-commerce",
+    "experienceLevel": "Senior",
+    "salaryMin": 95000,
+    "salaryMax": 130000,
+    "salaryCurrency": "USD",
+    "description": "Direct retail sales performance, clienteling relationship programs, and staff coaching for a landmark luxury fashion boutique in Dubai.",
+    "responsibilities": [
+      "Achieve monthly store revenue targets exceeding 4.5M AED through proactive VIP clienteling.",
+      "Lead a multilingual retail advisory team of 18 associates providing bespoke styling consultations.",
+      "Manage visual merchandising presentation according to strict global haute-couture standards."
+    ],
+    "skills": [
+      "Luxury Clienteling",
+      "Store Sales Management",
+      "Visual Merchandising",
+      "VIP Customer Relations",
+      "Retail Inventory Control"
+    ],
+    "qualifications": [
+      "5+ years boutique management experience in luxury goods or high fashion.",
+      "Proven network of regional luxury clientele in the GCC."
+    ],
+    "benefits": [
+      "100% tax-free compensation with generous store commission override",
+      "Annual international flight allowance and private medical insurance",
+      "Luxury brand seasonal uniform wardrobe provided"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 15,
+    "postedDate": "2026-10-22"
+  },
+  {
+    "id": "job-188",
+    "title": "Retail Demand Planning & Inventory Optimization Analyst",
+    "company": "Horizon Retail Innovations",
+    "companyLogoColor": "bg-purple-600",
+    "location": "Chicago, IL",
+    "country": "United States",
+    "workplaceType": "Hybrid",
+    "employmentType": "Full-time",
+    "industry": "Retail & E-commerce",
+    "experienceLevel": "Mid-level",
+    "salaryMin": 90000,
+    "salaryMax": 118000,
+    "salaryCurrency": "USD",
+    "description": "Forecast SKU-level customer demand, maintain ideal safety stock buffers, and prevent costly stock-outs across 4 distribution hubs.",
+    "responsibilities": [
+      "Build algorithmic statistical demand forecasts integrating seasonal sales patterns and marketing promotions.",
+      "Collaborate with suppliers to establish optimal reorder quantities and lead-time safety buffers.",
+      "Deliver weekly inventory turnover and slow-moving SKU write-down risk reports to VP of Finance."
+    ],
+    "skills": [
+      "Demand Forecasting",
+      "Inventory Optimization",
+      "SQL / Advanced Excel",
+      "ERP (NetSuite/SAP)",
+      "Supply Planning"
+    ],
+    "qualifications": [
+      "3-5 years demand planning or inventory analytics experience in multi-channel retail.",
+      "Strong mathematical modeling and cross-functional communication."
+    ],
+    "benefits": [
+      "Hybrid Chicago office policy (2 days home / 3 days office)",
+      "Annual bonus incentive tied to working capital efficiency",
+      "Top-tier healthcare and retirement plans"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 18,
+    "postedDate": "2026-10-21"
+  },
+  {
+    "id": "job-189",
+    "title": "E-Commerce Digital Merchandising Intern",
+    "company": "Horizon Retail Innovations",
+    "companyLogoColor": "bg-purple-600",
+    "location": "Sydney, Australia",
+    "country": "Australia",
+    "workplaceType": "Hybrid",
+    "employmentType": "Internship",
+    "industry": "Retail & E-commerce",
+    "experienceLevel": "Entry-level",
+    "salaryMin": 38000,
+    "salaryMax": 50000,
+    "salaryCurrency": "AUD",
+    "description": "Support digital product listing optimization, visual category sorting, and conversion rate A/B tests for leading Australian online retail brands.",
+    "responsibilities": [
+      "Review customer search queries on site and configure synonym search redirects.",
+      "Assist in setting up promotional discount codes and holiday banner campaigns in Shopify.",
+      "Extract weekly category sales data and format executive recap slides."
+    ],
+    "skills": [
+      "E-Commerce Merchandising",
+      "Shopify / Magento",
+      "Google Analytics",
+      "Excel Data Analysis",
+      "Commercial Acumen"
+    ],
+    "qualifications": [
+      "Current student or recent graduate in Business, Marketing, or E-Commerce.",
+      "Enthusiastic online shopper with keen visual design sensibility."
+    ],
+    "benefits": [
+      "Paid Sydney internship stipend",
+      "Direct exposure to senior e-commerce directors",
+      "High likelihood of junior merchandiser post-graduation job offer"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 28,
+    "postedDate": "2026-10-19"
+  },
+  {
+    "id": "job-190",
+    "title": "Contract Senior Financial Modeling & M&A Due Diligence Analyst",
+    "company": "Meridian Capital Group",
+    "companyLogoColor": "bg-emerald-600",
+    "location": "New York, NY",
+    "country": "United States",
+    "workplaceType": "Hybrid",
+    "employmentType": "Contract",
+    "industry": "Banking & Finance",
+    "experienceLevel": "Senior",
+    "salaryMin": 150000,
+    "salaryMax": 190000,
+    "salaryCurrency": "USD",
+    "description": "Construct 3-statement financial models, discounted cash flow (DCF) valuations, and quality-of-earnings analyses for active private equity acquisitions.",
+    "responsibilities": [
+      "Build dynamic LBO, M&A merger, and sensitivity models in Microsoft Excel.",
+      "Audit target company historical financial statements and draft confidential investment memos.",
+      "Assist deal partners in preparing investment committee presentation decks."
+    ],
+    "skills": [
+      "LBO Modeling",
+      "DCF Valuation",
+      "M&A Due Diligence",
+      "Financial Statement Analysis",
+      "Excel Mastery"
+    ],
+    "qualifications": [
+      "4+ years investment banking, private equity, or Big 4 transaction advisory experience.",
+      "Prior deal execution track record in North American middle-market buyouts."
+    ],
+    "benefits": [
+      "Premium contracting hourly rate ($90-120/hr equivalent)",
+      "Hybrid Midtown Manhattan office presence",
+      "Strong prospect for permanent fund Associate appointment"
+    ],
+    "status": "Active",
+    "featured": true,
+    "applicantsCount": 14,
+    "postedDate": "2026-10-23"
+  },
+  {
+    "id": "job-191",
+    "title": "Part-time Wealth Management & Estate Tax Planning Advisor",
+    "company": "Meridian Capital Group",
+    "companyLogoColor": "bg-emerald-600",
+    "location": "London (Mayfair), United Kingdom",
+    "country": "United Kingdom",
+    "workplaceType": "Hybrid",
+    "employmentType": "Part-time",
+    "industry": "Banking & Finance",
+    "experienceLevel": "Senior",
+    "salaryMin": 65000,
+    "salaryMax": 88000,
+    "salaryCurrency": "GBP",
+    "description": "Advise international ultra-high-net-worth families on cross-border inheritance, trust structures, and tax-efficient multi-jurisdictional portfolio allocations.",
+    "responsibilities": [
+      "Structure multi-generational discretionary trusts and family investment company (FIC) vehicles.",
+      "Analyze UK non-domicile reform implications and provide bespoke tax residency guidance.",
+      "Conduct quarterly private wealth stewardship consultations with family principals."
+    ],
+    "skills": [
+      "Estate Planning",
+      "Cross-Border Tax Advisory",
+      "Trust Structures",
+      "Private Wealth Management",
+      "Inheritance Tax"
+    ],
+    "qualifications": [
+      "STEP qualified (TEP) or Chartered Tax Advisor (CTA) with 7+ years private client experience.",
+      "Demonstrated history advising UHNW international families."
+    ],
+    "benefits": [
+      "Flexible 2-3 days per week schedule",
+      "Mayfair heritage private wealth townhouse office",
+      "Discretionary advisory bonus scheme"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 10,
+    "postedDate": "2026-10-21"
+  },
+  {
+    "id": "job-192",
+    "title": "Staff Distributed Systems & Rust Core Engineer",
+    "company": "Vertex Dynamics",
+    "companyLogoColor": "bg-blue-600",
+    "location": "Remote / North America",
+    "country": "United States",
+    "workplaceType": "Remote",
+    "employmentType": "Full-time",
+    "industry": "Information Technology",
+    "experienceLevel": "Senior",
+    "salaryMin": 195000,
+    "salaryMax": 250000,
+    "salaryCurrency": "USD",
+    "description": "Architect sub-millisecond distributed stream processing pipelines and memory-safe consensus layers built in Rust for global financial market telemetry.",
+    "responsibilities": [
+      "Author zero-allocation network protocol parsers and Raft consensus engines in pure Rust.",
+      "Profile CPU cache locality and eliminate microsecond latency outliers under multi-gigabit workloads.",
+      "Mentor senior engineering staff in concurrent systems architecture and fuzz testing."
+    ],
+    "skills": [
+      "Rust",
+      "Distributed Systems (Raft/Paxos)",
+      "Async Programming (Tokio)",
+      "Low-Latency Profiling",
+      "Linux Kernel Internals"
+    ],
+    "qualifications": [
+      "6+ years professional backend development with at least 3 years writing production Rust.",
+      "Deep understanding of lock-free data structures and memory barriers."
+    ],
+    "benefits": [
+      "Top 1% market compensation with equity RSUs",
+      "100% remote freedom with home workstation stipend",
+      "Unlimited PTO and comprehensive family health plans"
+    ],
+    "status": "Active",
+    "featured": true,
+    "applicantsCount": 19,
+    "postedDate": "2026-10-23"
+  },
+  {
+    "id": "job-193",
+    "title": "Contract Senior Site Reliability Engineer (Kubernetes & Istio)",
+    "company": "Vertex Dynamics",
+    "companyLogoColor": "bg-blue-600",
+    "location": "Frankfurt / Berlin, Germany",
+    "country": "Germany",
+    "workplaceType": "Remote",
+    "employmentType": "Contract",
+    "industry": "Information Technology",
+    "experienceLevel": "Senior",
+    "salaryMin": 110000,
+    "salaryMax": 145000,
+    "salaryCurrency": "EUR",
+    "description": "Harden multi-region Kubernetes clusters, configure Istio service mesh mTLS policies, and automate multi-cloud disaster recovery for critical European fintech APIs.",
+    "responsibilities": [
+      "Manage Terraform and GitOps (ArgoCD) state declarations across 30+ production EKS/GKE clusters.",
+      "Implement Prometheus, Grafana, and OpenTelemetry distributed tracing observability dashboards.",
+      "Conduct chaos engineering drills to guarantee 99.99% service availability SLAs."
+    ],
+    "skills": [
+      "Kubernetes (EKS/GKE)",
+      "Terraform / OpenTofu",
+      "Istio Service Mesh",
+      "ArgoCD GitOps",
+      "Prometheus / OpenTelemetry"
+    ],
+    "qualifications": [
+      "5+ years dedicated SRE or DevOps experience managing distributed cloud infrastructures.",
+      "CKA or CKS certification strongly preferred."
+    ],
+    "benefits": [
+      "Lucrative daily contracting rate (€650-850/day)",
+      "100% remote across European timezones",
+      "Contract extension up to 18 months"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 16,
+    "postedDate": "2026-10-22"
+  },
+  {
+    "id": "job-194",
+    "title": "Part-time Junior Web Developer & QA Specialist",
+    "company": "Vertex Dynamics",
+    "companyLogoColor": "bg-blue-600",
+    "location": "Austin, TX",
+    "country": "United States",
+    "workplaceType": "Remote",
+    "employmentType": "Part-time",
+    "industry": "Information Technology",
+    "experienceLevel": "Entry-level",
+    "salaryMin": 36000,
+    "salaryMax": 48000,
+    "salaryCurrency": "USD",
+    "description": "Write automated Playwright and Cypress end-to-end regression tests, verify frontend responsive UI components, and fix accessibility bugs.",
+    "responsibilities": [
+      "Author automated E2E browser tests in Playwright and TypeScript for candidate portal flows.",
+      "Perform cross-browser responsive audits across Chrome, Safari, and mobile viewports.",
+      "Triage frontend bug tickets and submit pull requests in React and Tailwind CSS."
+    ],
+    "skills": [
+      "TypeScript / JavaScript",
+      "Playwright / Cypress",
+      "React",
+      "HTML / CSS / Tailwind",
+      "Git & GitHub"
+    ],
+    "qualifications": [
+      "1+ years web development experience or completed coding bootcamp.",
+      "Attention to detail and passion for polished user experiences."
+    ],
+    "benefits": [
+      "Flexible 20 hours/week working schedule",
+      "Fully remote work environment",
+      "Mentorship from Staff Software Engineers"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 31,
+    "postedDate": "2026-10-21"
+  },
+  {
+    "id": "job-195",
+    "title": "Cloud Infrastructure & Cybersecurity Graduate Associate",
+    "company": "Vertex Dynamics",
+    "companyLogoColor": "bg-blue-600",
+    "location": "Toronto, ON",
+    "country": "Canada",
+    "workplaceType": "Hybrid",
+    "employmentType": "Full-time",
+    "industry": "Information Technology",
+    "experienceLevel": "Entry-level",
+    "salaryMin": 72000,
+    "salaryMax": 90000,
+    "salaryCurrency": "CAD",
+    "description": "Join an accelerated graduate rotation program covering cloud infrastructure engineering, identity and access management (IAM), and DevSecOps pipelines.",
+    "responsibilities": [
+      "Provision secure AWS cloud resources using Infrastructure as Code (Terraform).",
+      "Automate security vulnerability scans in GitHub Actions CI/CD workflows.",
+      "Shadow incident response leads during scheduled enterprise vulnerability assessments."
+    ],
+    "skills": [
+      "AWS Basics",
+      "Linux Administration",
+      "Python / Bash Scripting",
+      "Terraform",
+      "Git / CI/CD"
+    ],
+    "qualifications": [
+      "Bachelor's degree in Computer Science, Software Engineering, or Cybersecurity.",
+      "Curious mindset and eager to learn enterprise security architectures."
+    ],
+    "benefits": [
+      "Full company-funded AWS and security certification vouchers",
+      "Downtown Toronto financial district tech office",
+      "Structured 2-year mentorship path with guaranteed promotions"
+    ],
+    "status": "Active",
+    "featured": false,
+    "applicantsCount": 38,
+    "postedDate": "2026-10-23"
   }
 ];
 
