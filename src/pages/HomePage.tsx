@@ -101,10 +101,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Hero Details (7 columns) */}
             <div className="lg:col-span-7 flex flex-col justify-between space-y-6 pr-0 lg:pr-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs font-semibold self-start shadow-xs">
-                <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-                <span>Global Executive &amp; Professional Hiring Platform</span>
-              </div>
+
 
               <div className="space-y-3">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.08]">
@@ -134,10 +131,48 @@ export const HomePage: React.FC<HomePageProps> = ({
                 </button>
               </div>
 
+              {/* Verified Candidate Proof & Rating */}
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-2">
+                <div className="flex -space-x-2.5 overflow-hidden">
+                  <img
+                    className="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover"
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80"
+                    alt="Placed Executive"
+                  />
+                  <img
+                    className="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover"
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80"
+                    alt="Placed Executive"
+                  />
+                  <img
+                    className="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover"
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&h=120&q=80"
+                    alt="Placed Executive"
+                  />
+                  <img
+                    className="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover"
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80"
+                    alt="Placed Executive"
+                  />
+                  <img
+                    className="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover"
+                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=120&h=120&q=80"
+                    alt="Placed Executive"
+                  />
+                </div>
+                <div>
+                  <div className="flex items-center gap-1.5 text-amber-500 text-xs">
+                    <span className="font-bold text-slate-900">★★★★★</span>
+                    <span className="font-extrabold text-slate-900 ml-1">4.9 / 5.0</span>
+                  </div>
+                  <p className="text-xs text-slate-600 font-medium">Over 2,400+ international professionals &amp; executives placed</p>
+                </div>
+              </div>
+
               {/* Verified Trust Metrics */}
               <div className="pt-6 border-t border-slate-100 grid grid-cols-3 gap-6">
                 <div>
-                  <p className="text-2xl sm:text-3xl font-extrabold text-slate-900">21+</p>
+                  <p className="text-2xl sm:text-3xl font-extrabold text-slate-900">55+</p>
                   <p className="text-xs font-medium text-slate-500 mt-0.5">Active Requisitions</p>
                 </div>
                 <div>
@@ -151,8 +186,42 @@ export const HomePage: React.FC<HomePageProps> = ({
               </div>
             </div>
 
-            {/* Right Hero Visual Showcase (5 columns) */}
+            {/* Right Hero Visual Showcase (5 columns) with Floating Image Badges */}
             <div className="lg:col-span-5 relative">
+              {/* Floating Badge Top-Left: Recent Placed Candidate */}
+              <div className="hidden sm:flex absolute -top-5 -left-6 bg-white/95 backdrop-blur-md p-2.5 rounded-2xl border border-slate-200/90 shadow-xl items-center gap-3 z-30 transform hover:scale-105 transition-transform">
+                <img
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=140&h=140&q=80"
+                  alt="Placed Executive"
+                  className="w-11 h-11 rounded-xl object-cover border border-slate-200"
+                />
+                <div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <p className="text-[11px] font-bold text-slate-900">Mandate Filled • London</p>
+                  </div>
+                  <p className="text-[10px] text-slate-500 font-medium">VP Engineering @ Vertex Dynamics</p>
+                  <p className="text-[10px] font-mono font-bold text-emerald-600">£185,000 / yr package</p>
+                </div>
+              </div>
+
+              {/* Floating Badge Bottom-Right: Transparent Verified Compensation */}
+              <div className="hidden sm:flex absolute -bottom-5 -right-4 bg-white/95 backdrop-blur-md p-3 rounded-2xl border border-slate-200/90 shadow-xl items-center gap-3 z-30 transform hover:scale-105 transition-transform">
+                <img
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=140&h=140&q=80"
+                  alt="Marcus Vance"
+                  className="w-11 h-11 rounded-xl object-cover border border-slate-200"
+                />
+                <div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-blue-500" />
+                    <p className="text-[11px] font-bold text-slate-900">Direct Employer Requisition</p>
+                  </div>
+                  <p className="text-[10px] text-slate-500 font-medium">Senior Quant Lead @ Meridian</p>
+                  <p className="text-[10px] font-mono font-bold text-blue-600">$245,000 Verified Compensation</p>
+                </div>
+              </div>
+
               <div className="relative border border-slate-200 bg-white p-3 sm:p-4 rounded-3xl shadow-xl">
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-slate-900 group">
                   {/* Executive Background Photograph */}
@@ -187,7 +256,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                         “We place leaders who shape industries for the subsequent decade.”
                       </blockquote>
                       <p className="text-xs text-slate-300 tracking-wide pt-1">
-                        Technology · Finance · Healthcare · Robotics · Retail · Logistics
+                        Technology · Finance · Healthcare · Robotics · Retail · Logistics · Marketing · Hospitality
                       </p>
 
                       <div className="pt-3 border-t border-white/15 flex items-center justify-between">
@@ -198,7 +267,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                           onClick={() => onNavigate('jobs')}
                           className="inline-flex items-center gap-1.5 text-xs font-bold text-white hover:text-blue-300 transition-colors"
                         >
-                          <span>Explore Mandates</span>
+                          <span>Explore 55+ Mandates</span>
                           <ArrowUpRight className="w-3.5 h-3.5" />
                         </button>
                       </div>
@@ -212,6 +281,73 @@ export const HomePage: React.FC<HomePageProps> = ({
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Visual Sector Spotlight Showcase Strip */}
+          <div className="mt-14 pt-10 border-t border-slate-100 grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <button
+              onClick={() => onNavigate('jobs', { industry: 'Information Technology' })}
+              className="group relative overflow-hidden rounded-2xl border border-slate-200 aspect-[16/9] text-left shadow-xs hover:shadow-md transition-all"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80"
+                alt="Technology & AI"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/35 to-transparent" />
+              <div className="absolute bottom-3 left-3 right-3 text-white">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-blue-300">13 Requisitions</span>
+                <p className="text-sm font-bold leading-tight">Technology &amp; Cloud</p>
+              </div>
+            </button>
+
+            <button
+              onClick={() => onNavigate('jobs', { industry: 'Banking & Finance' })}
+              className="group relative overflow-hidden rounded-2xl border border-slate-200 aspect-[16/9] text-left shadow-xs hover:shadow-md transition-all"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
+                alt="Banking & Capital"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/35 to-transparent" />
+              <div className="absolute bottom-3 left-3 right-3 text-white">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-300">10 Requisitions</span>
+                <p className="text-sm font-bold leading-tight">Banking &amp; Capital</p>
+              </div>
+            </button>
+
+            <button
+              onClick={() => onNavigate('jobs', { industry: 'Healthcare' })}
+              className="group relative overflow-hidden rounded-2xl border border-slate-200 aspect-[16/9] text-left shadow-xs hover:shadow-md transition-all"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80"
+                alt="Healthcare & Biotech"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/35 to-transparent" />
+              <div className="absolute bottom-3 left-3 right-3 text-white">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-rose-300">6 Requisitions</span>
+                <p className="text-sm font-bold leading-tight">Healthcare &amp; Life Sciences</p>
+              </div>
+            </button>
+
+            <button
+              onClick={() => onNavigate('jobs', { industry: 'Manufacturing' })}
+              className="group relative overflow-hidden rounded-2xl border border-slate-200 aspect-[16/9] text-left shadow-xs hover:shadow-md transition-all"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80"
+                alt="Advanced Robotics & Manufacturing"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/35 to-transparent" />
+              <div className="absolute bottom-3 left-3 right-3 text-white">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-amber-300">7 Requisitions</span>
+                <p className="text-sm font-bold leading-tight">Robotics &amp; Advanced Industry</p>
+              </div>
+            </button>
           </div>
         </div>
       </section>

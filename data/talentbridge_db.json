@@ -1333,6 +1333,1031 @@
       "featured": true,
       "applicantsCount": 29,
       "postedDate": "2026-10-23"
+    },
+    {
+      "id": "job-131",
+      "title": "Clinical Telehealth Advisor & Patient Care Specialist",
+      "company": "Quantis BioTherapeutics",
+      "companyLogoColor": "bg-rose-600",
+      "location": "Remote / Nationwide",
+      "country": "United States",
+      "workplaceType": "Remote",
+      "employmentType": "Part-time",
+      "industry": "Healthcare",
+      "experienceLevel": "Mid-level",
+      "salaryMin": 65000,
+      "salaryMax": 95000,
+      "salaryCurrency": "USD",
+      "description": "Provide specialized clinical telehealth consultations, patient triage, and post-treatment monitoring for international oncology patients enrolled in digital health programs.",
+      "responsibilities": [
+        "Conduct virtual clinical intake reviews and patient symptom assessments.",
+        "Liaise directly with attending medical oncologists to adjust supportive care protocols.",
+        "Document encounter metrics within HIPAA-compliant electronic health records."
+      ],
+      "skills": [
+        "Telehealth",
+        "Clinical Nursing / BSN",
+        "Patient Triage",
+        "HIPAA Compliance",
+        "Oncology Care"
+      ],
+      "qualifications": [
+        "Active RN or Nurse Practitioner license.",
+        "3+ years clinical patient care experience with telehealth background."
+      ],
+      "benefits": [
+        "Flexible 20 hours/week schedule",
+        "Comprehensive home workspace stipend",
+        "Continuing medical education reimbursement"
+      ],
+      "status": "Active",
+      "featured": true,
+      "applicantsCount": 15,
+      "postedDate": "2026-10-22"
+    },
+    {
+      "id": "job-132",
+      "title": "Developer Relations & Technical Documentation Lead",
+      "company": "Vertex Dynamics",
+      "companyLogoColor": "bg-blue-600",
+      "location": "London, United Kingdom",
+      "country": "United Kingdom",
+      "workplaceType": "Hybrid",
+      "employmentType": "Part-time",
+      "industry": "Information Technology",
+      "experienceLevel": "Mid-level",
+      "salaryMin": 45000,
+      "salaryMax": 65000,
+      "salaryCurrency": "GBP",
+      "description": "Craft exceptional API documentation, SDK quickstart guides, and developer tutorials for Vertex Dynamics open platform APIs.",
+      "responsibilities": [
+        "Author clear technical reference documentation and sample GitHub integration repos.",
+        "Moderate developer Discord and community forum technical queries.",
+        "Collaborate with core engineering squads to review upcoming API deprecations and RFCs."
+      ],
+      "skills": [
+        "Technical Writing",
+        "TypeScript / Python",
+        "REST APIs / OpenAPI",
+        "Markdown / Docusaurus",
+        "Community Management"
+      ],
+      "qualifications": [
+        "2+ years technical writing or developer relations experience.",
+        "Proven ability to write sample code and understand microservice architectures."
+      ],
+      "benefits": [
+        "2 days/week flexible hours",
+        "London Tech City hub access",
+        "Annual tech equipment allowance"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 18,
+      "postedDate": "2026-10-21"
+    },
+    {
+      "id": "job-133",
+      "title": "Private Wealth Regulatory & Compliance Advisor",
+      "company": "Meridian Capital Group",
+      "companyLogoColor": "bg-emerald-600",
+      "location": "Toronto, ON, Canada",
+      "country": "Canada",
+      "workplaceType": "Hybrid",
+      "employmentType": "Part-time",
+      "industry": "Banking & Finance",
+      "experienceLevel": "Senior",
+      "salaryMin": 75000,
+      "salaryMax": 110000,
+      "salaryCurrency": "CAD",
+      "description": "Advise high-net-worth wealth management teams on CIRO (IIROC) regulatory adherence, cross-border tax transparency, and anti-money laundering monitoring.",
+      "responsibilities": [
+        "Review client onboarding dossiers for PEPs and complex corporate trust structures.",
+        "Audit discretionary investment mandates against client risk investment policy statements.",
+        "Draft quarterly compliance advisory briefings for the Chief Compliance Officer."
+      ],
+      "skills": [
+        "Wealth Management Compliance",
+        "CIRO / OSC Regulations",
+        "AML / KYC",
+        "Trust Structures",
+        "Risk Audits"
+      ],
+      "qualifications": [
+        "5+ years Canadian wealth compliance or securities legal experience.",
+        "Canadian Securities Course (CSC) or legal qualification."
+      ],
+      "benefits": [
+        "Pro-rated corporate retirement matching",
+        "Flexible hybrid schedule (15-20 hrs/week)",
+        "Downtown Toronto transit pass"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 9,
+      "postedDate": "2026-10-20"
+    },
+    {
+      "id": "job-134",
+      "title": "Social Media & Digital Campaign Specialist",
+      "company": "Apex Robotics Systems",
+      "companyLogoColor": "bg-amber-600",
+      "location": "Remote / Worldwide",
+      "country": "Remote / Global",
+      "workplaceType": "Remote",
+      "employmentType": "Part-time",
+      "industry": "Sales & Marketing",
+      "experienceLevel": "Entry-level",
+      "salaryMin": 35000,
+      "salaryMax": 50000,
+      "salaryCurrency": "USD",
+      "description": "Manage day-to-day social storytelling, technical video clips, and community interaction showcasing autonomous warehouse robotics across LinkedIn, YouTube, and X.",
+      "responsibilities": [
+        "Edit short-form video snippets demonstrating robotic automation deployments.",
+        "Write engaging LinkedIn posts highlighting engineering milestones and client testimonials.",
+        "Monitor engagement metrics and generate monthly reach analytics reports."
+      ],
+      "skills": [
+        "Social Media Management",
+        "Content Creation",
+        "Video Editing (Premiere / CapCut)",
+        "Copywriting",
+        "Analytics"
+      ],
+      "qualifications": [
+        "Demonstrated passion for technology, robotics, or engineering storytelling.",
+        "Portfolio or examples of managing social or creator accounts."
+      ],
+      "benefits": [
+        "100% remote flexibility",
+        "Creative software subscriptions paid",
+        "Career advancement into full-time marketing roles"
+      ],
+      "status": "Active",
+      "featured": true,
+      "applicantsCount": 24,
+      "postedDate": "2026-10-23"
+    },
+    {
+      "id": "job-135",
+      "title": "VIP Guest Relations & Event Host Coordinator",
+      "company": "Apex Robotics Systems",
+      "companyLogoColor": "bg-amber-600",
+      "location": "Dubai (Downtown), United Arab Emirates",
+      "country": "United Arab Emirates",
+      "workplaceType": "On-site",
+      "employmentType": "Part-time",
+      "industry": "Hospitality",
+      "experienceLevel": "Mid-level",
+      "salaryMin": 40000,
+      "salaryMax": 60000,
+      "salaryCurrency": "USD",
+      "description": "Host ultra-high-net-worth corporate delegates and international executives visiting Dubai for executive roundtables, private summits, and luxury concierge engagements.",
+      "responsibilities": [
+        "Greet and escort C-level dignitaries during international summit sessions.",
+        "Coordinate high-end dining, private chauffeur bookings, and bespoke itinerary requests.",
+        "Ensure flawless protocol and hospitality standards adhering to regional cultural norms."
+      ],
+      "skills": [
+        "VIP Concierge",
+        "Event Hospitality",
+        "Executive Protocol",
+        "Multilingual Communication",
+        "Client Care"
+      ],
+      "qualifications": [
+        "2+ years luxury hospitality, airline first-class, or high-end event experience in the UAE.",
+        "Fluent English; Arabic, French, or Russian is a plus."
+      ],
+      "benefits": [
+        "Tax-free remuneration",
+        "Downtown Dubai iconic location access",
+        "Flexible event-based schedule"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 16,
+      "postedDate": "2026-10-22"
+    },
+    {
+      "id": "job-136",
+      "title": "Cloud Architecture & AI Systems Summer Intern 2026",
+      "company": "Vertex Dynamics",
+      "companyLogoColor": "bg-blue-600",
+      "location": "San Francisco, CA",
+      "country": "United States",
+      "workplaceType": "Hybrid",
+      "employmentType": "Internship",
+      "industry": "Information Technology",
+      "experienceLevel": "Entry-level",
+      "salaryMin": 60000,
+      "salaryMax": 80000,
+      "salaryCurrency": "USD",
+      "description": "Join our cloud infrastructure research pod for a paid 12-week intensive summer internship designing scalable Kubernetes microservices and GenAI LLM inferencing pipelines.",
+      "responsibilities": [
+        "Pair-program with Principal and Staff Engineers on production Go and TypeScript services.",
+        "Build automated performance benchmarking suites testing gRPC latency across cloud zones.",
+        "Present an end-of-summer capstone project to executive engineering leadership."
+      ],
+      "skills": [
+        "Go",
+        "Python",
+        "Docker / Linux",
+        "Computer Science Fundamentals",
+        "Data Structures"
+      ],
+      "qualifications": [
+        "Currently enrolled in B.S./M.S. in Computer Science, Software Engineering, or related discipline.",
+        "Graduation date between Fall 2026 and Summer 2028."
+      ],
+      "benefits": [
+        "Competitive hourly stipend ($40-50/hr equivalent)",
+        "Corporate housing subsidy in SF",
+        "Direct mentorship and return full-time offer potential"
+      ],
+      "status": "Active",
+      "featured": true,
+      "applicantsCount": 42,
+      "postedDate": "2026-10-23"
+    },
+    {
+      "id": "job-137",
+      "title": "Quantitative Research & Trading Analytics Intern",
+      "company": "Meridian Capital Group",
+      "companyLogoColor": "bg-emerald-600",
+      "location": "London, United Kingdom",
+      "country": "United Kingdom",
+      "workplaceType": "Hybrid",
+      "employmentType": "Internship",
+      "industry": "Banking & Finance",
+      "experienceLevel": "Entry-level",
+      "salaryMin": 45000,
+      "salaryMax": 60000,
+      "salaryCurrency": "GBP",
+      "description": "Conduct deep data analysis on macroeconomic liquidity signals, equity vol surfaces, and tick-level order book anomalies alongside Senior Quantitative Portfolio Managers.",
+      "responsibilities": [
+        "Process terabyte-scale historical exchange market data using NumPy, Pandas, and C++.",
+        "Test statistical hypotheses regarding intraday momentum and mean-reversion signals.",
+        "Participate in weekly quant research seminars and algorithmic strategy reviews."
+      ],
+      "skills": [
+        "Python / C++",
+        "Linear Algebra & Statistics",
+        "Time Series Modeling",
+        "Jupyter",
+        "Financial Data"
+      ],
+      "qualifications": [
+        "Pursuing degree in Mathematics, Physics, Econometrics, or Engineering.",
+        "Strong mathematical curiosity and programming aptitude."
+      ],
+      "benefits": [
+        "Generous internship compensation (£45k-60k pro-rata)",
+        "Mayfair London office perks + private gym access",
+        "Direct conversion to full-time Quantitative Analyst graduate scheme"
+      ],
+      "status": "Active",
+      "featured": true,
+      "applicantsCount": 35,
+      "postedDate": "2026-10-22"
+    },
+    {
+      "id": "job-138",
+      "title": "Bioinformatics & Computational Biology Research Intern",
+      "company": "Quantis BioTherapeutics",
+      "companyLogoColor": "bg-rose-600",
+      "location": "Boston, MA",
+      "country": "United States",
+      "workplaceType": "Hybrid",
+      "employmentType": "Internship",
+      "industry": "Healthcare",
+      "experienceLevel": "Entry-level",
+      "salaryMin": 55000,
+      "salaryMax": 72000,
+      "salaryCurrency": "USD",
+      "description": "Assist computational biologists in parsing single-cell RNA sequencing data and identifying novel oncological drug target pathways using bioinformatic pipelines.",
+      "responsibilities": [
+        "Execute automated Nextflow and Snakemake pipelines on AWS genomic datasets.",
+        "Perform differential gene expression analysis and pathway enrichment visualizations.",
+        "Collaborate with wet-lab scientists to validate computational target predictions."
+      ],
+      "skills": [
+        "Python / R",
+        "Bioinformatics",
+        "RNA-Seq Data",
+        "Bioconductor",
+        "Genomics"
+      ],
+      "qualifications": [
+        "Degree progress in Bioinformatics, Computational Biology, or Biochemistry.",
+        "Familiarity with genomic databases (NCBI, Ensembl, UniProt)."
+      ],
+      "benefits": [
+        "Hands-on biotech lab & compute cluster access",
+        "Cambridge biotech hub networking",
+        "Housing stipend for out-of-state students"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 28,
+      "postedDate": "2026-10-21"
+    },
+    {
+      "id": "job-139",
+      "title": "Mechatronics & Industrial Robotics Engineering Intern",
+      "company": "Apex Robotics Systems",
+      "companyLogoColor": "bg-amber-600",
+      "location": "Munich, Germany",
+      "country": "Germany",
+      "workplaceType": "On-site",
+      "employmentType": "Internship",
+      "industry": "Manufacturing",
+      "experienceLevel": "Entry-level",
+      "salaryMin": 42000,
+      "salaryMax": 55000,
+      "salaryCurrency": "EUR",
+      "description": "Work directly on the factory assembly floor and testing labs building kinematic arms, optical sensor brackets, and firmware tests for heavy manufacturing robotics.",
+      "responsibilities": [
+        "Assist in CAD design modifications using SolidWorks and Siemens NX.",
+        "Assemble wiring harnesses and test motor servo controllers under engineer guidance.",
+        "Log cycle times and calibrate robotic end-effectors for precision repeatability."
+      ],
+      "skills": [
+        "CAD (SolidWorks/NX)",
+        "Robotics Kinematics",
+        "Mechatronics",
+        "Basic PLC",
+        "Sensors & Actuators"
+      ],
+      "qualifications": [
+        "Student in Mechanical, Electrical, or Mechatronics Engineering at European university.",
+        "Proficiency in English; conversational German is advantageous."
+      ],
+      "benefits": [
+        "Practical master/bachelor thesis sponsorship",
+        "Munich public transit ticket included",
+        "Subsidized corporate cafeteria"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 21,
+      "postedDate": "2026-10-20"
+    },
+    {
+      "id": "job-140",
+      "title": "Global Maritime Logistics & Data Analytics Intern",
+      "company": "Nexus Freight Logistics",
+      "companyLogoColor": "bg-slate-700",
+      "location": "Singapore",
+      "country": "Singapore",
+      "workplaceType": "Hybrid",
+      "employmentType": "Internship",
+      "industry": "Logistics & Supply Chain",
+      "experienceLevel": "Entry-level",
+      "salaryMin": 42000,
+      "salaryMax": 56000,
+      "salaryCurrency": "SGD",
+      "description": "Analyze container vessel transit bottlenecks, port berth turnaround times, and ocean freight pricing volatility across the Malacca Straits and Asian shipping corridors.",
+      "responsibilities": [
+        "Extract and visualize Automatic Identification System (AIS) vessel telemetry data.",
+        "Build real-time supply chain dashboard widgets in Tableau and Power BI.",
+        "Support trade lane managers during quarterly ocean carrier rate negotiations."
+      ],
+      "skills": [
+        "SQL / Python",
+        "Data Visualization (Tableau/Power BI)",
+        "Maritime Logistics",
+        "Excel Modeling",
+        "Supply Chain"
+      ],
+      "qualifications": [
+        "Studying Supply Chain Management, Business Analytics, or Industrial Engineering.",
+        "Analytical rigor and interest in global trade flows."
+      ],
+      "benefits": [
+        "Central Singapore office location",
+        "Fast-track pipeline to Maritime Graduate Associate Program",
+        "Mentorship from Global Operations Vice President"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 19,
+      "postedDate": "2026-10-19"
+    },
+    {
+      "id": "job-141",
+      "title": "Interim Cloud Security & Zero-Trust Architect (6-Month Contract)",
+      "company": "Vertex Dynamics",
+      "companyLogoColor": "bg-blue-600",
+      "location": "Remote / North America",
+      "country": "United States",
+      "workplaceType": "Remote",
+      "employmentType": "Contract",
+      "industry": "Information Technology",
+      "experienceLevel": "Lead / Executive",
+      "salaryMin": 180000,
+      "salaryMax": 230000,
+      "salaryCurrency": "USD",
+      "description": "Lead the enterprise-wide zero-trust network access (ZTNA) and identity architecture overhaul for a multi-cloud enterprise operating across AWS and GCP.",
+      "responsibilities": [
+        "Architect Okta / BeyondCorp zero-trust authentication policies across 4,000 corporate endpoints.",
+        "Audit Kubernetes cluster RBAC, service mesh mTLS, and secrets management with HashiCorp Vault.",
+        "Deliver executive board risk assessment and SOC 2 Type II audit readiness documentation."
+      ],
+      "skills": [
+        "Zero-Trust Architecture",
+        "AWS / GCP Security",
+        "Kubernetes mTLS",
+        "HashiCorp Vault",
+        "SOC 2 Compliance"
+      ],
+      "qualifications": [
+        "10+ years cybersecurity experience with prior contractor/consulting track record.",
+        "CISSP, CCSP, or AWS Certified Security Specialty."
+      ],
+      "benefits": [
+        "Lucrative hourly/day rate ($120-150/hr equivalent)",
+        "100% remote autonomy",
+        "Contract extension or advisory retainer potential"
+      ],
+      "status": "Active",
+      "featured": true,
+      "applicantsCount": 14,
+      "postedDate": "2026-10-23"
+    },
+    {
+      "id": "job-142",
+      "title": "Senior React Native & Cross-Platform Mobile Consultant",
+      "company": "Vertex Dynamics",
+      "companyLogoColor": "bg-blue-600",
+      "location": "Sydney, Australia",
+      "country": "Australia",
+      "workplaceType": "Hybrid",
+      "employmentType": "Contract",
+      "industry": "Information Technology",
+      "experienceLevel": "Senior",
+      "salaryMin": 160000,
+      "salaryMax": 200000,
+      "salaryCurrency": "AUD",
+      "description": "Accelerate the launch of Vertex Dynamics new iOS and Android mobile financial portal featuring real-time biometrics, offline sync, and push notification pipelines.",
+      "responsibilities": [
+        "Write clean, performant React Native / TypeScript code targeting iOS and Android.",
+        "Integrate native bridge modules for hardware security enclave biometric signing.",
+        "Optimize bundle size and achieve smooth 60fps gesture transitions."
+      ],
+      "skills": [
+        "React Native",
+        "TypeScript",
+        "iOS / Android Native Bridges",
+        "State Management (Zustand/Redux)",
+        "Mobile CI/CD"
+      ],
+      "qualifications": [
+        "5+ years mobile development experience with at least 3 years in React Native.",
+        "Published high-traffic mobile apps in the App Store and Google Play."
+      ],
+      "benefits": [
+        "Competitive day-rate contract terms (initial 9-month term)",
+        "Modern Sydney CBD tech hub access",
+        "Immediate project kickoff"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 11,
+      "postedDate": "2026-10-22"
+    },
+    {
+      "id": "job-143",
+      "title": "M&A Transaction Valuation & Financial Due Diligence Contractor",
+      "company": "Meridian Capital Group",
+      "companyLogoColor": "bg-emerald-600",
+      "location": "London, United Kingdom",
+      "country": "United Kingdom",
+      "workplaceType": "Hybrid",
+      "employmentType": "Contract",
+      "industry": "Banking & Finance",
+      "experienceLevel": "Senior",
+      "salaryMin": 135000,
+      "salaryMax": 175000,
+      "salaryCurrency": "GBP",
+      "description": "Perform buy-side Quality of Earnings (QofE) analyses, working capital peg calculations, and debt-free cash-free purchase price adjustments for mid-market corporate acquisitions.",
+      "responsibilities": [
+        "Review target financial records to uncover normalized EBITDA adjustments and hidden liabilities.",
+        "Draft comprehensive financial due diligence reports for investment committee review.",
+        "Model post-merger synergy realization timelines and tax treaty impacts."
+      ],
+      "skills": [
+        "Quality of Earnings (QofE)",
+        "Financial Due Diligence",
+        "EBITDA Normalization",
+        "M&A Accounting",
+        "Financial Modeling"
+      ],
+      "qualifications": [
+        "ACA, ACCA, or CFA qualified with Big 4 transaction services background.",
+        "4+ years focused on private equity or corporate transaction advisory."
+      ],
+      "benefits": [
+        "Premium consulting day rate",
+        "Mayfair office hot-desking + hybrid working",
+        "High-profile deal exposure across UK & Western Europe"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 13,
+      "postedDate": "2026-10-21"
+    },
+    {
+      "id": "job-144",
+      "title": "FDA Regulatory Submission & Biostatistical Consultant",
+      "company": "Quantis BioTherapeutics",
+      "companyLogoColor": "bg-rose-600",
+      "location": "Remote / United States",
+      "country": "United States",
+      "workplaceType": "Remote",
+      "employmentType": "Contract",
+      "industry": "Healthcare",
+      "experienceLevel": "Senior",
+      "salaryMin": 150000,
+      "salaryMax": 195000,
+      "salaryCurrency": "USD",
+      "description": "Guide the statistical design and electronic Common Technical Document (eCTD) preparation for upcoming FDA Phase III oncology clinical trial filings.",
+      "responsibilities": [
+        "Formulate statistical analysis plans (SAP) and survival analysis modeling for regulatory dossiers.",
+        "Review CDISC SDTM and ADaM dataset compliance against FDA guidance documents.",
+        "Prepare responses to FDA Type C and Pre-NDA clinical inquiries."
+      ],
+      "skills": [
+        "FDA Regulatory Affairs",
+        "Biostatistics",
+        "CDISC SDTM / ADaM",
+        "eCTD Submissions",
+        "Clinical Trials"
+      ],
+      "qualifications": [
+        "Ph.D. or M.S. in Biostatistics or Regulatory Science.",
+        "6+ years biotech/pharma experience navigating successful FDA filings."
+      ],
+      "benefits": [
+        "Flexible 12-month retainer engagement",
+        "100% remote flexibility",
+        "High-impact drug launch milestone bonuses"
+      ],
+      "status": "Active",
+      "featured": true,
+      "applicantsCount": 8,
+      "postedDate": "2026-10-20"
+    },
+    {
+      "id": "job-145",
+      "title": "SAP S/4HANA Supply Chain Migration Specialist",
+      "company": "Nexus Freight Logistics",
+      "companyLogoColor": "bg-slate-700",
+      "location": "Frankfurt, Germany",
+      "country": "Germany",
+      "workplaceType": "On-site",
+      "employmentType": "Contract",
+      "industry": "Logistics & Supply Chain",
+      "experienceLevel": "Senior",
+      "salaryMin": 130000,
+      "salaryMax": 170000,
+      "salaryCurrency": "EUR",
+      "description": "Lead the end-to-end data migration and business process cutover from legacy SAP ECC to SAP S/4HANA for continental European freight forwarding terminals.",
+      "responsibilities": [
+        "Configure SAP Transportation Management (TM) and Extended Warehouse Management (EWM).",
+        "Coordinate master data cleansing and cutover validation across 12 European cross-dock centers.",
+        "Train regional logistics operations directors on new automated booking workflows."
+      ],
+      "skills": [
+        "SAP S/4HANA",
+        "SAP TM / EWM",
+        "Data Migration",
+        "Supply Chain Architecture",
+        "Process Re-engineering"
+      ],
+      "qualifications": [
+        "7+ years SAP consulting with at least 2 full-lifecycle S/4HANA implementations in logistics.",
+        "German & English bilingual communication."
+      ],
+      "benefits": [
+        "Top European day-rate terms (12-month mandate)",
+        "Frankfurt commercial hub office",
+        "Travel & living allowance provided"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 10,
+      "postedDate": "2026-10-18"
+    },
+    {
+      "id": "job-146",
+      "title": "Clinical Trial Operations Associate",
+      "company": "Quantis BioTherapeutics",
+      "companyLogoColor": "bg-rose-600",
+      "location": "Toronto, ON, Canada",
+      "country": "Canada",
+      "workplaceType": "Hybrid",
+      "employmentType": "Full-time",
+      "industry": "Healthcare",
+      "experienceLevel": "Entry-level",
+      "salaryMin": 68000,
+      "salaryMax": 85000,
+      "salaryCurrency": "CAD",
+      "description": "Coordinate site activation documents, patient recruitment logs, and investigational product accountability across Canadian research hospitals.",
+      "responsibilities": [
+        "Track clinical study master files (eTMF) ensuring GCP and Health Canada compliance.",
+        "Liaise with hospital institutional review boards (IRB) for protocol amendment approvals.",
+        "Assist Clinical Project Managers with investigator meeting preparations."
+      ],
+      "skills": [
+        "Good Clinical Practice (GCP)",
+        "Clinical Trial Coordination",
+        "eTMF / CTMS",
+        "Regulatory Compliance",
+        "Health Canada Guidelines"
+      ],
+      "qualifications": [
+        "B.S. in Life Sciences, Pharmacology, or Health Administration.",
+        "1-2 years clinical research experience or postgraduate clinical research certificate."
+      ],
+      "benefits": [
+        "Canadian health & wellness benefits",
+        "Hybrid schedule (2 days office)",
+        "Tuition assistance for clinical project management certification"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 22,
+      "postedDate": "2026-10-21"
+    },
+    {
+      "id": "job-147",
+      "title": "Associate Brand & Demand Generation Specialist",
+      "company": "Apex Robotics Systems",
+      "companyLogoColor": "bg-amber-600",
+      "location": "New York, NY",
+      "country": "United States",
+      "workplaceType": "Hybrid",
+      "employmentType": "Full-time",
+      "industry": "Sales & Marketing",
+      "experienceLevel": "Entry-level",
+      "salaryMin": 70000,
+      "salaryMax": 92000,
+      "salaryCurrency": "USD",
+      "description": "Execute outbound email nurturing sequences, coordinate trade show booth logistics, and qualify inbound corporate interest for enterprise industrial robotics.",
+      "responsibilities": [
+        "Operate HubSpot marketing automation workflows and segment executive prospect databases.",
+        "Draft product one-pagers, case study summaries, and conference collateral.",
+        "Coordinate executive attendee registrations for North American robotics expos."
+      ],
+      "skills": [
+        "HubSpot / Salesforce",
+        "B2B Marketing",
+        "Lead Qualification",
+        "Email Marketing",
+        "Copywriting"
+      ],
+      "qualifications": [
+        "Bachelor's degree in Marketing, Business, or Communications.",
+        "Strong written communication and eagerness to learn B2B enterprise technology sales."
+      ],
+      "benefits": [
+        "Comprehensive medical & dental coverage",
+        "Manhattan collaborative office with rooftop lounge",
+        "Fast-track promotion to Growth Manager within 18 months"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 26,
+      "postedDate": "2026-10-22"
+    },
+    {
+      "id": "job-148",
+      "title": "E-Commerce Catalog & Merchandising Associate",
+      "company": "Nexus Freight Logistics",
+      "companyLogoColor": "bg-slate-700",
+      "location": "Chicago, IL",
+      "country": "United States",
+      "workplaceType": "Remote",
+      "employmentType": "Full-time",
+      "industry": "Retail & E-commerce",
+      "experienceLevel": "Entry-level",
+      "salaryMin": 65000,
+      "salaryMax": 82000,
+      "salaryCurrency": "USD",
+      "description": "Manage digital product taxonomy, inventory replenishment triggers, and storefront optimization across global multi-brand retail commerce platforms.",
+      "responsibilities": [
+        "Maintain SKU data integrity, product attribute tagging, and pricing updates in Shopify Plus.",
+        "Audit search conversion rates and optimize on-site product discovery filters.",
+        "Collaborate with fulfillment teams to flag stock shortages and coordinate supplier reorders."
+      ],
+      "skills": [
+        "Shopify Plus",
+        "E-Commerce Merchandising",
+        "Product Taxonomy",
+        "Excel / VLOOKUP",
+        "Catalog Management"
+      ],
+      "qualifications": [
+        "Bachelor's degree or 1+ year e-commerce retail operations experience.",
+        "Detail-oriented mindset with strong quantitative aptitude."
+      ],
+      "benefits": [
+        "100% remote flexibility with home office setup grant",
+        "401(k) matching",
+        "Generous brand employee discount program"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 20,
+      "postedDate": "2026-10-20"
+    },
+    {
+      "id": "job-149",
+      "title": "Junior Robotics Testing & Calibration Technician",
+      "company": "Apex Robotics Systems",
+      "companyLogoColor": "bg-amber-600",
+      "location": "Chicago, IL",
+      "country": "United States",
+      "workplaceType": "On-site",
+      "employmentType": "Full-time",
+      "industry": "Manufacturing",
+      "experienceLevel": "Entry-level",
+      "salaryMin": 62000,
+      "salaryMax": 78000,
+      "salaryCurrency": "USD",
+      "description": "Execute precision diagnostic routines, sensor alignment, and safety interlock inspections on production autonomous mobile robots (AMRs) prior to customer shipment.",
+      "responsibilities": [
+        "Calibrate LiDAR sensors, stereoscopic vision cameras, and optical encoders.",
+        "Record telemetry diagnostics and log bug tickets for firmware engineering pods.",
+        "Execute endurance test cycles across simulated warehouse floor obstacle courses."
+      ],
+      "skills": [
+        "Hardware Diagnostics",
+        "Sensor Calibration (LiDAR/Cameras)",
+        "Linux CLI",
+        "Multimeter & Oscilloscope",
+        "Documentation"
+      ],
+      "qualifications": [
+        "Associate degree in Electronics, Robotics, or Military technical background.",
+        "Comfortable reading electrical schematics and working in advanced hardware labs."
+      ],
+      "benefits": [
+        "Full healthcare benefits",
+        "Overtime eligibility + shift differentials",
+        "Career development into Lead Robotics Field Engineer"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 17,
+      "postedDate": "2026-10-19"
+    },
+    {
+      "id": "job-150",
+      "title": "Healthcare Data Privacy & HIPAA Compliance Analyst",
+      "company": "Quantis BioTherapeutics",
+      "companyLogoColor": "bg-rose-600",
+      "location": "Remote / United States",
+      "country": "United States",
+      "workplaceType": "Remote",
+      "employmentType": "Full-time",
+      "industry": "Healthcare",
+      "experienceLevel": "Mid-level",
+      "salaryMin": 105000,
+      "salaryMax": 135000,
+      "salaryCurrency": "USD",
+      "description": "Safeguard protected health information (PHI) across cloud clinical data lakes and partner API integrations, maintaining stringent HIPAA and HITECH security standards.",
+      "responsibilities": [
+        "Conduct Privacy Impact Assessments (PIAs) on new clinical algorithms and cloud repositories.",
+        "Investigate data access anomalies and maintain audit logs for federal compliance regulators.",
+        "Lead annual HIPAA data hygiene training for all biostatistical and software staff."
+      ],
+      "skills": [
+        "HIPAA / HITECH Compliance",
+        "Health Data Privacy",
+        "Audit Logging",
+        "Risk Assessments",
+        "Information Security"
+      ],
+      "qualifications": [
+        "3-5 years data privacy or compliance experience in healthcare or health-tech.",
+        "CHPS, CIPP/US, or HCISPP certification."
+      ],
+      "benefits": [
+        "100% remote flexibility",
+        "Generous paid time off + wellness stipend",
+        "401(k) with 5% employer match"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 12,
+      "postedDate": "2026-10-21"
+    },
+    {
+      "id": "job-151",
+      "title": "B2B Enterprise Account Executive – Mid-Market",
+      "company": "Vertex Dynamics",
+      "companyLogoColor": "bg-blue-600",
+      "location": "New York, NY",
+      "country": "United States",
+      "workplaceType": "Hybrid",
+      "employmentType": "Full-time",
+      "industry": "Sales & Marketing",
+      "experienceLevel": "Mid-level",
+      "salaryMin": 120000,
+      "salaryMax": 160000,
+      "salaryCurrency": "USD",
+      "description": "Drive mid-market software sales pipeline from qualification through contract close for Vertex Dynamics enterprise cloud infrastructure products.",
+      "responsibilities": [
+        "Manage end-to-end sales cycle with average deal sizes of $75k-$250k annual recurring revenue.",
+        "Conduct technical discovery calls with Chief Technology Officers and VP Engineering leads.",
+        "Negotiate master services agreements alongside corporate legal teams."
+      ],
+      "skills": [
+        "B2B SaaS Sales",
+        "Enterprise Quota Attainment",
+        "Pipeline Generation",
+        "Contract Negotiation",
+        "MEDDPICC"
+      ],
+      "qualifications": [
+        "3-5 years quota-carrying SaaS software sales experience with demonstrated president's club track record.",
+        "Strong enterprise relationship acumen."
+      ],
+      "benefits": [
+        "Uncapped commission structure with realistic OTE of $240,000+",
+        "Comprehensive tier-one healthcare",
+        "Midtown Manhattan premium office"
+      ],
+      "status": "Active",
+      "featured": true,
+      "applicantsCount": 27,
+      "postedDate": "2026-10-23"
+    },
+    {
+      "id": "job-152",
+      "title": "D2C E-Commerce Retention & Email Marketing Manager",
+      "company": "Nexus Freight Logistics",
+      "companyLogoColor": "bg-slate-700",
+      "location": "Denver, CO",
+      "country": "United States",
+      "workplaceType": "Remote",
+      "employmentType": "Full-time",
+      "industry": "Retail & E-commerce",
+      "experienceLevel": "Mid-level",
+      "salaryMin": 110000,
+      "salaryMax": 140000,
+      "salaryCurrency": "USD",
+      "description": "Own subscriber customer lifecycle, repeat purchase frequency, and personalized omnichannel SMS/email marketing flows across high-volume digital direct-to-consumer storefronts.",
+      "responsibilities": [
+        "Architect sophisticated Klaviyo customer segmentation and dynamic automated journeys.",
+        "A/B test subject lines, creative visuals, and personalized product recommendation algorithms.",
+        "Partner with data science squads to reduce 90-day customer churn by over 18%."
+      ],
+      "skills": [
+        "Klaviyo / Omnisend",
+        "Email Marketing Strategy",
+        "Customer Lifecycle / LTV",
+        "A/B Testing",
+        "Cohort Analytics"
+      ],
+      "qualifications": [
+        "3-6 years dedicated e-commerce retention or lifecycle marketing experience.",
+        "Proven track record managing email revenue programs exceeding $10M annual GMV."
+      ],
+      "benefits": [
+        "100% remote working flexibility",
+        "Annual learning & conference stipend",
+        "Comprehensive medical, dental, and vision"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 19,
+      "postedDate": "2026-10-22"
+    },
+    {
+      "id": "job-153",
+      "title": "Corporate Hotel Revenue & Yield Optimization Analyst",
+      "company": "Apex Robotics Systems",
+      "companyLogoColor": "bg-amber-600",
+      "location": "Dubai (Marina), United Arab Emirates",
+      "country": "United Arab Emirates",
+      "workplaceType": "Hybrid",
+      "employmentType": "Full-time",
+      "industry": "Hospitality",
+      "experienceLevel": "Mid-level",
+      "salaryMin": 75000,
+      "salaryMax": 105000,
+      "salaryCurrency": "USD",
+      "description": "Optimize dynamic RevPAR, channel distribution mix, and algorithmic room rate strategies across flagship luxury hotel properties throughout the United Arab Emirates.",
+      "responsibilities": [
+        "Analyze historical booking paces, local event surges, and competitor rate intelligence daily.",
+        "Calibrate dynamic pricing engines across Global Distribution Systems (GDS) and OTAs.",
+        "Present weekly forecast and revenue maximization recommendations to General Managers."
+      ],
+      "skills": [
+        "RevPAR Maximization",
+        "Hospitality Revenue Management",
+        "Dynamic Pricing",
+        "OTA / GDS Distribution",
+        "Data Analytics"
+      ],
+      "qualifications": [
+        "3-5 years hospitality revenue management or airline yield analytics experience in GCC.",
+        "Proficiency in IDeaS RMS, Opera PMS, or Duetto."
+      ],
+      "benefits": [
+        "100% tax-free compensation",
+        "Annual flight ticket allowance",
+        "Luxury accommodation discounts globally"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 14,
+      "postedDate": "2026-10-21"
+    },
+    {
+      "id": "job-154",
+      "title": "Global VP of Brand Strategy & Performance Marketing",
+      "company": "Meridian Capital Group",
+      "companyLogoColor": "bg-emerald-600",
+      "location": "Global / Remote",
+      "country": "Remote / Global",
+      "workplaceType": "Remote",
+      "employmentType": "Full-time",
+      "industry": "Sales & Marketing",
+      "experienceLevel": "Lead / Executive",
+      "salaryMin": 220000,
+      "salaryMax": 280000,
+      "salaryCurrency": "USD",
+      "description": "Lead global brand repositioning, digital customer acquisition, and institutional PR for international financial and technology ventures spanning North America and Europe.",
+      "responsibilities": [
+        "Manage annual $25M multi-channel digital performance and institutional brand budget.",
+        "Unify brand voice, global public relations, and high-profile industry event sponsorships.",
+        "Direct an international team of 24 marketing specialists across London, New York, and Singapore."
+      ],
+      "skills": [
+        "Global Brand Strategy",
+        "Executive Leadership",
+        "Performance Marketing",
+        "Public Relations",
+        "Marketing Mix Modeling"
+      ],
+      "qualifications": [
+        "12+ years marketing leadership with prior VP or CMO experience in financial or enterprise technology.",
+        "Demonstrated history scaling global enterprise brand equity."
+      ],
+      "benefits": [
+        "Executive equity stock options",
+        "Global business travel budget",
+        "Flexible worldwide remote status"
+      ],
+      "status": "Active",
+      "featured": true,
+      "applicantsCount": 31,
+      "postedDate": "2026-10-23"
+    },
+    {
+      "id": "job-155",
+      "title": "Managing Director of Luxury Resort & Hotel Properties",
+      "company": "Apex Robotics Systems",
+      "companyLogoColor": "bg-amber-600",
+      "location": "Miami, FL",
+      "country": "United States",
+      "workplaceType": "On-site",
+      "employmentType": "Full-time",
+      "industry": "Hospitality",
+      "experienceLevel": "Lead / Executive",
+      "salaryMin": 210000,
+      "salaryMax": 270000,
+      "salaryCurrency": "USD",
+      "description": "Direct full P&L operations, guest experience benchmarks, Michelin-caliber culinary programs, and capital expansion for premier oceanfront luxury resort properties.",
+      "responsibilities": [
+        "Lead 350+ operational hospitality personnel ensuring Forbes 5-Star service standards.",
+        "Drive annual property revenue targets exceeding $65M across lodging, culinary, and spa verticals.",
+        "Maintain active relations with luxury asset owners, municipal stakeholders, and international tour operators."
+      ],
+      "skills": [
+        "Luxury Resort Operations",
+        "P&L Management",
+        "Forbes 5-Star Standards",
+        "Hospitality Leadership",
+        "Culinary & Spa Management"
+      ],
+      "qualifications": [
+        "10+ years hospitality leadership with at least 4 years as General Manager or Managing Director at 5-star properties.",
+        "Proven track record of high guest satisfaction and profitable P&L stewardship."
+      ],
+      "benefits": [
+        "Comprehensive executive benefits and relocation package",
+        "Annual performance incentive bonus up to 35%",
+        "Top-tier family medical & retirement plans"
+      ],
+      "status": "Active",
+      "featured": true,
+      "applicantsCount": 18,
+      "postedDate": "2026-10-22"
     }
   ],
   "applications": [

@@ -17,7 +17,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'North America',
     cities: ['New York', 'San Francisco', 'Chicago', 'Austin', 'Seattle'],
     region: 'Americas',
-    mandatesCount: 14,
+    mandatesCount: 24,
     featuredRole: 'Principal Distributed Systems Architect'
   },
   {
@@ -27,7 +27,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'Europe / EMEA',
     cities: ['London', 'Manchester', 'Edinburgh'],
     region: 'Europe',
-    mandatesCount: 4,
+    mandatesCount: 7,
     featuredRole: 'Managing Director – European Private Equity'
   },
   {
@@ -37,7 +37,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'North America',
     cities: ['Toronto', 'Vancouver', 'Montreal'],
     region: 'Americas',
-    mandatesCount: 3,
+    mandatesCount: 5,
     featuredRole: 'Principal Cloud Architect'
   },
   {
@@ -47,7 +47,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'European Union',
     cities: ['Berlin', 'Frankfurt', 'Munich'],
     region: 'Europe',
-    mandatesCount: 3,
+    mandatesCount: 5,
     featuredRole: 'VP of Autonomous Robotics'
   },
   {
@@ -57,7 +57,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'Middle East (GCC)',
     cities: ['Dubai (DIFC / DWC)', 'Abu Dhabi'],
     region: 'Middle East',
-    mandatesCount: 3,
+    mandatesCount: 5,
     featuredRole: 'EVP – Global Infrastructure'
   },
   {
@@ -67,7 +67,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'Asia-Pacific',
     cities: ['Marina Bay Financial Centre', 'CBD'],
     region: 'Asia-Pacific',
-    mandatesCount: 2,
+    mandatesCount: 3,
     featuredRole: 'Head of APAC Quantitative Trading'
   },
   {
@@ -77,7 +77,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'Oceania',
     cities: ['Sydney', 'Melbourne', 'Brisbane'],
     region: 'Asia-Pacific',
-    mandatesCount: 2,
+    mandatesCount: 3,
     featuredRole: 'Director of Renewable Energy Supply Chain'
   },
   {
@@ -87,7 +87,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'Worldwide',
     cities: ['Anywhere', 'Distributed', 'Worldwide'],
     region: 'Global',
-    mandatesCount: 5,
+    mandatesCount: 10,
     featuredRole: 'Senior Staff Full-Stack Cloud Engineer'
   }
 ];

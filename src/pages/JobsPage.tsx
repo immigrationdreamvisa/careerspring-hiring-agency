@@ -44,24 +44,45 @@ export const JobsPage: React.FC<JobsPageProps> = ({
   const [employmentType, setEmploymentType] = useState('All Types');
   const [workplaceType, setWorkplaceType] = useState('All');
   const [experienceLevel, setExperienceLevel] = useState('All Levels');
-  const [minSalary, setMinSalary] = useState(0);
   const [sortBy, setSortBy] = useState<'relevance' | 'newest' | 'salary_high' | 'salary_low'>('relevance');
+
+  // Debounced inputs to keep typing and button clicks silky smooth
+  const [debouncedKeyword, setDebouncedKeyword] = useState(keyword);
+  const [debouncedLocation, setDebouncedLocation] = useState(location);
 
   const [visibleCount, setVisibleCount] = useState(10);
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
+  const [isUpdating, setIsUpdating] = useState(false);
 
-  const fetchJobs = async () => {
-    setLoading(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedKeyword(keyword);
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [keyword]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedLocation(location);
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [location]);
+
+  const fetchJobs = async (isInitial = false) => {
+    if (isInitial) {
+      setLoading(true);
+    } else {
+      setIsUpdating(true);
+    }
     setError(null);
     try {
       const data = await api.getJobs({
-        keyword: keyword || undefined,
-        location: location || undefined,
+        keyword: debouncedKeyword.trim() || undefined,
+        location: debouncedLocation.trim() || undefined,
         industry: industry === 'All Industries' ? undefined : industry,
         employmentType: employmentType === 'All Types' ? undefined : employmentType,
         workplaceType: workplaceType === 'All' ? undefined : workplaceType,
         experienceLevel: experienceLevel === 'All Levels' ? undefined : experienceLevel,
-        minSalary: minSalary > 0 ? minSalary : undefined,
         sort: sortBy,
       });
       setJobs(data.jobs);
@@ -69,6 +90,7 @@ export const JobsPage: React.FC<JobsPageProps> = ({
       setError(err.message || 'Failed to retrieve requisitions');
     } finally {
       setLoading(false);
+      setIsUpdating(false);
     }
   };
 
@@ -80,19 +102,29 @@ export const JobsPage: React.FC<JobsPageProps> = ({
     }
   }, [initialFilters]);
 
+  // Initial load
   useEffect(() => {
-    fetchJobs();
-  }, [keyword, location, industry, employmentType, workplaceType, experienceLevel, minSalary, sortBy]);
+    fetchJobs(true);
+  }, []);
+
+  // Filter updates - fast & seamless without wiping the UI
+  useEffect(() => {
+    if (!loading) {
+      fetchJobs(false);
+    }
+  }, [debouncedKeyword, debouncedLocation, industry, employmentType, workplaceType, experienceLevel, sortBy]);
 
   const handleClearFilters = () => {
     setKeyword('');
+    setDebouncedKeyword('');
     setLocation('');
+    setDebouncedLocation('');
     setIndustry('All Industries');
     setEmploymentType('All Types');
     setWorkplaceType('All');
     setExperienceLevel('All Levels');
-    setMinSalary(0);
     setSortBy('relevance');
+    setVisibleCount(10);
   };
 
   const industriesList = [
@@ -113,6 +145,14 @@ export const JobsPage: React.FC<JobsPageProps> = ({
 
   const displayedJobs = jobs.slice(0, visibleCount);
   const hasMore = visibleCount < jobs.length;
+  const isFiltered = Boolean(
+    keyword ||
+    location ||
+    industry !== 'All Industries' ||
+    employmentType !== 'All Types' ||
+    workplaceType !== 'All' ||
+    experienceLevel !== 'All Levels'
+  );
 
   return (
     <div className="bg-white min-h-screen text-slate-900">
@@ -255,15 +295,16 @@ export const JobsPage: React.FC<JobsPageProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Left Column: Filter Sidebar (Desktop) */}
-          <aside className="hidden lg:block lg:col-span-3 space-y-6 sticky top-28 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+          <aside className="hidden lg:block lg:col-span-3 sticky top-24 self-start max-h-[calc(100vh-6.5rem)] overflow-y-auto space-y-6 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <span className="font-bold text-base text-slate-900">
                 Refine Search
               </span>
-              {(keyword || location || industry !== 'All Industries' || employmentType !== 'All Types' || workplaceType !== 'All' || experienceLevel !== 'All Levels' || minSalary > 0) && (
+              {isFiltered && (
                 <button
+                  type="button"
                   onClick={handleClearFilters}
-                  className="text-xs font-bold text-blue-600 hover:underline"
+                  className="text-xs font-bold text-blue-600 hover:text-blue-700 hover:underline cursor-pointer"
                 >
                   Reset
                 </button>
@@ -276,24 +317,30 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                 Workplace Type
               </label>
               <div className="grid grid-cols-2 gap-1.5">
-                {workplaceTypesList.map((wp) => (
-                  <button
-                    key={wp}
-                    onClick={() => {
-                      setWorkplaceType(wp);
-                      if (wp !== 'All' && location.toLowerCase() === 'remote') {
-                        setLocation('');
-                      }
-                    }}
-                    className={`py-2 px-3 text-xs text-left border rounded-lg transition-colors font-semibold ${
-                      workplaceType === wp
-                        ? 'border-slate-900 bg-slate-900 text-white shadow-xs'
-                        : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300'
-                    }`}
-                  >
-                    {wp}
-                  </button>
-                ))}
+                {workplaceTypesList.map((wp) => {
+                  const isActive = workplaceType === wp;
+                  return (
+                    <button
+                      key={wp}
+                      type="button"
+                      onClick={() => {
+                        const next = isActive && wp !== 'All' ? 'All' : wp;
+                        setWorkplaceType(next);
+                        if (next !== 'All' && location.toLowerCase() === 'remote') {
+                          setLocation('');
+                        }
+                        setVisibleCount(10);
+                      }}
+                      className={`py-2 px-3 text-xs text-left border rounded-lg transition-all duration-150 font-semibold cursor-pointer active:scale-95 ${
+                        isActive
+                          ? 'border-slate-900 bg-slate-900 text-white shadow-xs'
+                          : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50'
+                      }`}
+                    >
+                      {wp}
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
@@ -303,20 +350,27 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                 Engagement Model
               </label>
               <div className="space-y-1.5">
-                {employmentTypesList.map((emp) => (
-                  <button
-                    key={emp}
-                    onClick={() => setEmploymentType(emp)}
-                    className={`w-full py-2 px-3 text-xs text-left border rounded-lg transition-colors flex items-center justify-between font-medium ${
-                      employmentType === emp
-                        ? 'border-slate-900 bg-slate-50 text-slate-900 font-bold'
-                        : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300'
-                    }`}
-                  >
-                    <span>{emp}</span>
-                    {employmentType === emp && <Check className="w-3.5 h-3.5 text-blue-600" />}
-                  </button>
-                ))}
+                {employmentTypesList.map((emp) => {
+                  const isActive = employmentType === emp;
+                  return (
+                    <button
+                      key={emp}
+                      type="button"
+                      onClick={() => {
+                        setEmploymentType(isActive && emp !== 'All Types' ? 'All Types' : emp);
+                        setVisibleCount(10);
+                      }}
+                      className={`w-full py-2 px-3 text-xs text-left border rounded-lg transition-all duration-150 flex items-center justify-between font-medium cursor-pointer active:scale-[0.99] ${
+                        isActive
+                          ? 'border-slate-900 bg-slate-50 text-slate-900 font-bold shadow-xs'
+                          : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50'
+                      }`}
+                    >
+                      <span>{emp}</span>
+                      {isActive && <Check className="w-3.5 h-3.5 text-blue-600" />}
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
@@ -326,42 +380,28 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                 Leadership Level
               </label>
               <div className="space-y-1.5">
-                {experienceLevelsList.map((lvl) => (
-                  <button
-                    key={lvl}
-                    onClick={() => setExperienceLevel(lvl)}
-                    className={`w-full py-2 px-3 text-xs text-left border rounded-lg transition-colors flex items-center justify-between font-medium ${
-                      experienceLevel === lvl
-                        ? 'border-slate-900 bg-slate-50 text-slate-900 font-bold'
-                        : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300'
-                    }`}
-                  >
-                    <span>{lvl}</span>
-                    {experienceLevel === lvl && <Check className="w-3.5 h-3.5 text-blue-600" />}
-                  </button>
-                ))}
+                {experienceLevelsList.map((lvl) => {
+                  const isActive = experienceLevel === lvl;
+                  return (
+                    <button
+                      key={lvl}
+                      type="button"
+                      onClick={() => {
+                        setExperienceLevel(isActive && lvl !== 'All Levels' ? 'All Levels' : lvl);
+                        setVisibleCount(10);
+                      }}
+                      className={`w-full py-2 px-3 text-xs text-left border rounded-lg transition-all duration-150 flex items-center justify-between font-medium cursor-pointer active:scale-[0.99] ${
+                        isActive
+                          ? 'border-slate-900 bg-slate-50 text-slate-900 font-bold shadow-xs'
+                          : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50'
+                      }`}
+                    >
+                      <span>{lvl}</span>
+                      {isActive && <Check className="w-3.5 h-3.5 text-blue-600" />}
+                    </button>
+                  );
+                })}
               </div>
-            </div>
-
-            {/* Salary Floor Slider */}
-            <div className="space-y-2 pt-2 border-t border-slate-100">
-              <div className="flex justify-between items-baseline">
-                <label className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                  Minimum Base
-                </label>
-                <span className="font-mono text-xs font-bold text-slate-900">
-                  {minSalary > 0 ? `$${minSalary.toLocaleString()}/yr` : 'Any level'}
-                </span>
-              </div>
-              <input
-                type="range"
-                min="0"
-                max="250000"
-                step="10000"
-                value={minSalary}
-                onChange={(e) => setMinSalary(Number(e.target.value))}
-                className="w-full accent-slate-900 cursor-pointer"
-              />
             </div>
           </aside>
 
@@ -370,7 +410,11 @@ export const JobsPage: React.FC<JobsPageProps> = ({
             <div className="lg:hidden col-span-1 bg-white border border-slate-200 rounded-2xl p-6 space-y-6 shadow-xl">
               <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                 <span className="font-bold text-base text-slate-900">Filter Criteria</span>
-                <button onClick={() => setMobileFilterOpen(false)} className="text-slate-600 p-1">
+                <button
+                  type="button"
+                  onClick={() => setMobileFilterOpen(false)}
+                  className="text-slate-600 p-1"
+                >
                   <X className="w-4 h-4" />
                 </button>
               </div>
@@ -381,24 +425,30 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                     Workplace Type
                   </label>
                   <div className="grid grid-cols-2 gap-2">
-                    {workplaceTypesList.map((wp) => (
-                      <button
-                        key={wp}
-                        onClick={() => {
-                          setWorkplaceType(wp);
-                          if (wp !== 'All' && location.toLowerCase() === 'remote') {
-                            setLocation('');
-                          }
-                        }}
-                        className={`py-2 px-3 text-xs rounded-lg border font-semibold ${
-                          workplaceType === wp
-                            ? 'border-slate-900 bg-slate-900 text-white'
-                            : 'border-slate-200 bg-white text-slate-700'
-                        }`}
-                      >
-                        {wp}
-                      </button>
-                    ))}
+                    {workplaceTypesList.map((wp) => {
+                      const isActive = workplaceType === wp;
+                      return (
+                        <button
+                          key={wp}
+                          type="button"
+                          onClick={() => {
+                            const next = isActive && wp !== 'All' ? 'All' : wp;
+                            setWorkplaceType(next);
+                            if (next !== 'All' && location.toLowerCase() === 'remote') {
+                              setLocation('');
+                            }
+                            setVisibleCount(10);
+                          }}
+                          className={`py-2 px-3 text-xs rounded-lg border font-semibold ${
+                            isActive
+                              ? 'border-slate-900 bg-slate-900 text-white'
+                              : 'border-slate-200 bg-white text-slate-700'
+                          }`}
+                        >
+                          {wp}
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
 
@@ -407,52 +457,69 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                     Engagement Model
                   </label>
                   <div className="grid grid-cols-2 gap-2">
-                    {employmentTypesList.map((emp) => (
-                      <button
-                        key={emp}
-                        onClick={() => setEmploymentType(emp)}
-                        className={`py-2 px-3 text-xs rounded-lg border font-semibold ${
-                          employmentType === emp
-                            ? 'border-slate-900 bg-slate-900 text-white'
-                            : 'border-slate-200 bg-white text-slate-700'
-                        }`}
-                      >
-                        {emp}
-                      </button>
-                    ))}
+                    {employmentTypesList.map((emp) => {
+                      const isActive = employmentType === emp;
+                      return (
+                        <button
+                          key={emp}
+                          type="button"
+                          onClick={() => {
+                            setEmploymentType(isActive && emp !== 'All Types' ? 'All Types' : emp);
+                            setVisibleCount(10);
+                          }}
+                          className={`py-2 px-3 text-xs rounded-lg border font-semibold ${
+                            isActive
+                              ? 'border-slate-900 bg-slate-900 text-white'
+                              : 'border-slate-200 bg-white text-slate-700'
+                          }`}
+                        >
+                          {emp}
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
 
                 <div>
                   <label className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-2">
-                    Minimum Compensation
+                    Leadership Level
                   </label>
-                  <div className="flex justify-between items-center mb-1 text-xs">
-                    <span className="font-mono font-bold text-slate-900">
-                      {minSalary > 0 ? `$${minSalary.toLocaleString()}` : 'No floor'}
-                    </span>
+                  <div className="grid grid-cols-2 gap-2">
+                    {experienceLevelsList.map((lvl) => {
+                      const isActive = experienceLevel === lvl;
+                      return (
+                        <button
+                          key={lvl}
+                          type="button"
+                          onClick={() => {
+                            setExperienceLevel(isActive && lvl !== 'All Levels' ? 'All Levels' : lvl);
+                            setVisibleCount(10);
+                          }}
+                          className={`py-2 px-3 text-xs rounded-lg border font-semibold ${
+                            isActive
+                              ? 'border-slate-900 bg-slate-900 text-white'
+                              : 'border-slate-200 bg-white text-slate-700'
+                          }`}
+                        >
+                          {lvl}
+                        </button>
+                      );
+                    })}
                   </div>
-                  <input
-                    type="range"
-                    min="0"
-                    max="250000"
-                    step="10000"
-                    value={minSalary}
-                    onChange={(e) => setMinSalary(Number(e.target.value))}
-                    className="w-full accent-slate-900"
-                  />
                 </div>
 
                 <div className="pt-2 flex gap-3">
                   <button
+                    type="button"
                     onClick={handleClearFilters}
-                    className="flex-1 py-2.5 border border-slate-200 rounded-lg text-xs font-bold"
+                    className="flex-1 py-2.5 border border-slate-200 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-50"
                   >
                     Clear All
                   </button>
                   <button
+                    type="button"
                     onClick={() => setMobileFilterOpen(false)}
-                    className="flex-1 py-2.5 bg-slate-900 text-white rounded-lg text-xs font-bold"
+                    className="flex-1 py-2.5 bg-slate-900 text-white rounded-lg text-xs font-bold hover:bg-slate-800"
                   >
                     Apply Filters
                   </button>
@@ -462,13 +529,21 @@ export const JobsPage: React.FC<JobsPageProps> = ({
           )}
 
           {/* Right Column: Requisition Ledger */}
-          <main className="col-span-1 lg:col-span-9 space-y-6">
+          <main className="col-span-1 lg:col-span-9 space-y-6 min-h-[650px]">
             
             {/* Ledger Status Bar */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-200 gap-4">
-              <div className="text-xs font-sans text-slate-600">
-                Showing <span className="font-bold text-slate-900">{displayedJobs.length}</span> of{' '}
-                <span className="font-bold text-slate-900">{jobs.length}</span> verified requisitions
+              <div className="flex items-center gap-3">
+                <div className="text-xs font-sans text-slate-600">
+                  Showing <span className="font-bold text-slate-900">{displayedJobs.length}</span> of{' '}
+                  <span className="font-bold text-slate-900">{jobs.length}</span> verified requisitions
+                </div>
+                {isUpdating && (
+                  <div className="inline-flex items-center gap-1.5 text-xs text-blue-600 font-semibold animate-pulse">
+                    <span className="inline-block w-3 h-3 border-2 border-blue-600 border-t-transparent animate-spin rounded-full" />
+                    <span>Updating...</span>
+                  </div>
+                )}
               </div>
 
               {/* Sort By Dropdown */}
@@ -487,7 +562,7 @@ export const JobsPage: React.FC<JobsPageProps> = ({
               </div>
             </div>
 
-            {/* Loading State */}
+            {/* Loading State - only on initial full load */}
             {loading && (
               <div className="py-24 text-center space-y-3">
                 <div className="inline-block w-6 h-6 border-2 border-slate-900 border-t-transparent animate-spin rounded-full" />
@@ -496,11 +571,12 @@ export const JobsPage: React.FC<JobsPageProps> = ({
             )}
 
             {/* Error State */}
-            {error && (
+            {!loading && error && (
               <div className="p-8 border border-rose-200 bg-rose-50/50 rounded-2xl text-center space-y-3">
                 <p className="text-sm font-bold text-rose-800">{error}</p>
                 <button
-                  onClick={fetchJobs}
+                  type="button"
+                  onClick={() => fetchJobs(true)}
                   className="px-4 py-2 bg-slate-900 text-white rounded-lg text-xs font-bold"
                 >
                   Retry Query
@@ -517,8 +593,9 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                   Job requisitions are updated continuously. Try clearing your filters or selecting another location or category.
                 </p>
                 <button
+                  type="button"
                   onClick={handleClearFilters}
-                  className="px-5 py-2.5 bg-slate-900 text-white rounded-lg text-xs font-bold"
+                  className="px-5 py-2.5 bg-slate-900 text-white rounded-lg text-xs font-bold cursor-pointer"
                 >
                   Clear Filters
                 </button>
@@ -527,8 +604,9 @@ export const JobsPage: React.FC<JobsPageProps> = ({
 
             {/* Job List Items */}
             {!loading && !error && jobs.length > 0 && (
-              <div className="border border-slate-200 bg-white rounded-2xl shadow-sm divide-y divide-slate-100 overflow-hidden">
-                {displayedJobs.map((job) => (
+              <div className={`transition-opacity duration-150 ${isUpdating ? 'opacity-60 pointer-events-none' : 'opacity-100'}`}>
+                <div className="border border-slate-200 bg-white rounded-2xl shadow-sm divide-y divide-slate-100 overflow-hidden">
+                  {displayedJobs.map((job) => (
                   <article
                     key={job.id}
                     className="p-6 sm:p-7 hover:bg-slate-50/60 transition-colors group relative"
@@ -634,6 +712,7 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                     </div>
                   </article>
                 ))}
+                </div>
               </div>
             )}
 
