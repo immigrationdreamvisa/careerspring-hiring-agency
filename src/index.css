@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Clean Impressive Modern White & Slate Palette */
+    --color-burgundy: #0F172A;
+    --color-burgundy-dark: #020617;
+    --color-ivory: #FFFFFF;
+    --color-ivory-light: #F8FAFC;
+    --color-champagne: #E2E8F0;
+    --color-champagne-light: #F1F5F9;
+    --color-graphite: #0F172A;
+    --color-taupe: #64748B;
+    --color-taupe-light: #E2E8F0;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #0F172A;
+    background-color: #FFFFFF;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-editorial {
+    font-family: var(--font-sans);
+    letter-spacing: -0.025em;
+    font-style: normal;
+  }
+
+  .font-sans-body {
+    font-family: var(--font-sans);
+  }
+
+  .font-mono-data {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Universal pointer cursor for interactive elements */
+  button,
+  [role="button"],
+  a,
+  select,
+  summary,
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"] {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [role="button"][aria-disabled="true"],
+  input:disabled {
+    cursor: not-allowed;
+  }
+}
+
+/* Modern clean typography scale (bold, simple, crisp) */
+.text-editorial-hero {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.text-editorial-section {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+}
+
+.text-editorial-statement {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+/* Clean modern scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}

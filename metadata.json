@@ -1,0 +1,6 @@
+{
+  "name": "TalentBridge - Premium Hiring & Recruitment Agency",
+  "description": "Modern recruitment agency platform connecting exceptional talent with premier companies, featuring job discovery, applicant tracking, and employer staffing solutions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
