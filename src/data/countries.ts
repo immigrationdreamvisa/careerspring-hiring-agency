@@ -17,7 +17,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'North America',
     cities: ['New York', 'San Francisco', 'Chicago', 'Austin', 'Seattle'],
     region: 'Americas',
-    mandatesCount: 8,
+    mandatesCount: 14,
     featuredRole: 'Principal Distributed Systems Architect'
   },
   {
@@ -88,6 +88,6 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     cities: ['Anywhere', 'Distributed', 'Worldwide'],
     region: 'Global',
     mandatesCount: 5,
-    featuredRole: 'Head of Growth & Performance'
+    featuredRole: 'Senior Staff Full-Stack Cloud Engineer'
   }
 ];

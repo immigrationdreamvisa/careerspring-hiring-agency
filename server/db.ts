@@ -21,7 +21,9 @@ interface DatabaseSchema {
   companies: Company[];
 }
 
-const DATA_DIR = path.resolve(process.cwd(), 'data');
+const DATA_DIR = process.env.VERCEL
+  ? path.join('/tmp', 'talentbridge_data')
+  : path.resolve(process.cwd(), 'data');
 const DB_FILE_PATH = path.join(DATA_DIR, 'talentbridge_db.json');
 
 class DatabaseStore {
@@ -221,6 +223,9 @@ class DatabaseStore {
           return jobCountry.includes('australia') || jobLoc.includes('australia') || jobLoc.includes('sydney') || jobLoc.includes('melbourne');
         }
         if (loc === 'remote' || loc === 'global') {
+          if (filter?.workplaceType && filter.workplaceType !== 'All' && filter.workplaceType !== 'Remote') {
+            return true;
+          }
           return j.workplaceType === 'Remote' || jobLoc.includes('remote') || jobCountry.includes('remote');
         }
         return false;

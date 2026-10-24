@@ -227,7 +227,14 @@ export const JobsPage: React.FC<JobsPageProps> = ({
             return (
               <button
                 key={c.code}
-                onClick={() => setLocation(c.name === 'Remote / Global' ? 'Remote' : c.name)}
+                onClick={() => {
+                  if (c.name === 'Remote / Global') {
+                    setLocation('Remote');
+                    setWorkplaceType('All');
+                  } else {
+                    setLocation(c.name);
+                  }
+                }}
                 className={`px-3 py-1.5 text-xs rounded-lg whitespace-nowrap transition-colors border flex items-center gap-1.5 font-semibold ${
                   isMatch
                     ? 'bg-slate-900 border-slate-900 text-white shadow-xs'
@@ -272,7 +279,12 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                 {workplaceTypesList.map((wp) => (
                   <button
                     key={wp}
-                    onClick={() => setWorkplaceType(wp)}
+                    onClick={() => {
+                      setWorkplaceType(wp);
+                      if (wp !== 'All' && location.toLowerCase() === 'remote') {
+                        setLocation('');
+                      }
+                    }}
                     className={`py-2 px-3 text-xs text-left border rounded-lg transition-colors font-semibold ${
                       workplaceType === wp
                         ? 'border-slate-900 bg-slate-900 text-white shadow-xs'
@@ -372,7 +384,12 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                     {workplaceTypesList.map((wp) => (
                       <button
                         key={wp}
-                        onClick={() => setWorkplaceType(wp)}
+                        onClick={() => {
+                          setWorkplaceType(wp);
+                          if (wp !== 'All' && location.toLowerCase() === 'remote') {
+                            setLocation('');
+                          }
+                        }}
                         className={`py-2 px-3 text-xs rounded-lg border font-semibold ${
                           workplaceType === wp
                             ? 'border-slate-900 bg-slate-900 text-white'
