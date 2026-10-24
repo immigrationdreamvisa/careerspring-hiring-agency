@@ -46,16 +46,19 @@ export const ApplicationsPage: React.FC<ApplicationsPageProps> = ({
     setLoading(true);
     setError(null);
     try {
-      // 1. Fetch server applications
-      let serverApps: JobApplication[] = [];
+      // 1. Get current candidate profile email if available
+      let userEmail = '';
       try {
-        const data = await api.getApplications();
-        serverApps = data.applications || [];
-      } catch (serverErr) {
-        console.warn('Server fetch note:', serverErr);
+        const storedProfile = localStorage.getItem('careerspring_user_profile');
+        if (storedProfile) {
+          const prof = JSON.parse(storedProfile);
+          userEmail = (prof?.email || '').trim().toLowerCase();
+        }
+      } catch (e) {
+        console.warn('Profile fetch note:', e);
       }
 
-      // 2. Fetch locally stored applications submitted by this user
+      // 2. Fetch locally stored applications submitted by this user in this browser
       let localApps: JobApplication[] = [];
       try {
         const stored = localStorage.getItem('careerspring_user_applications');
@@ -66,19 +69,37 @@ export const ApplicationsPage: React.FC<ApplicationsPageProps> = ({
         console.warn('Local applications fetch note:', localErr);
       }
 
-      // 3. Merge without duplicates (newest first)
+      // 3. Fetch server applications
+      let serverApps: JobApplication[] = [];
+      try {
+        const data = await api.getApplications();
+        serverApps = data.applications || [];
+      } catch (serverErr) {
+        console.warn('Server fetch note:', serverErr);
+      }
+
+      // 4. User's applications ONLY!
+      // An application belongs to this user if:
+      // a) It was submitted locally by this user (in localApps)
+      // b) OR if the candidate has an email and the server application matches that email
+      // This guarantees that a new user who has not applied anywhere has exactly ZERO applications and ZERO notifications!
       const appMap = new Map<string, JobApplication>();
       localApps.forEach((a) => {
         if (a && a.id) appMap.set(a.id, a);
       });
-      serverApps.forEach((a) => {
-        if (a && a.id) appMap.set(a.id, a);
-      });
 
-      const merged = Array.from(appMap.values());
-      merged.sort((a, b) => new Date(b.appliedAt).getTime() - new Date(a.appliedAt).getTime());
+      if (userEmail) {
+        serverApps.forEach((a) => {
+          if (a && a.id && a.email && a.email.toLowerCase() === userEmail) {
+            appMap.set(a.id, a);
+          }
+        });
+      }
 
-      setApplications(merged);
+      const userOnlyApps = Array.from(appMap.values());
+      userOnlyApps.sort((a, b) => new Date(b.appliedAt).getTime() - new Date(a.appliedAt).getTime());
+
+      setApplications(userOnlyApps);
     } catch (err: any) {
       setError(err.message || 'Failed to load applications');
     } finally {
@@ -89,6 +110,18 @@ export const ApplicationsPage: React.FC<ApplicationsPageProps> = ({
   useEffect(() => {
     fetchApplications();
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    const handleUpdate = () => {
+      fetchApplications();
+    };
+    window.addEventListener('storage', handleUpdate);
+    window.addEventListener('careerspring_applications_updated', handleUpdate);
+    window.addEventListener('careerspring_profile_updated', handleUpdate);
+    return () => {
+      window.removeEventListener('storage', handleUpdate);
+      window.removeEventListener('careerspring_applications_updated', handleUpdate);
+      window.removeEventListener('careerspring_profile_updated', handleUpdate);
+    };
   }, []);
 
   // Filtered applications
@@ -227,7 +260,7 @@ export const ApplicationsPage: React.FC<ApplicationsPageProps> = ({
                 <Bell className="w-4 h-4" />
               </div>
               <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mt-2">Live Alerts</p>
-              <p className="text-2xl font-extrabold text-purple-600">{applications.length + 2}</p>
+              <p className="text-2xl font-extrabold text-purple-600">{applications.length}</p>
               <p className="text-xs text-slate-500">Real-time status notifications</p>
             </div>
           </div>
@@ -292,6 +325,9 @@ export const ApplicationsPage: React.FC<ApplicationsPageProps> = ({
             >
               <Bell className="w-3.5 h-3.5 text-blue-500" />
               <span>Activity Notifications</span>
+              <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${activeTab === 'notifications' ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-700'}`}>
+                {applications.length}
+              </span>
             </button>
           </div>
 
@@ -329,192 +365,138 @@ export const ApplicationsPage: React.FC<ApplicationsPageProps> = ({
               </button>
             </div>
 
-            <div className="space-y-4">
-              {/* 1. Job Application Notifications with complete candidate data */}
-              {applications.map((app, idx) => (
-                <div
-                  key={app.id || idx}
-                  className="p-6 border border-slate-200 bg-white rounded-3xl shadow-sm space-y-4 hover:border-slate-300 transition-all"
-                >
-                  {/* Top Notification Status Bar */}
-                  <div className="flex items-start justify-between gap-4 pb-3 border-b border-slate-100 flex-wrap">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
-                        {app.status === 'Shortlisted' ? (
-                          <Sparkles className="w-5 h-5 text-emerald-600" />
-                        ) : (
-                          <CheckCircle2 className="w-5 h-5 text-blue-600" />
-                        )}
-                      </div>
-                      <div>
-                        <div className="flex items-center gap-2 flex-wrap">
-                          <span className="text-xs font-extrabold text-slate-900">
-                            {app.status === 'Shortlisted' ? 'Shortlisted for Interview' : 'Application Received & Active'}
-                          </span>
-                          <span className="font-mono text-[11px] px-2 py-0.5 bg-slate-100 text-slate-600 rounded-md font-bold">
-                            #{app.id}
-                          </span>
-                        </div>
-                        <p className="text-xs text-slate-500 mt-0.5">
-                          Submitted on {new Date(app.appliedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="shrink-0">
-                      {getStatusBadge(app.status)}
-                    </div>
-                  </div>
-
-                  {/* Applied Role Info */}
-                  <div className="flex items-center justify-between gap-4 flex-wrap bg-slate-50/70 p-3.5 rounded-2xl border border-slate-100">
-                    <div>
-                      <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">Target Vacancy</span>
-                      <h4 className="text-sm font-extrabold text-slate-900">{app.jobTitle}</h4>
-                      <p className="text-xs text-slate-600 flex items-center gap-1.5 mt-0.5">
-                        <Building2 className="w-3.5 h-3.5 text-slate-400" />
-                        <span className="font-semibold">{app.company}</span>
-                      </p>
-                    </div>
-
-                    {onOpenJobDetails && (
-                      <button
-                        onClick={() => onOpenJobDetails(app.jobId)}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:border-slate-400 text-xs font-bold text-slate-800 rounded-xl transition-all shadow-2xs"
-                      >
-                        <span>View Vacancy</span>
-                        <ArrowUpRight className="w-3.5 h-3.5 text-slate-500" />
-                      </button>
-                    )}
-                  </div>
-
-                  {/* USER'S SUBMITTED CANDIDATE DATA */}
-                  <div className="space-y-2">
-                    <span className="text-xs font-bold text-slate-900 uppercase tracking-wider block flex items-center gap-1.5">
-                      <FileText className="w-3.5 h-3.5 text-blue-600" />
-                      <span>Your Submitted Candidate Dossier</span>
-                    </span>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl text-xs">
-                      <div>
-                        <span className="text-slate-400 block text-[10px] uppercase font-bold">Candidate Name</span>
-                        <span className="font-bold text-slate-900 text-xs sm:text-sm">{app.fullName}</span>
-                      </div>
-                      <div>
-                        <span className="text-slate-400 block text-[10px] uppercase font-bold">Direct Email</span>
-                        <span className="font-medium text-blue-600 truncate block">{app.email}</span>
-                      </div>
-                      <div>
-                        <span className="text-slate-400 block text-[10px] uppercase font-bold">Phone Number</span>
-                        <span className="font-mono font-medium text-slate-800">{app.phone}</span>
-                      </div>
-                      <div>
-                        <span className="text-slate-400 block text-[10px] uppercase font-bold">Current Location</span>
-                        <span className="font-medium text-slate-800">{app.currentLocation}</span>
-                      </div>
-                      <div>
-                        <span className="text-slate-400 block text-[10px] uppercase font-bold">Total Experience</span>
-                        <span className="font-medium text-slate-800">{app.totalExperience}</span>
-                      </div>
-                      <div>
-                        <span className="text-slate-400 block text-[10px] uppercase font-bold">Attached Document</span>
-                        <span className="font-medium text-slate-800 truncate block text-blue-600 font-mono text-[11px]">{app.resumeFileName}</span>
-                      </div>
-                    </div>
-
-                    {app.coverLetter && (
-                      <div className="p-3.5 bg-white border border-slate-200 rounded-xl text-xs space-y-1">
-                        <span className="font-bold text-slate-900 block text-[11px] uppercase tracking-wider text-slate-400">Candidate Statement / Cover Note:</span>
-                        <p className="text-slate-700 leading-relaxed italic font-sans">{app.coverLetter}</p>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Recruiter Notes or Next Step Note */}
-                  <div className="p-3 bg-blue-50/50 border border-blue-100 rounded-xl text-xs text-slate-700 flex items-center justify-between gap-3">
-                    <span className="text-blue-900 font-medium">
-                      {app.adminNotes || 'Recruiter review initiated. We maintain a guaranteed 24-hour partner screening protocol.'}
-                    </span>
-                    <span className="text-[10px] uppercase font-bold text-blue-600 shrink-0">Live Update</span>
-                  </div>
+            {applications.length === 0 ? (
+              <div className="p-12 border border-slate-200 bg-white rounded-3xl text-center max-w-xl mx-auto space-y-4 shadow-sm my-6">
+                <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto">
+                  <Bell className="w-6 h-6 text-blue-600" />
                 </div>
-              ))}
-
-              {/* 2. Registered Candidate Profile Alert if present */}
-              {(() => {
-                try {
-                  const storedProfile = localStorage.getItem('careerspring_user_profile');
-                  if (!storedProfile) return null;
-                  const prof = JSON.parse(storedProfile);
-                  return (
-                    <div className="p-6 border border-emerald-200 bg-emerald-50/40 rounded-3xl shadow-xs space-y-3">
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
-                            <ShieldCheck className="w-5 h-5" />
-                          </div>
-                          <div>
-                            <div className="flex items-center gap-2">
-                              <h4 className="text-sm font-extrabold text-slate-900">CareerSpring Candidate Profile Verified</h4>
-                              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                            </div>
-                            <p className="text-xs text-slate-600 mt-0.5">
-                              Registered under <strong className="text-slate-900 font-bold">{prof.name}</strong> ({prof.targetRole})
-                            </p>
-                          </div>
-                        </div>
-
-                        <button
-                          onClick={() => onNavigate('contact')}
-                          className="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition-colors shadow-2xs"
-                        >
-                          View / Edit Profile
-                        </button>
-                      </div>
-
-                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 text-xs">
-                        <div className="p-2.5 bg-white/80 border border-emerald-100 rounded-xl">
-                          <span className="text-[10px] text-slate-400 font-bold uppercase block">Email</span>
-                          <span className="font-medium text-slate-800 truncate block">{prof.email}</span>
-                        </div>
-                        <div className="p-2.5 bg-white/80 border border-emerald-100 rounded-xl">
-                          <span className="text-[10px] text-slate-400 font-bold uppercase block">Phone</span>
-                          <span className="font-mono font-medium text-slate-800 truncate block">{prof.phone}</span>
-                        </div>
-                        <div className="p-2.5 bg-white/80 border border-emerald-100 rounded-xl">
-                          <span className="text-[10px] text-slate-400 font-bold uppercase block">Location</span>
-                          <span className="font-medium text-slate-800 truncate block">{prof.location}</span>
-                        </div>
-                        <div className="p-2.5 bg-white/80 border border-emerald-100 rounded-xl">
-                          <span className="text-[10px] text-slate-400 font-bold uppercase block">Target Comp</span>
-                          <span className="font-medium text-slate-800 truncate block">{prof.expectedSalary}</span>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                } catch {
-                  return null;
-                }
-              })()}
-
-              {/* 3. Welcome Alert */}
-              <div className="p-5 border border-slate-200 bg-white rounded-2xl shadow-xs space-y-1 flex items-start gap-4">
-                <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 mt-0.5">
-                  <Sparkles className="w-5 h-5 text-blue-600" />
-                </div>
-                <div className="space-y-1 flex-1">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold text-slate-900">
-                      Welcome to CareerSpring Executive Candidate Network
-                    </span>
-                    <span className="text-[11px] text-slate-400">System Notification</span>
-                  </div>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    All candidacies are reviewed under confidential non-disclosure protocols. Direct hiring managers evaluate your profile without third-party recruitment markup.
+                <div className="space-y-1.5">
+                  <h3 className="text-lg font-bold text-slate-900">No Activity Notifications Yet</h3>
+                  <p className="text-xs text-slate-500 leading-relaxed max-w-md mx-auto">
+                    You have not applied to any positions yet. As soon as you apply to open vacancies, your real-time candidacy tracking, recruiter screening feedback, and interview alerts will appear here.
                   </p>
                 </div>
+                <button
+                  onClick={() => onNavigate('jobs')}
+                  className="px-6 py-2.5 bg-slate-900 hover:bg-blue-600 text-white text-xs font-bold rounded-xl transition-colors shadow-xs inline-flex items-center gap-1.5 cursor-pointer"
+                >
+                  <span>Browse Verified Positions</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </button>
               </div>
-            </div>
+            ) : (
+              <div className="space-y-4">
+                {/* 1. Job Application Notifications with complete candidate data */}
+                {applications.map((app, idx) => (
+                  <div
+                    key={app.id || idx}
+                    className="p-6 border border-slate-200 bg-white rounded-3xl shadow-sm space-y-4 hover:border-slate-300 transition-all"
+                  >
+                    {/* Top Notification Status Bar */}
+                    <div className="flex items-start justify-between gap-4 pb-3 border-b border-slate-100 flex-wrap">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                          {app.status === 'Shortlisted' ? (
+                            <Sparkles className="w-5 h-5 text-emerald-600" />
+                          ) : (
+                            <CheckCircle2 className="w-5 h-5 text-blue-600" />
+                          )}
+                        </div>
+                        <div>
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className="text-xs font-extrabold text-slate-900">
+                              {app.status === 'Shortlisted' ? 'Shortlisted for Interview' : 'Application Received & Active'}
+                            </span>
+                            <span className="font-mono text-[11px] px-2 py-0.5 bg-slate-100 text-slate-600 rounded-md font-bold">
+                              #{app.id}
+                            </span>
+                          </div>
+                          <p className="text-xs text-slate-500 mt-0.5">
+                            Submitted on {new Date(app.appliedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="shrink-0">
+                        {getStatusBadge(app.status)}
+                      </div>
+                    </div>
+
+                    {/* Applied Role Info */}
+                    <div className="flex items-center justify-between gap-4 flex-wrap bg-slate-50/70 p-3.5 rounded-2xl border border-slate-100">
+                      <div>
+                        <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">Target Vacancy</span>
+                        <h4 className="text-sm font-extrabold text-slate-900">{app.jobTitle}</h4>
+                        <p className="text-xs text-slate-600 flex items-center gap-1.5 mt-0.5">
+                          <Building2 className="w-3.5 h-3.5 text-slate-400" />
+                          <span className="font-semibold">{app.company}</span>
+                        </p>
+                      </div>
+
+                      {onOpenJobDetails && (
+                        <button
+                          onClick={() => onOpenJobDetails(app.jobId)}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:border-slate-400 text-xs font-bold text-slate-800 rounded-xl transition-all shadow-2xs"
+                        >
+                          <span>View Vacancy</span>
+                          <ArrowUpRight className="w-3.5 h-3.5 text-slate-500" />
+                        </button>
+                      )}
+                    </div>
+
+                    {/* USER'S SUBMITTED CANDIDATE DATA */}
+                    <div className="space-y-2">
+                      <span className="text-xs font-bold text-slate-900 uppercase tracking-wider block flex items-center gap-1.5">
+                        <FileText className="w-3.5 h-3.5 text-blue-600" />
+                        <span>Your Submitted Candidate Dossier</span>
+                      </span>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl text-xs">
+                        <div>
+                          <span className="text-slate-400 block text-[10px] uppercase font-bold">Candidate Name</span>
+                          <span className="font-bold text-slate-900 text-xs sm:text-sm">{app.fullName}</span>
+                        </div>
+                        <div>
+                          <span className="text-slate-400 block text-[10px] uppercase font-bold">Direct Email</span>
+                          <span className="font-medium text-blue-600 truncate block">{app.email}</span>
+                        </div>
+                        <div>
+                          <span className="text-slate-400 block text-[10px] uppercase font-bold">Phone Number</span>
+                          <span className="font-mono font-medium text-slate-800">{app.phone}</span>
+                        </div>
+                        <div>
+                          <span className="text-slate-400 block text-[10px] uppercase font-bold">Current Location</span>
+                          <span className="font-medium text-slate-800">{app.currentLocation}</span>
+                        </div>
+                        <div>
+                          <span className="text-slate-400 block text-[10px] uppercase font-bold">Total Experience</span>
+                          <span className="font-medium text-slate-800">{app.totalExperience}</span>
+                        </div>
+                        <div>
+                          <span className="text-slate-400 block text-[10px] uppercase font-bold">Attached Document</span>
+                          <span className="font-medium text-slate-800 truncate block text-blue-600 font-mono text-[11px]">{app.resumeFileName}</span>
+                        </div>
+                      </div>
+
+                      {app.coverLetter && (
+                        <div className="p-3.5 bg-white border border-slate-200 rounded-xl text-xs space-y-1">
+                          <span className="font-bold text-slate-900 block text-[11px] uppercase tracking-wider text-slate-400">Candidate Statement / Cover Note:</span>
+                          <p className="text-slate-700 leading-relaxed italic font-sans">{app.coverLetter}</p>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Recruiter Notes or Next Step Note */}
+                    <div className="p-3 bg-blue-50/50 border border-blue-100 rounded-xl text-xs text-slate-700 flex items-center justify-between gap-3">
+                      <span className="text-blue-900 font-medium">
+                        {app.adminNotes || 'Recruiter review initiated. We maintain a guaranteed 24-hour partner screening protocol.'}
+                      </span>
+                      <span className="text-[10px] uppercase font-bold text-blue-600 shrink-0">Live Update</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         )}
 
@@ -534,14 +516,18 @@ export const ApplicationsPage: React.FC<ApplicationsPageProps> = ({
                   <FileText className="w-6 h-6" />
                 </div>
                 <div className="space-y-1">
-                  <h3 className="text-base font-bold text-slate-900">No applications match this filter</h3>
+                  <h3 className="text-base font-bold text-slate-900">
+                    {applications.length === 0 ? 'No applications submitted yet' : 'No applications match this filter'}
+                  </h3>
                   <p className="text-xs text-slate-500 leading-relaxed">
-                    You have not submitted an application in this category yet. Explore available vacancies to submit your profile.
+                    {applications.length === 0
+                      ? 'You have not submitted an application to any role yet. Explore verified global vacancies and submit your candidacy with 1-click.'
+                      : 'You have not submitted an application in this category yet. Explore available vacancies to submit your profile.'}
                   </p>
                 </div>
                 <button
                   onClick={() => onNavigate('jobs')}
-                  className="px-6 py-2.5 bg-slate-900 hover:bg-blue-600 text-white text-xs font-bold rounded-xl transition-colors shadow-xs"
+                  className="px-6 py-2.5 bg-slate-900 hover:bg-blue-600 text-white text-xs font-bold rounded-xl transition-colors shadow-xs cursor-pointer"
                 >
                   Explore Openings
                 </button>

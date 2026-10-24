@@ -107,6 +107,7 @@ export const JobApplicationModal: React.FC<JobApplicationModalProps> = ({
         const list = stored ? JSON.parse(stored) : [];
         list.unshift(res.application);
         localStorage.setItem('careerspring_user_applications', JSON.stringify(list));
+        window.dispatchEvent(new CustomEvent('careerspring_applications_updated', { detail: res.application }));
       } catch (storageErr) {
         console.warn('Failed to save application to local storage', storageErr);
       }
