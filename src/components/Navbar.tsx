@@ -14,6 +14,7 @@ import {
   Check,
   Bell,
   User,
+  UserPlus,
   Briefcase,
   Sparkles,
 } from 'lucide-react';
@@ -230,7 +231,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenD
                     className="flex items-center gap-2 px-3.5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-bold transition-all shadow-xs group cursor-pointer"
                     title="Create Candidate Profile"
                   >
-                    <Sparkles className="w-3.5 h-3.5 text-blue-200" />
+                    <UserPlus className="w-4 h-4 text-blue-100 group-hover:scale-110 transition-transform shrink-0" />
                     <span>Create Profile</span>
                   </button>
                 )}
@@ -548,9 +549,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenD
                 </div>
                 <button
                   onClick={() => handleNavClick('contact')}
-                  className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg shadow-xs"
+                  className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg shadow-xs cursor-pointer"
                 >
-                  Create Profile
+                  <UserPlus className="w-3.5 h-3.5 text-blue-100 shrink-0" />
+                  <span>Create Profile</span>
                 </button>
               </div>
             )}
