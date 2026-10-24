@@ -53,6 +53,7 @@ export const JobsPage: React.FC<JobsPageProps> = ({
   const [visibleCount, setVisibleCount] = useState(10);
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
   const [isUpdating, setIsUpdating] = useState(false);
+  const [fallbackNotice, setFallbackNotice] = useState<string | null>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -85,7 +86,55 @@ export const JobsPage: React.FC<JobsPageProps> = ({
         experienceLevel: experienceLevel === 'All Levels' ? undefined : experienceLevel,
         sort: sortBy,
       });
-      setJobs(data.jobs);
+
+      if (data.jobs && data.jobs.length > 0) {
+        setJobs(data.jobs);
+        setFallbackNotice(null);
+      } else {
+        // If exact combination produces 0 matches, NEVER show an empty screen when jobs are available!
+        // 1. Try relaxing location (showing jobs matching these filters globally)
+        if (debouncedLocation.trim()) {
+          const globalData = await api.getJobs({
+            keyword: debouncedKeyword.trim() || undefined,
+            industry: industry === 'All Industries' ? undefined : industry,
+            employmentType: employmentType === 'All Types' ? undefined : employmentType,
+            workplaceType: workplaceType === 'All' ? undefined : workplaceType,
+            experienceLevel: experienceLevel === 'All Levels' ? undefined : experienceLevel,
+            sort: sortBy,
+          });
+          if (globalData.jobs && globalData.jobs.length > 0) {
+            setJobs(globalData.jobs);
+            setFallbackNotice(`Showing ${globalData.jobs.length} verified opportunities matching your criteria across all regions (no direct match in "${debouncedLocation}")`);
+            return;
+          }
+        }
+
+        // 2. Try relaxing specific filter criteria while keeping industry / keyword
+        if (industry !== 'All Industries' || debouncedKeyword.trim()) {
+          const industryData = await api.getJobs({
+            keyword: debouncedKeyword.trim() || undefined,
+            industry: industry === 'All Industries' ? undefined : industry,
+            sort: sortBy,
+          });
+          if (industryData.jobs && industryData.jobs.length > 0) {
+            setJobs(industryData.jobs);
+            const term = industry !== 'All Industries' ? industry : `"${debouncedKeyword}"`;
+            setFallbackNotice(`Showing all ${industryData.jobs.length} open opportunities in ${term}`);
+            return;
+          }
+        }
+
+        // 3. Fallback to all active jobs
+        const allData = await api.getJobs({ status: 'Active', sort: sortBy });
+        if (allData.jobs && allData.jobs.length > 0) {
+          setJobs(allData.jobs);
+          setFallbackNotice(`Showing all ${allData.jobs.length} verified opportunities currently active in the directory`);
+          return;
+        }
+
+        setJobs([]);
+        setFallbackNotice(null);
+      }
     } catch (err: any) {
       setError(err.message || 'Failed to retrieve requisitions');
     } finally {
@@ -125,6 +174,7 @@ export const JobsPage: React.FC<JobsPageProps> = ({
     setExperienceLevel('All Levels');
     setSortBy('relevance');
     setVisibleCount(10);
+    setFallbackNotice(null);
   };
 
   const industriesList = [
@@ -269,7 +319,8 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                 key={c.code}
                 type="button"
                 onClick={() => {
-                  setLocation(c.name === 'Remote / Global' ? 'Remote' : c.name);
+                  const target = c.name === 'Remote / Global' ? 'Remote' : c.name;
+                  setLocation(isMatch ? '' : target);
                   setVisibleCount(10);
                 }}
                 className={`px-3 py-1.5 text-xs rounded-lg whitespace-nowrap transition-colors border flex items-center gap-1.5 font-semibold cursor-pointer ${
@@ -287,12 +338,12 @@ export const JobsPage: React.FC<JobsPageProps> = ({
         </div>
       </section>
 
-      {/* Directory Content Area */}
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-14 py-10">
+      {/* Directory Content Area with Viewport Height Guarantees to prevent Footer jump */}
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-14 py-10 min-h-[calc(100vh-220px)]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Left Column: Filter Sidebar (Desktop) */}
-          <aside className="hidden lg:block lg:col-span-3 sticky top-24 self-start max-h-[calc(100vh-6.5rem)] overflow-y-auto space-y-6 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+          <aside className="hidden lg:block lg:col-span-3 sticky top-24 self-start max-h-[calc(100vh-7rem)] overflow-y-auto space-y-6 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <span className="font-bold text-base text-slate-900">
                 Refine Search
@@ -321,7 +372,7 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                       key={wp}
                       type="button"
                       onClick={() => {
-                        setWorkplaceType(wp);
+                        setWorkplaceType(isActive && wp !== 'All' ? 'All' : wp);
                         setVisibleCount(10);
                       }}
                       className={`py-2 px-3 text-xs text-left border rounded-lg transition-all duration-150 font-semibold cursor-pointer active:scale-95 ${
@@ -350,7 +401,7 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                       key={emp}
                       type="button"
                       onClick={() => {
-                        setEmploymentType(emp);
+                        setEmploymentType(isActive && emp !== 'All Types' ? 'All Types' : emp);
                         setVisibleCount(10);
                       }}
                       className={`w-full py-2 px-3 text-xs text-left border rounded-lg transition-all duration-150 flex items-center justify-between font-medium cursor-pointer active:scale-[0.99] ${
@@ -380,7 +431,7 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                       key={lvl}
                       type="button"
                       onClick={() => {
-                        setExperienceLevel(lvl);
+                        setExperienceLevel(isActive && lvl !== 'All Levels' ? 'All Levels' : lvl);
                         setVisibleCount(10);
                       }}
                       className={`w-full py-2 px-3 text-xs text-left border rounded-lg transition-all duration-150 flex items-center justify-between font-medium cursor-pointer active:scale-[0.99] ${
@@ -425,7 +476,7 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                           key={wp}
                           type="button"
                           onClick={() => {
-                            setWorkplaceType(wp);
+                            setWorkplaceType(isActive && wp !== 'All' ? 'All' : wp);
                             setVisibleCount(10);
                           }}
                           className={`py-2 px-3 text-xs rounded-lg border font-semibold cursor-pointer ${
@@ -453,7 +504,7 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                           key={emp}
                           type="button"
                           onClick={() => {
-                            setEmploymentType(emp);
+                            setEmploymentType(isActive && emp !== 'All Types' ? 'All Types' : emp);
                             setVisibleCount(10);
                           }}
                           className={`py-2 px-3 text-xs rounded-lg border font-semibold cursor-pointer ${
@@ -481,7 +532,7 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                           key={lvl}
                           type="button"
                           onClick={() => {
-                            setExperienceLevel(lvl);
+                            setExperienceLevel(isActive && lvl !== 'All Levels' ? 'All Levels' : lvl);
                             setVisibleCount(10);
                           }}
                           className={`py-2 px-3 text-xs rounded-lg border font-semibold cursor-pointer ${
@@ -517,8 +568,8 @@ export const JobsPage: React.FC<JobsPageProps> = ({
             </div>
           )}
 
-          {/* Right Column: Requisition Ledger */}
-          <main className="col-span-1 lg:col-span-9 space-y-6 min-h-[650px]">
+          {/* Right Column: Requisition Ledger with min-h to prevent footer jump */}
+          <main className="col-span-1 lg:col-span-9 space-y-6 min-h-[850px] pb-16">
             
             {/* Ledger Status Bar */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-200 gap-4">
@@ -573,7 +624,26 @@ export const JobsPage: React.FC<JobsPageProps> = ({
               </div>
             )}
 
-            {/* Empty State */}
+            {/* Fallback Notice Banner when filters are intelligently relaxed */}
+            {fallbackNotice && (
+              <div className="p-4 bg-blue-50 border border-blue-200/80 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs shadow-xs animate-in fade-in duration-200">
+                <div className="flex items-center gap-2.5 text-blue-900 font-semibold">
+                  <div className="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center shrink-0">
+                    <Sparkles className="w-4 h-4" />
+                  </div>
+                  <span>{fallbackNotice}</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleClearFilters}
+                  className="px-3.5 py-1.5 bg-white hover:bg-slate-50 text-blue-700 border border-blue-200 rounded-lg font-bold text-xs shrink-0 transition-colors shadow-2xs cursor-pointer self-start sm:self-auto"
+                >
+                  Reset All Criteria
+                </button>
+              </div>
+            )}
+
+            {/* Empty State - only when zero jobs exist globally */}
             {!loading && !error && jobs.length === 0 && (
               <div className="border border-slate-200 bg-slate-50/50 rounded-2xl p-12 text-center space-y-4">
                 <Briefcase className="w-10 h-10 text-slate-400 mx-auto" />

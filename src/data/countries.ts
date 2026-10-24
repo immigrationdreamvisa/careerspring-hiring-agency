@@ -17,7 +17,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'North America',
     cities: ['New York', 'San Francisco', 'Chicago', 'Austin', 'Seattle'],
     region: 'Americas',
-    mandatesCount: 39,
+    mandatesCount: 41,
     featuredRole: 'Principal Distributed Systems Architect'
   },
   {
@@ -37,7 +37,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'North America',
     cities: ['Toronto', 'Vancouver', 'Montreal'],
     region: 'Americas',
-    mandatesCount: 11,
+    mandatesCount: 13,
     featuredRole: 'Principal Cloud Architect'
   },
   {
@@ -47,7 +47,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'European Union',
     cities: ['Berlin', 'Frankfurt', 'Munich'],
     region: 'Europe',
-    mandatesCount: 9,
+    mandatesCount: 10,
     featuredRole: 'VP of Autonomous Robotics'
   },
   {
@@ -57,7 +57,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'Middle East (GCC)',
     cities: ['Dubai (DIFC / DWC)', 'Abu Dhabi'],
     region: 'Middle East',
-    mandatesCount: 8,
+    mandatesCount: 11,
     featuredRole: 'EVP – Global Infrastructure'
   },
   {
@@ -67,7 +67,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'Oceania',
     cities: ['Sydney', 'Melbourne', 'Brisbane'],
     region: 'Asia-Pacific',
-    mandatesCount: 7,
+    mandatesCount: 9,
     featuredRole: 'Director of Renewable Energy Supply Chain'
   },
   {
@@ -77,7 +77,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'Asia-Pacific',
     cities: ['Marina Bay Financial Centre', 'CBD'],
     region: 'Asia-Pacific',
-    mandatesCount: 4,
+    mandatesCount: 8,
     featuredRole: 'Head of APAC Quantitative Trading'
   },
   {
@@ -87,7 +87,7 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     badge: 'Worldwide',
     cities: ['Anywhere', 'Distributed', 'Worldwide'],
     region: 'Global',
-    mandatesCount: 24,
+    mandatesCount: 28,
     featuredRole: 'Staff Distributed Systems & Rust Core Engineer'
   }
 ];

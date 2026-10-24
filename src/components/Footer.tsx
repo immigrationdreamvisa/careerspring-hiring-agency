@@ -143,7 +143,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <ul className="space-y-2.5 text-slate-300">
               <li>
                 <button
-                  onClick={() => onNavigate('jobs', { filters: { industry: 'Information Technology' } })}
+                  onClick={() => onNavigate('jobs', { industry: 'Information Technology' })}
                   className="hover:text-white transition-colors"
                 >
                   Information Technology
@@ -151,7 +151,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('jobs', { filters: { industry: 'Banking & Finance' } })}
+                  onClick={() => onNavigate('jobs', { industry: 'Banking & Finance' })}
                   className="hover:text-white transition-colors"
                 >
                   Banking &amp; Finance
@@ -159,7 +159,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('jobs', { filters: { industry: 'Healthcare' } })}
+                  onClick={() => onNavigate('jobs', { industry: 'Healthcare' })}
                   className="hover:text-white transition-colors"
                 >
                   Healthcare &amp; Science
@@ -167,7 +167,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('jobs', { filters: { industry: 'Manufacturing' } })}
+                  onClick={() => onNavigate('jobs', { industry: 'Manufacturing' })}
                   className="hover:text-white transition-colors"
                 >
                   Robotics &amp; Manufacturing
@@ -175,7 +175,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('jobs', { filters: { industry: 'Retail & E-commerce' } })}
+                  onClick={() => onNavigate('jobs', { industry: 'Retail & E-commerce' })}
                   className="hover:text-white transition-colors"
                 >
                   Retail &amp; E-Commerce

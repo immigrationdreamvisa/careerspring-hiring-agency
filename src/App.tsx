@@ -65,7 +65,7 @@ function MainLayout() {
 
   const handleNavigate = (page: PageView, params?: any) => {
     if (page === 'jobs' && params) {
-      setJobsFilterParams(params);
+      setJobsFilterParams(params?.filters || params);
     }
     if (page === 'job-details' && params?.jobId) {
       setSelectedJobId(params.jobId);
@@ -101,7 +101,7 @@ function MainLayout() {
       />
 
       {/* Main Page Body */}
-      <main className="flex-1">
+      <main className="flex-1 min-h-[calc(100vh-80px)] flex flex-col">
         {currentPage === 'home' && (
           <HomePage
             onNavigate={handleNavigate}

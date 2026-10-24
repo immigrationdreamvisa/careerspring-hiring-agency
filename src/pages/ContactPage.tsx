@@ -271,10 +271,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
               <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
                 {profile && activeTab === 'profile' && !isEditing
                   ? 'Your Candidate Profile &amp; Contact Hub'
-                  : 'Candidate Contact &amp; Profile Registration'}
+                  : 'Candidate Contact &amp; Profile Creation'}
               </h1>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                Register your credentials, career aspirations, and direct contact details. CareerSpring connects your verified profile with executive hiring committees.
+                Create your candidate profile with your career aspirations and direct contact details. CareerSpring connects your verified profile with executive hiring committees.
               </p>
             </div>
 

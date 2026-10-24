@@ -3998,6 +3998,621 @@
       "featured": false,
       "applicantsCount": 38,
       "postedDate": "2026-10-23"
+    },
+    {
+      "id": "job-196",
+      "title": "Senior Cloud Security Consultant (Contract)",
+      "company": "NorthShield Cyber Corp",
+      "companyLogoColor": "bg-indigo-600",
+      "location": "Toronto, ON, Canada",
+      "country": "Canada",
+      "workplaceType": "Hybrid",
+      "employmentType": "Contract",
+      "industry": "Information Technology",
+      "experienceLevel": "Senior",
+      "salaryMin": 140000,
+      "salaryMax": 180000,
+      "salaryCurrency": "USD",
+      "description": "Provide elite cybersecurity architecture and cloud posture remediation for Tier-1 Canadian financial and healthcare enterprises.",
+      "responsibilities": [
+        "Conduct cloud posture security assessments across AWS and Azure environments",
+        "Architect zero-trust access and IAM governance models",
+        "Deliver incident response and threat modeling workshops to client engineering teams"
+      ],
+      "skills": [
+        "AWS Security",
+        "Terraform",
+        "Zero Trust",
+        "SOC2",
+        "Kubernetes"
+      ],
+      "qualifications": [
+        "6+ years in cloud security architecture",
+        "CISSP or AWS Certified Security Specialty certification"
+      ],
+      "benefits": [
+        "Highly competitive daily contract rates",
+        "Flexible hybrid schedule in Toronto",
+        "Option for multi-year contract renewal"
+      ],
+      "status": "Active",
+      "featured": true,
+      "applicantsCount": 14,
+      "postedDate": "2026-10-24"
+    },
+    {
+      "id": "job-197",
+      "title": "Software Engineering Intern (Cloud Platforms)",
+      "company": "MapleTech Systems",
+      "companyLogoColor": "bg-emerald-600",
+      "location": "Vancouver, BC, Canada",
+      "country": "Canada",
+      "workplaceType": "On-site",
+      "employmentType": "Internship",
+      "industry": "Information Technology",
+      "experienceLevel": "Entry-level",
+      "salaryMin": 65000,
+      "salaryMax": 85000,
+      "salaryCurrency": "USD",
+      "description": "Work directly alongside principal systems architects building distributed data processing microservices in Vancouver.",
+      "responsibilities": [
+        "Contribute to TypeScript and Golang backend services",
+        "Write comprehensive unit and integration tests with 90%+ code coverage",
+        "Participate in daily architecture reviews and code pairing sessions"
+      ],
+      "skills": [
+        "TypeScript",
+        "Golang",
+        "Docker",
+        "PostgreSQL",
+        "Git"
+      ],
+      "qualifications": [
+        "Enrolled in or recent graduate of Computer Science or related degree program",
+        "Strong passion for distributed systems and clean software design"
+      ],
+      "benefits": [
+        "Dedicated 1-on-1 mentorship with Staff Software Engineers",
+        "Fast-track offer for full-time junior position upon internship completion",
+        "Full transit stipend and catered lunches"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 42,
+      "postedDate": "2026-10-24"
+    },
+    {
+      "id": "job-198",
+      "title": "Part-Time Technical Systems Specialist",
+      "company": "Bavaria Tech Automations",
+      "companyLogoColor": "bg-slate-700",
+      "location": "Berlin, Germany",
+      "country": "Germany",
+      "workplaceType": "Hybrid",
+      "employmentType": "Part-time",
+      "industry": "Information Technology",
+      "experienceLevel": "Mid-level",
+      "salaryMin": 55000,
+      "salaryMax": 78000,
+      "salaryCurrency": "USD",
+      "description": "Support enterprise Linux server infrastructure and database maintenance on a flexible 20-hour work week schedule.",
+      "responsibilities": [
+        "Monitor production database clusters and microservices uptime",
+        "Automate backup routines and disaster recovery drills",
+        "Collaborate with the DevOps team during scheduled release windows"
+      ],
+      "skills": [
+        "Linux",
+        "PostgreSQL",
+        "Bash",
+        "Docker",
+        "Grafana"
+      ],
+      "qualifications": [
+        "3+ years administrating Linux production server environments",
+        "Fluent professional English; German proficiency is a plus"
+      ],
+      "benefits": [
+        "Flexible 20 hours per week scheduling around family or study commitments",
+        "Central Berlin office with modern hardware and quiet spaces",
+        "Pro-rated health and retirement benefits"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 19,
+      "postedDate": "2026-10-24"
+    },
+    {
+      "id": "job-199",
+      "title": "Fintech Infrastructure Lead (Contract)",
+      "company": "Emirates Horizon Capital",
+      "companyLogoColor": "bg-amber-600",
+      "location": "Dubai (DIFC), United Arab Emirates",
+      "country": "United Arab Emirates",
+      "workplaceType": "Hybrid",
+      "employmentType": "Contract",
+      "industry": "Banking & Finance",
+      "experienceLevel": "Senior",
+      "salaryMin": 145000,
+      "salaryMax": 195000,
+      "salaryCurrency": "USD",
+      "description": "Architect resilient high-frequency clearing and settlement microservices for DIFC institutional trading desks.",
+      "responsibilities": [
+        "Design ultra-low-latency message processing pipelines with Apache Kafka and Redis",
+        "Implement financial compliance controls and automated audit trails",
+        "Coordinate with regional regulatory authorities on cloud sovereignty"
+      ],
+      "skills": [
+        "Apache Kafka",
+        "Fintech",
+        "Kubernetes",
+        "Redis",
+        "Python"
+      ],
+      "qualifications": [
+        "7+ years engineering high-throughput financial or fintech platforms",
+        "Deep expertise in distributed event-driven architectures"
+      ],
+      "benefits": [
+        "100% tax-free compensation package in Dubai DIFC",
+        "Executive housing and transportation allowances",
+        "Potential conversion to permanent Managing Director role"
+      ],
+      "status": "Active",
+      "featured": true,
+      "applicantsCount": 16,
+      "postedDate": "2026-10-24"
+    },
+    {
+      "id": "job-200",
+      "title": "Investment Banking Analyst Intern",
+      "company": "Gulf Sovereign Advisory",
+      "companyLogoColor": "bg-emerald-700",
+      "location": "Dubai (DIFC), United Arab Emirates",
+      "country": "United Arab Emirates",
+      "workplaceType": "On-site",
+      "employmentType": "Internship",
+      "industry": "Banking & Finance",
+      "experienceLevel": "Entry-level",
+      "salaryMin": 55000,
+      "salaryMax": 75000,
+      "salaryCurrency": "USD",
+      "description": "Prestigious 6-month analyst internship supporting cross-border sovereign fund transactions and M&A pitch decks.",
+      "responsibilities": [
+        "Build financial three-statement valuation models and DCF projections",
+        "Draft confidential investment committee memorandums and sector research briefs",
+        "Attend client presentations with senior transaction partners"
+      ],
+      "skills": [
+        "Financial Modeling",
+        "M&A",
+        "DCF Valuation",
+        "Excel",
+        "PowerPoint"
+      ],
+      "qualifications": [
+        "Bachelor or Master candidate in Finance, Economics, or Quantitative Sciences",
+        "Exceptional analytical acumen and attention to detail"
+      ],
+      "benefits": [
+        "Direct mentorship under global investment banking managing directors",
+        "Prestigious institutional credential in the Middle East financial hub",
+        "Accommodation assistance in Dubai DIFC district"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 52,
+      "postedDate": "2026-10-24"
+    },
+    {
+      "id": "job-201",
+      "title": "MENA Region Commercial Strategist",
+      "company": "Oasis Digital Ventures",
+      "companyLogoColor": "bg-blue-600",
+      "location": "Remote / Dubai, United Arab Emirates",
+      "country": "United Arab Emirates",
+      "workplaceType": "Remote",
+      "employmentType": "Full-time",
+      "industry": "Sales & Marketing",
+      "experienceLevel": "Senior",
+      "salaryMin": 130000,
+      "salaryMax": 170000,
+      "salaryCurrency": "USD",
+      "description": "Drive regional enterprise software expansion and partnerships across UAE, Saudi Arabia, and Qatar from a fully remote setup.",
+      "responsibilities": [
+        "Identify enterprise SaaS partnership opportunities with Tier-1 conglomerates",
+        "Negotiate enterprise licensing agreements valued at - ARR",
+        "Represent the company at leading Gulf tech conferences and summits"
+      ],
+      "skills": [
+        "Enterprise SaaS",
+        "B2B Sales",
+        "MENA Market",
+        "Contract Negotiation",
+        "Salesforce"
+      ],
+      "qualifications": [
+        "5+ years leading enterprise commercial growth in the Gulf region",
+        "Proven track record exceeding  annual quota"
+      ],
+      "benefits": [
+        "Full remote flexibility with home office technology stipend",
+        "Quarterly executive summit retreats in Dubai and Abu Dhabi",
+        "Uncapped commission structure"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 22,
+      "postedDate": "2026-10-24"
+    },
+    {
+      "id": "job-202",
+      "title": "Senior Quantitative Risk Engineer (Contract)",
+      "company": "LionCity Quantitative Partners",
+      "companyLogoColor": "bg-purple-700",
+      "location": "Singapore",
+      "country": "Singapore",
+      "workplaceType": "Hybrid",
+      "employmentType": "Contract",
+      "industry": "Banking & Finance",
+      "experienceLevel": "Senior",
+      "salaryMin": 155000,
+      "salaryMax": 200000,
+      "salaryCurrency": "USD",
+      "description": "Develop and backtest real-time algorithmic risk control systems for multi-asset institutional portfolios in Singapore.",
+      "responsibilities": [
+        "Implement real-time Value-at-Risk (VaR) and stress testing algorithms",
+        "Optimize algorithmic risk monitoring pipelines using C++ and Python",
+        "Collaborate with portfolio managers to define exposure limits"
+      ],
+      "skills": [
+        "Python",
+        "C++",
+        "Quantitative Risk",
+        "VaR Modeling",
+        "Algorithmic Trading"
+      ],
+      "qualifications": [
+        "Master or PhD in Financial Engineering, Mathematics, or Computer Science",
+        "5+ years in quantitative trading or hedge fund risk management"
+      ],
+      "benefits": [
+        "Top-tier daily contracting rates in Singapore Marina Bay",
+        "Cutting-edge HPC computing cluster access",
+        "Comprehensive medical and business travel coverage"
+      ],
+      "status": "Active",
+      "featured": true,
+      "applicantsCount": 18,
+      "postedDate": "2026-10-24"
+    },
+    {
+      "id": "job-203",
+      "title": "Regulatory Compliance Specialist (Part-time)",
+      "company": "Straits Financial Governance",
+      "companyLogoColor": "bg-cyan-700",
+      "location": "Singapore",
+      "country": "Singapore",
+      "workplaceType": "Hybrid",
+      "employmentType": "Part-time",
+      "industry": "Banking & Finance",
+      "experienceLevel": "Mid-level",
+      "salaryMin": 60000,
+      "salaryMax": 88000,
+      "salaryCurrency": "USD",
+      "description": "Manage MAS regulatory filings, AML audit controls, and licensing compliance on a structured 3-day per week schedule.",
+      "responsibilities": [
+        "Conduct periodic AML/KYC audits and risk evaluations",
+        "Prepare quarterly regulatory submissions to the Monetary Authority of Singapore (MAS)",
+        "Deliver compliance refresher training to front-office investment staff"
+      ],
+      "skills": [
+        "MAS Regulations",
+        "AML / KYC",
+        "Compliance Auditing",
+        "Financial Governance"
+      ],
+      "qualifications": [
+        "4+ years in Singapore financial services compliance or legal advisory",
+        "Thorough knowledge of MAS notices and guidelines"
+      ],
+      "benefits": [
+        "Flexible 24-hour work week model",
+        "Central Raffles Place office with premium amenities",
+        "Full pro-rated annual leave and medical allowances"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 15,
+      "postedDate": "2026-10-24"
+    },
+    {
+      "id": "job-204",
+      "title": "APAC Cloud Solution Architect",
+      "company": "Pan-Asian Cloud Infrastructure",
+      "companyLogoColor": "bg-sky-600",
+      "location": "Remote / Singapore",
+      "country": "Singapore",
+      "workplaceType": "Remote",
+      "employmentType": "Full-time",
+      "industry": "Information Technology",
+      "experienceLevel": "Lead / Executive",
+      "salaryMin": 165000,
+      "salaryMax": 215000,
+      "salaryCurrency": "USD",
+      "description": "Lead multi-cloud enterprise transformations and Kubernetes migration programs for major APAC banking and retail clients.",
+      "responsibilities": [
+        "Architect enterprise-grade cloud landing zones on AWS and GCP",
+        "Lead technical discovery sessions with enterprise CTOs and VPs of Engineering",
+        "Mentor senior cloud engineers across the Singapore and Tokyo engineering hubs"
+      ],
+      "skills": [
+        "AWS",
+        "GCP",
+        "Kubernetes",
+        "Cloud Migration",
+        "Enterprise Architecture"
+      ],
+      "qualifications": [
+        "8+ years in cloud consulting or enterprise solution architecture",
+        "AWS Solutions Architect Professional or Google Cloud Fellow certification"
+      ],
+      "benefits": [
+        "100% remote working arrangement anywhere in APAC time zones",
+        "Company equity ownership and annual executive bonuses",
+        "Annual tech conference travel budget"
+      ],
+      "status": "Active",
+      "featured": true,
+      "applicantsCount": 27,
+      "postedDate": "2026-10-24"
+    },
+    {
+      "id": "job-205",
+      "title": "Private Banking Operations Lead",
+      "company": "Temasek Heritage Wealth",
+      "companyLogoColor": "bg-emerald-800",
+      "location": "Singapore (Marina Bay)",
+      "country": "Singapore",
+      "workplaceType": "On-site",
+      "employmentType": "Full-time",
+      "industry": "Banking & Finance",
+      "experienceLevel": "Senior",
+      "salaryMin": 145000,
+      "salaryMax": 185000,
+      "salaryCurrency": "USD",
+      "description": "Oversee end-to-end custody settlement, client onboarding, and high-net-worth transactional operations in Marina Bay.",
+      "responsibilities": [
+        "Manage day-to-day operations team handling ultra-high-net-worth accounts",
+        "Streamline client onboarding turnaround time by 35% through digital automation",
+        "Coordinate with global custodian banks and clearing houses"
+      ],
+      "skills": [
+        "Private Wealth Management",
+        "Custody Settlements",
+        "Operations Leadership",
+        "SWIFT"
+      ],
+      "qualifications": [
+        "6+ years in private banking operations or wealth management administration",
+        "Proven track record leading high-performance operational teams"
+      ],
+      "benefits": [
+        "Prestigious Marina Bay Financial Centre executive suite",
+        "Comprehensive private health coverage for employee and dependents",
+        "Generous performance incentive bonus"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 21,
+      "postedDate": "2026-10-24"
+    },
+    {
+      "id": "job-206",
+      "title": "Biotech Clinical Research Associate (Part-Time)",
+      "company": "Oceania LifeSciences Research",
+      "companyLogoColor": "bg-rose-600",
+      "location": "Sydney, Australia",
+      "country": "Australia",
+      "workplaceType": "Hybrid",
+      "employmentType": "Part-time",
+      "industry": "Healthcare",
+      "experienceLevel": "Mid-level",
+      "salaryMin": 65000,
+      "salaryMax": 88000,
+      "salaryCurrency": "USD",
+      "description": "Coordinate oncology phase-II clinical trial monitoring and patient protocol documentation on a 20-hour week.",
+      "responsibilities": [
+        "Perform on-site and remote monitoring visits at Sydney hospital trial sites",
+        "Verify patient consent forms and electronic Case Report Forms (eCRFs)",
+        "Liaise with ethics committees and the Therapeutic Goods Administration (TGA)"
+      ],
+      "skills": [
+        "Clinical Trials",
+        "GCP Compliance",
+        "Oncology Protocol",
+        "eCRF",
+        "TGA Regulations"
+      ],
+      "qualifications": [
+        "3+ years clinical trial monitoring experience in biopharma or CRO",
+        "Degree in Life Sciences, Nursing, or Pharmacy"
+      ],
+      "benefits": [
+        "Flexible 20 hours per week schedule with hospital site visits",
+        "Comprehensive travel allowances and conference sponsorships",
+        "Collaborative Sydney harbour research park facility"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 17,
+      "postedDate": "2026-10-24"
+    },
+    {
+      "id": "job-207",
+      "title": "Full Stack Distributed Systems Engineer",
+      "company": "Sydney Cloud Foundry",
+      "companyLogoColor": "bg-blue-700",
+      "location": "Remote / Sydney, Australia",
+      "country": "Australia",
+      "workplaceType": "Remote",
+      "employmentType": "Full-time",
+      "industry": "Information Technology",
+      "experienceLevel": "Senior",
+      "salaryMin": 140000,
+      "salaryMax": 180000,
+      "salaryCurrency": "USD",
+      "description": "Build real-time collaborative cloud platforms using React, Node.js, and distributed microservices with full remote flexibility in Australia.",
+      "responsibilities": [
+        "Develop scalable APIs and event-driven backends using Node.js and TypeScript",
+        "Build responsive frontend interfaces with modern React, Tailwind CSS, and WebSockets",
+        "Implement robust CI/CD pipelines and infrastructure as code"
+      ],
+      "skills": [
+        "TypeScript",
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "WebSockets",
+        "AWS"
+      ],
+      "qualifications": [
+        "5+ years building full-stack web applications and microservices",
+        "Strong knowledge of asynchronous event-driven system architecture"
+      ],
+      "benefits": [
+        "100% remote across Australia with home office setup grant",
+        "Annual Australian Superannuation contribution match",
+        "Wellness and gym membership stipend"
+      ],
+      "status": "Active",
+      "featured": true,
+      "applicantsCount": 31,
+      "postedDate": "2026-10-24"
+    },
+    {
+      "id": "job-208",
+      "title": "AI & Machine Learning Research Intern",
+      "company": "DeepHorizon AI Labs",
+      "companyLogoColor": "bg-violet-700",
+      "location": "Remote / Global",
+      "country": "Remote",
+      "workplaceType": "Remote",
+      "employmentType": "Internship",
+      "industry": "Information Technology",
+      "experienceLevel": "Entry-level",
+      "salaryMin": 65000,
+      "salaryMax": 85000,
+      "salaryCurrency": "USD",
+      "description": "Conduct foundational research on transformer model optimization, quantization, and multimodal inference architectures.",
+      "responsibilities": [
+        "Implement and evaluate LLM quantization techniques (AWQ, GPTQ) in PyTorch",
+        "Benchmark throughput and latency on modern GPU clusters",
+        "Co-author research technical reports and open-source model evaluations"
+      ],
+      "skills": [
+        "PyTorch",
+        "Transformers",
+        "Python",
+        "LLM Fine-tuning",
+        "Hugging Face"
+      ],
+      "qualifications": [
+        "Pursuing or completed degree in Computer Science, AI, or Computational Mathematics",
+        "Hands-on experience with PyTorch and deep learning architectures"
+      ],
+      "benefits": [
+        "Direct co-authorship on cutting-edge AI publications",
+        "Generous GPU cloud compute allocation (H100 clusters)",
+        "100% remote global internship with competitive compensation"
+      ],
+      "status": "Active",
+      "featured": true,
+      "applicantsCount": 68,
+      "postedDate": "2026-10-24"
+    },
+    {
+      "id": "job-209",
+      "title": "Wealth Management Operations Associate (Part-Time)",
+      "company": "Meridian Capital Group",
+      "companyLogoColor": "bg-emerald-600",
+      "location": "New York, NY, USA",
+      "country": "United States",
+      "workplaceType": "Hybrid",
+      "employmentType": "Part-time",
+      "industry": "Banking & Finance",
+      "experienceLevel": "Mid-level",
+      "salaryMin": 70000,
+      "salaryMax": 95000,
+      "salaryCurrency": "USD",
+      "description": "Provide operational reconciliation, trade support, and client account servicing on a 25-hour week schedule in Manhattan.",
+      "responsibilities": [
+        "Reconcile daily trading activity across global equity and fixed income desks",
+        "Prepare asset allocation summaries for private wealth clients",
+        "Ensure strict adherence to FINRA and SEC regulatory reporting standards"
+      ],
+      "skills": [
+        "Wealth Management",
+        "Trade Reconciliation",
+        "Bloomberg Terminal",
+        "FINRA",
+        "Excel"
+      ],
+      "qualifications": [
+        "3+ years in financial operations or wealth management support",
+        "Series 7 or Series 63 is advantageous"
+      ],
+      "benefits": [
+        "Midtown Manhattan office with state-of-the-art facilities",
+        "Competitive pro-rated base pay and year-end discretionary bonus",
+        "Generous 401(k) matching program"
+      ],
+      "status": "Active",
+      "featured": false,
+      "applicantsCount": 23,
+      "postedDate": "2026-10-24"
+    },
+    {
+      "id": "job-210",
+      "title": "Systems Engineering & Cloud Architecture Intern",
+      "company": "Vertex Dynamics",
+      "companyLogoColor": "bg-blue-600",
+      "location": "San Francisco, CA, USA",
+      "country": "United States",
+      "workplaceType": "On-site",
+      "employmentType": "Internship",
+      "industry": "Information Technology",
+      "experienceLevel": "Entry-level",
+      "salaryMin": 75000,
+      "salaryMax": 95000,
+      "salaryCurrency": "USD",
+      "description": "Join the infrastructure engineering team in San Francisco building high-performance service mesh and Kubernetes platforms.",
+      "responsibilities": [
+        "Assist in optimizing Envoy proxy configurations and Istio service mesh routing",
+        "Implement automated Terraform infrastructure modules for staging clusters",
+        "Participate in chaos engineering simulations and reliability testing"
+      ],
+      "skills": [
+        "Kubernetes",
+        "Golang",
+        "Docker",
+        "Linux",
+        "Terraform",
+        "Prometheus"
+      ],
+      "qualifications": [
+        "Current student or recent graduate in Computer Science or Computer Engineering",
+        "Proficiency in at least one systems programming language (Go, Rust, or C++)"
+      ],
+      "benefits": [
+        "Top-tier Silicon Valley internship stipend and corporate housing assistance",
+        "Direct executive mentorship from the VP of Infrastructure",
+        "High conversion rate to full-time Associate Systems Engineer"
+      ],
+      "status": "Active",
+      "featured": true,
+      "applicantsCount": 54,
+      "postedDate": "2026-10-24"
     }
   ],
   "applications": [

@@ -239,15 +239,15 @@ class DatabaseStore {
     }
 
     if (filter?.employmentType && filter.employmentType !== 'All Types') {
-      result = result.filter((j) => j.employmentType === filter.employmentType);
+      result = result.filter((j) => j.employmentType.toLowerCase() === filter.employmentType!.toLowerCase());
     }
 
     if (filter?.workplaceType && filter.workplaceType !== 'All') {
-      result = result.filter((j) => j.workplaceType === filter.workplaceType);
+      result = result.filter((j) => j.workplaceType.toLowerCase() === filter.workplaceType!.toLowerCase());
     }
 
     if (filter?.experienceLevel && filter.experienceLevel !== 'All Levels') {
-      result = result.filter((j) => j.experienceLevel === filter.experienceLevel);
+      result = result.filter((j) => j.experienceLevel.toLowerCase() === filter.experienceLevel!.toLowerCase());
     }
 
     if (filter?.minSalary) {
