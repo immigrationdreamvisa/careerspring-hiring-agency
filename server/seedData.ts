@@ -13,6 +13,7 @@ export interface Job {
   title: string;
   company: string;
   companyLogoColor: string;
+  companyLogoUrl?: string;
   location: string;
   country?: string;
   workplaceType: 'Remote' | 'Hybrid' | 'On-site';
@@ -75,6 +76,7 @@ export interface Company {
   tagline: string;
   activeOpenings: number;
   logoAccent: string;
+  logoUrl?: string;
 }
 
 export const INITIAL_COMPANIES: Company[] = [
@@ -137,6 +139,17 @@ export const INITIAL_COMPANIES: Company[] = [
     tagline: 'Multimodal freight routing and real-time inventory networks',
     activeOpenings: 3,
     logoAccent: 'bg-slate-700',
+  },
+  {
+    id: 'c-7',
+    name: 'Global Activity Construction',
+    industry: 'Logistics & Supply Chain',
+    size: '250-500 employees',
+    location: 'Baku, Azerbaijan',
+    tagline: 'Leading building infrastructure, materials logistics, and project contracting',
+    activeOpenings: 1,
+    logoAccent: 'bg-[#18233C]',
+    logoUrl: '/global-activity-icon.png',
   },
 ];
 
@@ -4755,6 +4768,57 @@ export const INITIAL_JOBS: Job[] = [
     "featured": true,
     "applicantsCount": 54,
     "postedDate": "2026-10-24"
+  },
+  {
+    "id": "job-211",
+    "title": "Warehouse Worker",
+    "company": "Global Activity Construction",
+    "companyLogoColor": "bg-[#18233C]",
+    "companyLogoUrl": "/global-activity-icon.png",
+    "location": "Baku, Azerbaijan",
+    "country": "Azerbaijan, Azerbaijani",
+    "workplaceType": "On-site",
+    "employmentType": "Full-time",
+    "industry": "Logistics & Supply Chain",
+    "experienceLevel": "Entry-level",
+    "salaryMin": 21600,
+    "salaryMax": 24000,
+    "salaryCurrency": "AZN",
+    "description": "Global Activity Construction is seeking a motivated Warehouse Worker to join our logistics and materials warehousing facility in Baku, Azerbaijan. You will handle building materials, stage equipment for construction job sites, oversee loading and unloading operations, and maintain accurate digital inventory counts. Base compensation is 1,800 – 2,000 AZN monthly (calculated annual base: 21,600 – 24,000 AZN).",
+    "responsibilities": [
+      "Receive, inspect, offload, and log incoming shipments of building materials, hardware, and construction equipment.",
+      "Safely stage, organize, and prepare materials in warehouse bays for timely dispatch to active construction job sites across Baku.",
+      "Operate material handling equipment including hydraulic pallet jacks and forklifts in compliance with strict occupational safety rules.",
+      "Conduct regular physical inventory counts and reconcile warehouse records with the digital stock management system.",
+      "Check shipping manifests, bills of lading, and delivery notes for accuracy, noting any discrepancies or damaged cargo.",
+      "Maintain a clean, organized, hazard-free warehouse environment and observe all safety protocols."
+    ],
+    "skills": [
+      "Warehouse Operations",
+      "Material Handling",
+      "Inventory Management",
+      "Forklift / Pallet Jack",
+      "Loading & Unloading",
+      "Safety Protocols",
+      "Logistics Staging"
+    ],
+    "qualifications": [
+      "Prior experience in warehouse, distribution center, or construction yard operations preferred.",
+      "Physically capable of handling materials safely and adhering to standard health and safety regulations.",
+      "High degree of reliability, punctuality, and ability to work effectively in a team environment.",
+      "Fluency in Azerbaijani (conversational English or Russian is a plus)."
+    ],
+    "benefits": [
+      "Competitive monthly salary: 1,800 – 2,000 AZN (calculated annual base of 21,600 – 24,000 AZN)",
+      "Full occupational safety gear (PPE) and protective equipment supplied",
+      "Health insurance coverage and workplace injury protection",
+      "Paid annual leave, official state holidays, and overtime pay when applicable",
+      "Daily company lunch allowance and shuttle service from central Baku transit points"
+    ],
+    "status": "Active",
+    "featured": true,
+    "applicantsCount": 6,
+    "postedDate": "2026-10-26"
   }
 ];
 

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" width="260" height="64" fill="none">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;display=swap');
+      .brand-title {
+        font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        fill: #FFFFFF;
+      }
+      .brand-subtitle {
+        font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+        font-size: 9.5px;
+        font-weight: 400;
+        letter-spacing: 0.26em;
+        fill: #CBD5E1;
+      }
+    </style>
+  </defs>
+  <rect width="260" height="64" fill="#18233C"/>
+  <text x="130" y="32" text-anchor="middle" class="brand-title">GLOBAL ACTIVITY</text>
+  <text x="130" y="49" text-anchor="middle" class="brand-subtitle">CONSTRUCTION COMPANY</text>
+</svg>

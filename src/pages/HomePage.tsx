@@ -54,18 +54,22 @@ export const HomePage: React.FC<HomePageProps> = ({
     if (text.includes('emirates') || text.includes('uae') || text.includes('dubai')) return '🇦🇪';
     if (text.includes('singapore')) return '🇸🇬';
     if (text.includes('australia') || text.includes('sydney')) return '🇦🇺';
+    if (text.includes('azerbaijan') || text.includes('azerbaijani') || text.includes('baku')) return '🇦🇿';
     return '🌐';
   };
 
   // Currency formatted salary
   const formatSalary = (min: number, max: number, currency: string) => {
     const symbol =
+      currency === 'AZN' ? '₼' :
       currency === 'GBP' ? '£' :
       currency === 'EUR' ? '€' :
       currency === 'CAD' ? 'CAD $' :
       currency === 'SGD' ? 'SGD $' :
       currency === 'AUD' ? 'AUD $' : '$';
-    return `${symbol}${(min / 1000).toFixed(0)}k – ${symbol}${(max / 1000).toFixed(0)}k / yr`;
+    const minK = min >= 1000 ? `${(min / 1000).toFixed(min % 1000 === 0 ? 0 : 1)}k` : min.toLocaleString();
+    const maxK = max >= 1000 ? `${(max / 1000).toFixed(max % 1000 === 0 ? 0 : 1)}k` : max.toLocaleString();
+    return `${symbol}${minK} – ${symbol}${maxK}${currency === 'AZN' ? ' AZN' : ''} / yr`;
   };
 
   // Filter jobs by selected category, workplace model, and search keyword
@@ -478,9 +482,17 @@ export const HomePage: React.FC<HomePageProps> = ({
                       <div className="flex items-start justify-between gap-3">
                         <div className="flex items-center gap-3">
                           <div
-                            className={`w-10 h-10 rounded-xl ${job.companyLogoColor || 'bg-slate-900'} text-white font-sans text-base flex items-center justify-center font-bold shadow-xs`}
+                            className={`w-10 h-10 rounded-xl ${job.companyLogoColor || 'bg-slate-900'} text-white font-sans text-base flex items-center justify-center font-bold shadow-xs shrink-0 overflow-hidden border border-slate-100/50`}
                           >
-                            {job.company.charAt(0)}
+                            {job.companyLogoUrl ? (
+                              <img
+                                src={job.companyLogoUrl}
+                                alt={job.company}
+                                className="w-full h-full object-contain p-0.5"
+                              />
+                            ) : (
+                              job.company.charAt(0)
+                            )}
                           </div>
                           <div>
                             <h4 className="text-xs font-bold text-slate-900 truncate max-w-[180px]">

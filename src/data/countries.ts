@@ -81,6 +81,16 @@ export const COUNTRY_SECTIONS: CountrySection[] = [
     featuredRole: 'Head of APAC Quantitative Trading'
   },
   {
+    code: 'AZ',
+    name: 'Azerbaijan',
+    flag: '🇦🇿',
+    badge: 'South Caucasus / Eurasia',
+    cities: ['Baku', 'Ganja', 'Sumqayit'],
+    region: 'Eurasia',
+    mandatesCount: 1,
+    featuredRole: 'Warehouse Worker – Global Activity Construction'
+  },
+  {
     code: 'GLOBAL',
     name: 'Remote / Global',
     flag: '🌐',

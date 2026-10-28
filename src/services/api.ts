@@ -92,6 +92,9 @@ function filterClientJobs(filter?: {
       if (loc === 'australia' || loc === 'au') {
         return jobCountry.includes('australia') || jobLoc.includes('australia') || jobLoc.includes('sydney') || jobLoc.includes('melbourne');
       }
+      if (loc === 'azerbaijan' || loc === 'azerbaijani' || loc === 'az') {
+        return jobCountry.includes('azerbaijan') || jobCountry.includes('azerbaijani') || jobLoc.includes('baku') || jobLoc.includes('azerbaijan');
+      }
       if (loc === 'remote' || loc === 'global') {
         if (filter?.workplaceType && filter.workplaceType !== 'All' && filter.workplaceType !== 'Remote') {
           return true;

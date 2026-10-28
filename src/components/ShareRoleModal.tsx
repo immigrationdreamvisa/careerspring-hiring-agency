@@ -36,12 +36,15 @@ export const ShareRoleModal: React.FC<ShareRoleModalProps> = ({
 
   const formatSalary = (min: number, max: number, currency: string = 'USD') => {
     const symbol =
+      currency === 'AZN' ? '₼' :
       currency === 'GBP' ? '£' :
       currency === 'EUR' ? '€' :
       currency === 'CAD' ? 'CAD $' :
       currency === 'SGD' ? 'SGD $' :
       currency === 'AUD' ? 'AUD $' : '$';
-    return `${symbol}${(min / 1000).toFixed(0)}k – ${symbol}${(max / 1000).toFixed(0)}k`;
+    const minK = min >= 1000 ? `${(min / 1000).toFixed(min % 1000 === 0 ? 0 : 1)}k` : min.toLocaleString();
+    const maxK = max >= 1000 ? `${(max / 1000).toFixed(max % 1000 === 0 ? 0 : 1)}k` : max.toLocaleString();
+    return `${symbol}${minK} – ${symbol}${maxK}${currency === 'AZN' ? ' AZN' : ''}`;
   };
 
   const referralPitch = `Hi! I found an executive opportunity at ${job.company} that might be a great fit: ${job.title} (${job.location}) — ${formatSalary(job.salaryMin, job.salaryMax, job.salaryCurrency)} base. Check it out and apply here: ${shareUrl}`;
@@ -128,9 +131,17 @@ export const ShareRoleModal: React.FC<ShareRoleModalProps> = ({
               </h4>
             </div>
             <div
-              className={`w-9 h-9 rounded-xl ${job.companyLogoColor || 'bg-slate-900'} text-white font-bold text-sm flex items-center justify-center shrink-0 shadow-xs`}
+              className={`w-9 h-9 rounded-xl ${job.companyLogoColor || 'bg-slate-900'} text-white font-bold text-sm flex items-center justify-center shrink-0 shadow-xs overflow-hidden border border-slate-100/50`}
             >
-              {job.company.charAt(0)}
+              {job.companyLogoUrl ? (
+                <img
+                  src={job.companyLogoUrl}
+                  alt={job.company}
+                  className="w-full h-full object-contain p-0.5"
+                />
+              ) : (
+                job.company.charAt(0)
+              )}
             </div>
           </div>
 

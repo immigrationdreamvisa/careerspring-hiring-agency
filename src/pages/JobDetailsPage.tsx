@@ -76,29 +76,36 @@ export const JobDetailsPage: React.FC<JobDetailsPageProps> = ({
     if (text.includes('france') || text.includes('paris')) return '🇫🇷';
     if (text.includes('netherlands') || text.includes('amsterdam')) return '🇳🇱';
     if (text.includes('switzerland') || text.includes('zurich')) return '🇨🇭';
+    if (text.includes('azerbaijan') || text.includes('azerbaijani') || text.includes('baku')) return '🇦🇿';
     return '🌐';
   };
 
   const formatSalary = (min: number, max: number, currency: string = 'USD') => {
     const symbol =
+      currency === 'AZN' ? '₼' :
       currency === 'GBP' ? '£' :
       currency === 'EUR' ? '€' :
       currency === 'CAD' ? 'CAD $' :
       currency === 'SGD' ? 'SGD $' :
       currency === 'AUD' ? 'AUD $' : '$';
-    return `${symbol}${(min / 1000).toFixed(0)}k – ${symbol}${(max / 1000).toFixed(0)}k`;
+    const minK = min >= 1000 ? `${(min / 1000).toFixed(min % 1000 === 0 ? 0 : 1)}k` : min.toLocaleString();
+    const maxK = max >= 1000 ? `${(max / 1000).toFixed(max % 1000 === 0 ? 0 : 1)}k` : max.toLocaleString();
+    return `${symbol}${minK} – ${symbol}${maxK}${currency === 'AZN' ? ' AZN' : ''}`;
   };
 
   const formatMonthlyEstimate = (min: number, max: number, currency: string = 'USD') => {
     const symbol =
+      currency === 'AZN' ? '₼' :
       currency === 'GBP' ? '£' :
       currency === 'EUR' ? '€' :
       currency === 'CAD' ? 'CAD $' :
       currency === 'SGD' ? 'SGD $' :
       currency === 'AUD' ? 'AUD $' : '$';
-    const minM = (min / 12 / 1000).toFixed(1);
-    const maxM = (max / 12 / 1000).toFixed(1);
-    return `${symbol}${minM}k – ${symbol}${maxM}k / mo`;
+    const minM = Math.round(min / 12);
+    const maxM = Math.round(max / 12);
+    const minMStr = minM >= 10000 ? `${(minM / 1000).toFixed(1)}k` : minM.toLocaleString();
+    const maxMStr = maxM >= 10000 ? `${(maxM / 1000).toFixed(1)}k` : maxM.toLocaleString();
+    return `${symbol}${minMStr} – ${symbol}${maxMStr}${currency === 'AZN' ? ' AZN' : ''} / mo`;
   };
 
   if (loading) {
@@ -208,9 +215,17 @@ export const JobDetailsPage: React.FC<JobDetailsPageProps> = ({
               {/* Company Info Box */}
               <div className="flex items-center gap-4">
                 <div
-                  className={`w-14 h-14 rounded-2xl ${job.companyLogoColor || 'bg-slate-900'} text-white font-bold text-xl flex items-center justify-center shadow-sm shrink-0`}
+                  className={`w-14 h-14 rounded-2xl ${job.companyLogoColor || 'bg-slate-900'} text-white font-bold text-xl flex items-center justify-center shadow-sm shrink-0 overflow-hidden border border-slate-100/50`}
                 >
-                  {job.company.charAt(0)}
+                  {job.companyLogoUrl ? (
+                    <img
+                      src={job.companyLogoUrl}
+                      alt={job.company}
+                      className="w-full h-full object-contain p-1"
+                    />
+                  ) : (
+                    job.company.charAt(0)
+                  )}
                 </div>
                 <div>
                   <div className="flex items-center gap-2">

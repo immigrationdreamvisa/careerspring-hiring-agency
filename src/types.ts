@@ -11,6 +11,7 @@ export interface Job {
   title: string;
   company: string;
   companyLogoColor: string;
+  companyLogoUrl?: string;
   location: string;
   country?: string;
   workplaceType: 'Remote' | 'Hybrid' | 'On-site';
@@ -73,6 +74,7 @@ export interface Company {
   tagline: string;
   activeOpenings: number;
   logoAccent: string;
+  logoUrl?: string;
 }
 
 export interface SystemStatus {

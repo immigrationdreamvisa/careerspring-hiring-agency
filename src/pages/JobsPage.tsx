@@ -193,6 +193,19 @@ export const JobsPage: React.FC<JobsPageProps> = ({
   const employmentTypesList = ['All Types', 'Full-time', 'Contract', 'Part-time', 'Internship'];
   const experienceLevelsList = ['All Levels', 'Entry-level', 'Mid-level', 'Senior', 'Lead / Executive'];
 
+  const formatJobSalary = (min: number, max: number, currency: string = 'USD') => {
+    const symbol =
+      currency === 'AZN' ? '₼' :
+      currency === 'GBP' ? '£' :
+      currency === 'EUR' ? '€' :
+      currency === 'CAD' ? 'CAD $' :
+      currency === 'SGD' ? 'SGD $' :
+      currency === 'AUD' ? 'AUD $' : '$';
+    const minK = min >= 1000 ? `${(min / 1000).toFixed(min % 1000 === 0 ? 0 : 1)}k` : min.toLocaleString();
+    const maxK = max >= 1000 ? `${(max / 1000).toFixed(max % 1000 === 0 ? 0 : 1)}k` : max.toLocaleString();
+    return `${symbol}${minK} – ${symbol}${maxK}${currency === 'AZN' ? ' AZN' : ''}`;
+  };
+
   const displayedJobs = jobs.slice(0, visibleCount);
   const hasMore = visibleCount < jobs.length;
   const isFiltered = Boolean(
@@ -692,16 +705,31 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                           )}
                         </div>
 
-                        <div>
-                          <button
-                            onClick={() => onOpenJobDetails(job.id)}
-                            className="text-left font-bold text-xl sm:text-2xl text-slate-900 group-hover:text-blue-600 transition-colors leading-snug"
+                        <div className="flex items-start gap-3.5">
+                          <div
+                            className={`w-11 h-11 rounded-xl ${job.companyLogoColor || 'bg-slate-900'} text-white font-bold text-sm flex items-center justify-center shrink-0 shadow-2xs overflow-hidden border border-slate-100/50 mt-0.5`}
                           >
-                            {job.title}
-                          </button>
-                          <p className="text-xs text-slate-500 font-medium mt-1">
-                            {job.company} — <span className="text-slate-800">{job.location}</span>
-                          </p>
+                            {job.companyLogoUrl ? (
+                              <img
+                                src={job.companyLogoUrl}
+                                alt={job.company}
+                                className="w-full h-full object-contain p-1"
+                              />
+                            ) : (
+                              job.company.charAt(0)
+                            )}
+                          </div>
+                          <div>
+                            <button
+                              onClick={() => onOpenJobDetails(job.id)}
+                              className="text-left font-bold text-xl sm:text-2xl text-slate-900 group-hover:text-blue-600 transition-colors leading-snug"
+                            >
+                              {job.title}
+                            </button>
+                            <p className="text-xs text-slate-500 font-medium mt-1">
+                              {job.company} — <span className="text-slate-800">{job.location}</span>
+                            </p>
+                          </div>
                         </div>
 
                         <p className="text-xs sm:text-sm text-slate-600 font-normal line-clamp-2 leading-relaxed">
@@ -735,7 +763,7 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                             Annual Base
                           </span>
                           <span className="font-bold text-lg sm:text-xl text-slate-900">
-                            ${(job.salaryMin / 1000).toFixed(0)}k – ${(job.salaryMax / 1000).toFixed(0)}k
+                            {formatJobSalary(job.salaryMin, job.salaryMax, job.salaryCurrency)}
                           </span>
                           <span className="text-xs text-slate-500 block font-medium">
                             {job.employmentType}
