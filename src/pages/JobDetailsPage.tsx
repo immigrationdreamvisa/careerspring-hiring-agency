@@ -693,6 +693,31 @@ export const JobDetailsPage: React.FC<JobDetailsPageProps> = ({
           </aside>
         </div>
       </main>
+
+      {/* Sticky Mobile Action Bar */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-md border-t border-slate-200 px-4 py-3 shadow-lg flex items-center justify-between gap-3">
+        <div className="min-w-0 flex-1">
+          <p className="text-xs font-bold text-slate-900 truncate">{job.title}</p>
+          <p className="text-[11px] font-semibold text-blue-600">
+            {formatSalary(job.salaryMin, job.salaryMax, job.salaryCurrency)}
+          </p>
+        </div>
+        <div className="flex items-center gap-2 shrink-0">
+          <button
+            onClick={handleWhatsApp}
+            className="p-2.5 rounded-lg border border-slate-200 bg-white hover:border-[#25D366] text-slate-600 hover:text-[#25D366] transition-all"
+            aria-label="Share via WhatsApp"
+          >
+            <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
+          </button>
+          <button
+            onClick={() => onOpenApplyModal(job)}
+            className="px-5 py-2.5 bg-slate-900 hover:bg-blue-600 active:scale-95 text-white text-xs font-bold rounded-lg shadow-sm transition-all"
+          >
+            Apply Now
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

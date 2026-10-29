@@ -91,6 +91,7 @@ export interface IndustryData {
   typicalRoles: string[];
   metrics: { label: string; value: string }[];
   accent: string;
+  jobIndustry: string;
 }
 
 export const INDUSTRIES_DATA: IndustryData[] = [
@@ -112,6 +113,7 @@ export const INDUSTRIES_DATA: IndustryData[] = [
       { label: 'Placements Last Year', value: '420+' },
     ],
     accent: '#451B27',
+    jobIndustry: 'Information Technology',
   },
   {
     id: 'banking-capital-markets',
@@ -131,6 +133,7 @@ export const INDUSTRIES_DATA: IndustryData[] = [
       { label: 'Institutional Clients', value: '110+' },
     ],
     accent: '#451B27',
+    jobIndustry: 'Banking & Finance',
   },
   {
     id: 'healthcare-life-sciences',
@@ -150,6 +153,7 @@ export const INDUSTRIES_DATA: IndustryData[] = [
       { label: 'Placements Last Year', value: '280+' },
     ],
     accent: '#451B27',
+    jobIndustry: 'Healthcare',
   },
   {
     id: 'manufacturing-robotics',
@@ -169,6 +173,7 @@ export const INDUSTRIES_DATA: IndustryData[] = [
       { label: 'Avg Time to Shortlist', value: '12 Days' },
     ],
     accent: '#451B27',
+    jobIndustry: 'Manufacturing',
   },
   {
     id: 'retail-omnichannel',
@@ -188,6 +193,7 @@ export const INDUSTRIES_DATA: IndustryData[] = [
       { label: 'Client Satisfaction', value: '98%' },
     ],
     accent: '#451B27',
+    jobIndustry: 'Retail & E-commerce',
   },
   {
     id: 'logistics-supply-chain',
@@ -207,6 +213,7 @@ export const INDUSTRIES_DATA: IndustryData[] = [
       { label: 'Placements Last Year', value: '240+' },
     ],
     accent: '#451B27',
+    jobIndustry: 'Logistics & Supply Chain',
   },
 ];
 

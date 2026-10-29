@@ -596,32 +596,4 @@ export const api = {
     }
     return { companies: INITIAL_COMPANIES };
   },
-
-  // Contact
-  async sendContactMessage(payload: {
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
-  }): Promise<{ success: boolean; message: string }> {
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: getHeaders(),
-        body: JSON.stringify(payload),
-      });
-      if (res.ok) {
-        const ct = res.headers.get('content-type');
-        if (ct && ct.includes('application/json')) {
-          return await res.json();
-        }
-      }
-    } catch {
-      // Fallback
-    }
-    return {
-      success: true,
-      message: 'Thank you for reaching out to TalentBridge. Our advisory team will respond shortly.',
-    };
-  },
 };

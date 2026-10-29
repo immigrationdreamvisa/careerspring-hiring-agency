@@ -236,9 +236,36 @@ class DatabaseStore {
     }
 
     if (filter?.industry && filter.industry !== 'All Industries') {
-      result = result.filter(
-        (j) => j.industry.toLowerCase() === filter.industry?.toLowerCase()
-      );
+      const indQuery = filter.industry.toLowerCase().trim();
+      result = result.filter((j) => {
+        const jInd = j.industry.toLowerCase().trim();
+        if (jInd === indQuery) return true;
+        // Technology / Software
+        if (indQuery.includes('tech') || indQuery.includes('software')) {
+          return jInd.includes('tech') || jInd.includes('information technology');
+        }
+        // Banking / Capital Markets / Finance
+        if (indQuery.includes('bank') || indQuery.includes('financ') || indQuery.includes('capital')) {
+          return jInd.includes('bank') || jInd.includes('finance');
+        }
+        // Healthcare / Life Sciences / Medicine
+        if (indQuery.includes('health') || indQuery.includes('medic') || indQuery.includes('pharma') || indQuery.includes('clinical') || indQuery.includes('science')) {
+          return jInd.includes('health');
+        }
+        // Manufacturing / Industrial / Robotics
+        if (indQuery.includes('manufactur') || indQuery.includes('robot') || indQuery.includes('industri')) {
+          return jInd.includes('manufactur');
+        }
+        // Retail / Omnichannel / Commerce
+        if (indQuery.includes('retail') || indQuery.includes('e-commerce') || indQuery.includes('commerce')) {
+          return jInd.includes('retail') || jInd.includes('e-commerce');
+        }
+        // Logistics / Supply Chain
+        if (indQuery.includes('logist') || indQuery.includes('supply')) {
+          return jInd.includes('logist') || jInd.includes('supply');
+        }
+        return false;
+      });
     }
 
     if (filter?.employmentType && filter.employmentType !== 'All Types') {

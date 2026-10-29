@@ -482,19 +482,5 @@ app.get('/api/companies', (_req, res) => {
   res.json({ companies: db.getCompanies() });
 });
 
-// Contact Us Form Submission
-app.post('/api/contact', (req, res) => {
-  const { name, email, subject, message } = req.body;
-  if (!name || !email || !message) {
-    return res.status(400).json({ error: 'Name, email, and message are required.' });
-  }
-  // Log message and acknowledge
-  console.log(`[TalentBridge Contact] Message from ${name} (${email}): ${subject || 'No subject'}`);
-  res.json({
-    success: true,
-    message: 'Thank you for reaching out to TalentBridge. Our advisory team will respond shortly.',
-  });
-});
-
 export default app;
 export { app };

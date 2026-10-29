@@ -87,10 +87,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
 
             <div className="lg:col-span-4 lg:text-right">
               <button
-                onClick={() => onNavigate('hire-talent')}
+                onClick={() => onNavigate('jobs')}
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-slate-900 hover:bg-blue-600 text-white text-xs uppercase tracking-wider font-bold rounded-xl transition-colors shadow-sm"
               >
-                <span>Partner With Our Firm</span>
+                <span>Explore Career Opportunities</span>
                 <ArrowUpRight className="w-4 h-4" />
               </button>
             </div>
@@ -221,10 +221,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               Explore Job Openings
             </button>
             <button
-              onClick={() => onNavigate('contact')}
+              onClick={() => onNavigate('industries')}
               className="px-7 py-3 border border-slate-700 hover:border-slate-500 text-white text-xs uppercase tracking-wider font-bold rounded-xl transition-colors bg-slate-900"
             >
-              Contact Advisory Team
+              Sector Practices
             </button>
           </div>
         </div>

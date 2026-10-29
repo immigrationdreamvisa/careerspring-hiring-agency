@@ -10,7 +10,6 @@ import {
   ArrowUpRight,
   Check,
   ShieldCheck,
-  Bell,
 } from 'lucide-react';
 
 interface JobApplicationModalProps {
@@ -204,18 +203,12 @@ export const JobApplicationModal: React.FC<JobApplicationModalProps> = ({
               >
                 Close
               </button>
-              {onNavigateToApplications && (
-                <button
-                  onClick={() => {
-                    resetForm();
-                    onNavigateToApplications();
-                  }}
-                  className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl transition-all shadow-sm flex items-center gap-1.5"
-                >
-                  <Bell className="w-3.5 h-3.5" />
-                  <span>View All Applications &amp; Status</span>
-                </button>
-              )}
+              <button
+                onClick={resetForm}
+                className="px-6 py-2.5 bg-slate-900 hover:bg-blue-600 text-white text-xs font-bold rounded-xl transition-all shadow-sm"
+              >
+                <span>Done</span>
+              </button>
             </div>
           </div>
         ) : (

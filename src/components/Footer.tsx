@@ -26,7 +26,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <footer className="border-t border-slate-200 bg-slate-950 text-slate-300 pt-16 pb-12 px-6 lg:px-14">
       <div className="max-w-[1440px] mx-auto space-y-14">
-        
+
         {/* Top Section: Wordmark, Mission & Newsletter */}
         <div className="border-b border-slate-800 pb-12 flex flex-col lg:flex-row lg:items-end justify-between gap-10">
           <div className="space-y-3 max-w-xl">
@@ -88,8 +88,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
         </div>
 
-        {/* 4-Column Directory Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-xs font-sans">
+        {/* 3-Column Directory Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-14 text-xs font-sans">
           {/* Col 1: Navigation */}
           <div className="space-y-4">
             <span className="text-xs text-slate-400 uppercase tracking-wider font-bold block">
@@ -97,38 +97,27 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </span>
             <ul className="space-y-2.5 text-slate-300">
               <li>
-                <button onClick={() => onNavigate('home')} className="hover:text-white transition-colors">
+                <button onClick={() => onNavigate('home')} className="hover:text-white transition-colors text-left cursor-pointer">
                   Overview &amp; Home
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('jobs')} className="hover:text-white transition-colors">
+                <button onClick={() => onNavigate('jobs')} className="hover:text-white transition-colors text-left cursor-pointer">
                   Talent Search / Jobs
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('applications')} className="hover:text-white text-blue-400 font-semibold transition-colors flex items-center gap-1.5">
-                  <span>Applications &amp; Status</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-                </button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate('hire-talent')} className="hover:text-white transition-colors">
-                  For Employers &amp; Boards
-                </button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate('industries')} className="hover:text-white transition-colors">
+                <button onClick={() => onNavigate('industries')} className="hover:text-white transition-colors text-left cursor-pointer">
                   Sector Practices
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('about')} className="hover:text-white transition-colors">
+                <button onClick={() => onNavigate('about')} className="hover:text-white transition-colors text-left cursor-pointer">
                   About Our Firm
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('contact')} className="hover:text-white transition-colors">
+                <button onClick={() => onNavigate('about')} className="hover:text-white transition-colors text-left cursor-pointer">
                   Global Offices
                 </button>
               </li>
@@ -144,7 +133,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <li>
                 <button
                   onClick={() => onNavigate('jobs', { industry: 'Information Technology' })}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   Information Technology
                 </button>
@@ -152,7 +141,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <li>
                 <button
                   onClick={() => onNavigate('jobs', { industry: 'Banking & Finance' })}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   Banking &amp; Finance
                 </button>
@@ -160,7 +149,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <li>
                 <button
                   onClick={() => onNavigate('jobs', { industry: 'Healthcare' })}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   Healthcare &amp; Science
                 </button>
@@ -168,7 +157,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <li>
                 <button
                   onClick={() => onNavigate('jobs', { industry: 'Manufacturing' })}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   Robotics &amp; Manufacturing
                 </button>
@@ -176,7 +165,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <li>
                 <button
                   onClick={() => onNavigate('jobs', { industry: 'Retail & E-commerce' })}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   Retail &amp; E-Commerce
                 </button>
@@ -187,52 +176,30 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Col 3: Practices */}
           <div className="space-y-4">
             <span className="text-xs text-slate-400 uppercase tracking-wider font-bold block">
-              03 / ENGAGEMENT
+              03 / OPPORTUNITIES
             </span>
             <ul className="space-y-2.5 text-slate-300">
               <li>
-                <button onClick={() => onNavigate('hire-talent')} className="hover:text-white transition-colors">
-                  Retained Executive Search
+                <button onClick={() => onNavigate('jobs')} className="hover:text-white transition-colors text-left cursor-pointer">
+                  Executive &amp; Leadership Roles
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('hire-talent')} className="hover:text-white transition-colors">
-                  Permanent Recruitment
+                <button onClick={() => onNavigate('jobs')} className="hover:text-white transition-colors text-left cursor-pointer">
+                  Permanent Positions
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('hire-talent')} className="hover:text-white transition-colors">
-                  Specialist Advisory
+                <button onClick={() => onNavigate('jobs', { location: 'Remote' })} className="hover:text-white transition-colors text-left cursor-pointer">
+                  Remote &amp; Global Roles
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('hire-talent')} className="hover:text-white transition-colors">
-                  Board &amp; Leadership Advisory
+                <button onClick={() => onNavigate('jobs')} className="hover:text-white transition-colors text-left cursor-pointer">
+                  Contract &amp; Interim Mandates
                 </button>
               </li>
             </ul>
-          </div>
-
-          {/* Col 4: Regional Hubs */}
-          <div className="space-y-4">
-            <span className="text-xs text-slate-400 uppercase tracking-wider font-bold block">
-              04 / REGIONAL HUBS
-            </span>
-            <div className="text-slate-300 space-y-3 font-sans leading-relaxed">
-              <div>
-                <span className="text-white font-semibold block">San Francisco HQ</span>
-                <p className="text-[11px] text-slate-400">100 Montgomery St, Suite 2400</p>
-              </div>
-              <div>
-                <span className="text-white font-semibold block">New York Office</span>
-                <p className="text-[11px] text-slate-400">452 Fifth Ave, 18th Floor</p>
-              </div>
-              <div>
-                <span className="text-white font-semibold block">London Office</span>
-                <p className="text-[11px] text-slate-400">100 Bishopsgate, Level 19</p>
-              </div>
-              <p className="font-mono text-xs text-blue-400 pt-1">+1 (800) 555-0199</p>
-            </div>
           </div>
         </div>
 
@@ -243,13 +210,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div className="flex items-center gap-6 text-xs">
             <button
               onClick={() => setActiveLegalModal('privacy')}
-              className="hover:text-white transition-colors"
+              className="hover:text-white transition-colors cursor-pointer"
             >
               Privacy Protocol
             </button>
             <button
               onClick={() => setActiveLegalModal('terms')}
-              className="hover:text-white transition-colors"
+              className="hover:text-white transition-colors cursor-pointer"
             >
               Terms of Engagement
             </button>

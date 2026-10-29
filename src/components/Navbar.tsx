@@ -12,11 +12,10 @@ import {
   Search,
   MapPin,
   Check,
-  Bell,
   User,
-  UserPlus,
   Briefcase,
-  Sparkles,
+  ArrowRight,
+  FileText,
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -31,6 +30,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenD
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
   const [countryDropdownOpen, setCountryDropdownOpen] = useState(false);
   const [countrySearchQuery, setCountrySearchQuery] = useState('');
+  const [mobileCountrySearch, setMobileCountrySearch] = useState('');
   const [selectedCountryName, setSelectedCountryName] = useState<string>('');
   const [candidateProfile, setCandidateProfile] = useState<any>(null);
 
@@ -67,10 +67,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenD
   const displayEmail = user?.email || candidateProfile?.email || '';
   const displayRole = user?.role === 'employer' ? 'Employer' : (candidateProfile?.targetRole || 'Candidate');
 
-  const navLinks: { label: string; page: PageView; index: string }[] = [
-    { label: 'Applications & Alerts', page: 'applications', index: '01' },
-    { label: 'About Us', page: 'about', index: '02' },
-    { label: 'Contact & Profile', page: 'contact', index: '03' },
+  const navLinks: { label: string; page: PageView; index: string; badge?: string }[] = [
+    { label: 'Explore Jobs', page: 'jobs', index: '01', badge: '111 Roles' },
+    { label: 'Sector Practices', page: 'industries', index: '02' },
+    { label: 'About Our Firm', page: 'about', index: '03' },
   ];
 
   const handleNavClick = (page: PageView) => {
@@ -97,115 +97,119 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenD
     );
   });
 
+  const filteredMobileCountries = COUNTRY_SECTIONS.filter((c) => {
+    if (!mobileCountrySearch.trim()) return true;
+    const q = mobileCountrySearch.toLowerCase();
+    return (
+      c.name.toLowerCase().includes(q) ||
+      c.region.toLowerCase().includes(q) ||
+      c.cities.some((city) => city.toLowerCase().includes(q))
+    );
+  });
+
   return (
     <>
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all shadow-xs">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14">
           <div className="flex items-center justify-between h-20 gap-4">
             {/* Left: Official CAREERSPRING Brand Logo & Name */}
-            <div className="flex-1 flex items-center justify-start shrink-0">
+            <div className="flex items-center justify-start min-w-0 shrink-0">
               <button
                 onClick={() => handleNavClick('home')}
-                className="flex items-center gap-3 text-left group focus:outline-none shrink-0"
+                className="flex items-center gap-2.5 sm:gap-3 text-left group focus:outline-none min-w-0 cursor-pointer"
               >
                 <img
                   src="/logo-icon.png"
                   alt="CareerSpring Logo"
-                  className="w-10 h-10 object-contain drop-shadow-2xs group-hover:scale-105 transition-transform shrink-0"
+                  className="w-9 h-9 sm:w-10 sm:h-10 object-contain drop-shadow-2xs group-hover:scale-105 transition-transform shrink-0"
                 />
-                <div className="flex flex-col justify-center">
-                  <div className="font-sans text-xl sm:text-2xl tracking-tight uppercase font-black leading-none text-slate-900 flex items-center">
+                <div className="flex flex-col justify-center min-w-0">
+                  <div className="font-sans text-lg sm:text-2xl tracking-tight uppercase font-black leading-none text-slate-900 flex items-center">
                     <span>CAREER</span>
                     <span className="text-[#FF5500]">SPRING</span>
                   </div>
-                  <span className="text-[8.5px] sm:text-[9.5px] tracking-[0.22em] uppercase font-bold text-slate-500 mt-1">
+                  <span className="hidden sm:block text-[8.5px] sm:text-[9.5px] tracking-[0.22em] uppercase font-bold text-slate-500 mt-1 truncate">
                     Jobs &bull; Talent &bull; Opportunities
                   </span>
                 </div>
               </button>
             </div>
 
-            {/* Center: Clean Nav Links centered */}
-            <nav className="hidden md:flex items-center justify-center gap-7 lg:gap-9 text-xs tracking-wider uppercase font-sans font-semibold text-slate-600 shrink-0">
-
-              {/* Country Sections Dropdown Trigger */}
-              <div className="relative">
+            {/* Right Corner: Nav Buttons & Actions */}
+            <div className="flex items-center justify-end gap-5 lg:gap-8 ml-auto">
+              <nav className="hidden md:flex items-center gap-5 lg:gap-7 text-xs tracking-wider uppercase font-sans font-semibold text-slate-600">
+                {/* Jobs */}
                 <button
-                  type="button"
-                  onClick={() => setCountryDropdownOpen(!countryDropdownOpen)}
-                  className={`transition-colors whitespace-nowrap relative py-2 hover:text-slate-900 flex items-center gap-1.5 ${
-                    countryDropdownOpen ? 'text-slate-900 font-bold' : 'text-slate-600'
+                  onClick={() => handleNavClick('jobs')}
+                  className={`transition-colors whitespace-nowrap relative py-2 hover:text-slate-900 flex items-center gap-1.5 cursor-pointer ${
+                    currentPage === 'jobs' ? 'text-slate-900 font-bold' : 'text-slate-600'
                   }`}
-                  aria-expanded={countryDropdownOpen}
                 >
-                  <Globe className="w-3.5 h-3.5 text-blue-600" />
-                  <span>Countries</span>
-                  <ChevronDown
-                    className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                      countryDropdownOpen ? 'rotate-180 text-slate-900' : 'text-slate-400'
-                    }`}
-                  />
-                  {countryDropdownOpen && (
+                  <Briefcase className="w-3.5 h-3.5 text-blue-600" />
+                  <span>Jobs</span>
+                  {currentPage === 'jobs' && (
                     <span className="absolute bottom-0 left-0 w-full h-[2px] bg-slate-900" />
                   )}
                 </button>
-              </div>
 
-              {/* Applications & Alerts */}
-              <button
-                onClick={() => handleNavClick('applications')}
-                className={`transition-colors whitespace-nowrap relative py-2 hover:text-slate-900 flex items-center gap-1.5 ${
-                  currentPage === 'applications'
-                    ? 'text-slate-900 font-bold'
-                    : 'text-slate-600'
-                }`}
-              >
-                <Bell className="w-3.5 h-3.5 text-blue-600" />
-                <span>Applications &amp; Alerts</span>
-                {currentPage === 'applications' && (
-                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-slate-900" />
-                )}
-              </button>
+                {/* Country Sections Dropdown Trigger */}
+                <div className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setCountryDropdownOpen(!countryDropdownOpen)}
+                    className={`transition-colors whitespace-nowrap relative py-2 hover:text-slate-900 flex items-center gap-1.5 cursor-pointer ${
+                      countryDropdownOpen ? 'text-slate-900 font-bold' : 'text-slate-600'
+                    }`}
+                    aria-expanded={countryDropdownOpen}
+                  >
+                    <Globe className="w-3.5 h-3.5 text-blue-600" />
+                    <span>Countries</span>
+                    <ChevronDown
+                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                        countryDropdownOpen ? 'rotate-180 text-slate-900' : 'text-slate-400'
+                      }`}
+                    />
+                    {countryDropdownOpen && (
+                      <span className="absolute bottom-0 left-0 w-full h-[2px] bg-slate-900" />
+                    )}
+                  </button>
+                </div>
 
-              {/* Contact & Profile */}
-              <button
-                onClick={() => handleNavClick('contact')}
-                className={`transition-colors whitespace-nowrap relative py-2 hover:text-slate-900 ${
-                  currentPage === 'contact'
-                    ? 'text-slate-900 font-bold'
-                    : 'text-slate-600'
-                }`}
-              >
-                <span>Contact &amp; Profile</span>
-                {currentPage === 'contact' && (
-                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-slate-900" />
-                )}
-              </button>
+                {/* Sector Practices */}
+                <button
+                  onClick={() => handleNavClick('industries')}
+                  className={`transition-colors whitespace-nowrap relative py-2 hover:text-slate-900 cursor-pointer ${
+                    currentPage === 'industries' ? 'text-slate-900 font-bold' : 'text-slate-600'
+                  }`}
+                >
+                  <span>Sectors</span>
+                  {currentPage === 'industries' && (
+                    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-slate-900" />
+                  )}
+                </button>
 
-              {/* About */}
-              <button
-                onClick={() => handleNavClick('about')}
-                className={`transition-colors whitespace-nowrap relative py-2 hover:text-slate-900 ${
-                  currentPage === 'about'
-                    ? 'text-slate-900 font-bold'
-                    : 'text-slate-600'
-                }`}
-              >
-                <span>About</span>
-                {currentPage === 'about' && (
-                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-slate-900" />
-                )}
-              </button>
-            </nav>
+                {/* About */}
+                <button
+                  onClick={() => handleNavClick('about')}
+                  className={`transition-colors whitespace-nowrap relative py-2 hover:text-slate-900 cursor-pointer ${
+                    currentPage === 'about' ? 'text-slate-900 font-bold' : 'text-slate-600'
+                  }`}
+                >
+                  <span>About</span>
+                  {currentPage === 'about' && (
+                    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-slate-900" />
+                  )}
+                </button>
+              </nav>
 
-            {/* Right: Actions / Mobile Controls */}
-            <div className="flex-1 flex items-center justify-end gap-3 shrink-0">
+              {/* Right: Actions / Mobile Controls */}
+              <div className="flex items-center justify-end gap-2 sm:gap-3 shrink-0">
               {/* Profile Icon & Dropdown */}
-              <div className="relative">
-                {hasProfile ? (
+              {hasProfile && (
+                <div className="relative">
                   <button
                     onClick={() => setUserDropdownOpen(!userDropdownOpen)}
-                    className="flex items-center gap-2 px-3 py-1.5 border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-800 rounded-lg transition-all shadow-xs group cursor-pointer"
+                    className="flex items-center gap-2 px-2.5 sm:px-3 py-1.5 border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-800 rounded-lg transition-all shadow-xs group cursor-pointer"
                     title="View Profile"
                   >
                     <div className="relative">
@@ -224,115 +228,79 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenD
                     </div>
                     <ChevronDown className={`w-3.5 h-3.5 text-slate-400 group-hover:text-slate-700 transition-transform duration-200 ${userDropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
-                ) : (
-                  <button
-                    type="button"
-                    onClick={() => handleNavClick('contact')}
-                    className="flex items-center gap-2 px-3.5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-bold transition-all shadow-xs group cursor-pointer"
-                    title="Create Candidate Profile"
-                  >
-                    <UserPlus className="w-4 h-4 text-blue-100 group-hover:scale-110 transition-transform shrink-0" />
-                    <span>Create Profile</span>
-                  </button>
-                )}
 
-                {/* Profile Dropdown Menu (Only active when candidate has a profile) */}
-                {userDropdownOpen && hasProfile && (
-                  <div className="absolute right-0 mt-2 w-72 bg-white border border-slate-200 rounded-2xl shadow-xl py-3 z-50 text-xs font-sans animate-in fade-in slide-in-from-top-2">
-                    <div className="px-4 pb-3 border-b border-slate-100 flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 text-white flex items-center justify-center font-bold text-sm uppercase shrink-0 shadow-xs">
-                        {displayName.charAt(0)}
+                  {/* Profile Dropdown Menu (Only active when candidate has a profile) */}
+                  {userDropdownOpen && (
+                    <div className="absolute right-0 mt-2 w-72 bg-white border border-slate-200 rounded-2xl shadow-xl py-3 z-50 text-xs font-sans animate-in fade-in slide-in-from-top-2">
+                      <div className="px-4 pb-3 border-b border-slate-100 flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 text-white flex items-center justify-center font-bold text-sm uppercase shrink-0 shadow-xs">
+                          {displayName.charAt(0)}
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center gap-1.5">
+                            <span className="font-bold text-slate-900 text-sm truncate">{displayName}</span>
+                            <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" title="Profile Active" />
+                          </div>
+                          {displayEmail && <p className="text-[11px] text-slate-500 truncate">{displayEmail}</p>}
+                          <span className="inline-block mt-1 px-2 py-0.5 bg-blue-50 text-blue-700 text-[9.5px] font-bold rounded uppercase tracking-wider">
+                            {displayRole}
+                          </span>
+                        </div>
                       </div>
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-center gap-1.5">
-                          <span className="font-bold text-slate-900 text-sm truncate">{displayName}</span>
-                          <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" title="Profile Active" />
-                        </div>
-                        {displayEmail && <p className="text-[11px] text-slate-500 truncate">{displayEmail}</p>}
-                        <span className="inline-block mt-1 px-2 py-0.5 bg-blue-50 text-blue-700 text-[9.5px] font-bold rounded uppercase tracking-wider">
-                          {displayRole}
-                        </span>
+
+                      <div className="p-2 space-y-0.5">
+
+                        <button
+                          onClick={() => {
+                            setUserDropdownOpen(false);
+                            handleNavClick('jobs');
+                          }}
+                          className="w-full text-left px-3 py-2 hover:bg-slate-50 text-slate-800 font-medium flex items-center justify-between"
+                        >
+                          <div className="flex items-center gap-2">
+                            <Briefcase className="w-4 h-4 text-slate-500" />
+                            <span>Explore Opportunities</span>
+                          </div>
+                          <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
+                        </button>
+                      </div>
+
+                      <div className="border-t border-slate-100 my-1 mx-2" />
+
+                      <div className="px-2">
+                        <button
+                          onClick={() => {
+                            logout();
+                            localStorage.removeItem('careerspring_user_profile');
+                            setCandidateProfile(null);
+                            window.dispatchEvent(new CustomEvent('careerspring_profile_updated', { detail: null }));
+                            setUserDropdownOpen(false);
+                          }}
+                          className="w-full text-left px-3 py-2 hover:bg-rose-50 rounded-lg flex items-center justify-between text-rose-600 font-semibold"
+                        >
+                          <span>Switch / Reset Profile</span>
+                          <LogOut className="w-3.5 h-3.5" />
+                        </button>
                       </div>
                     </div>
+                  )}
+                </div>
+              )}
 
-                    <div className="p-2 space-y-0.5">
-                      <button
-                        onClick={() => {
-                          setUserDropdownOpen(false);
-                          handleNavClick('contact');
-                        }}
-                        className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 font-medium flex items-center justify-between"
-                      >
-                        <div className="flex items-center gap-2">
-                          <User className="w-4 h-4 text-blue-600" />
-                          <span>View / Edit Profile</span>
-                        </div>
-                        <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
-                      </button>
-
-                      <button
-                        onClick={() => {
-                          setUserDropdownOpen(false);
-                          handleNavClick('applications');
-                        }}
-                        className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 font-medium flex items-center justify-between"
-                      >
-                        <div className="flex items-center gap-2">
-                          <Bell className="w-4 h-4 text-blue-600" />
-                          <span>Applications & Alerts</span>
-                        </div>
-                        <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
-                      </button>
-
-                      <button
-                        onClick={() => {
-                          setUserDropdownOpen(false);
-                          handleNavClick('jobs');
-                        }}
-                        className="w-full text-left px-3 py-2 hover:bg-slate-50 text-slate-800 font-medium flex items-center justify-between"
-                      >
-                        <div className="flex items-center gap-2">
-                          <Briefcase className="w-4 h-4 text-slate-500" />
-                          <span>Explore Opportunities</span>
-                        </div>
-                        <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
-                      </button>
-                    </div>
-
-                    <div className="border-t border-slate-100 my-1 mx-2" />
-
-                    <div className="px-2">
-                      <button
-                        onClick={() => {
-                          logout();
-                          localStorage.removeItem('careerspring_user_profile');
-                          setCandidateProfile(null);
-                          window.dispatchEvent(new CustomEvent('careerspring_profile_updated', { detail: null }));
-                          setUserDropdownOpen(false);
-                        }}
-                        className="w-full text-left px-3 py-2 hover:bg-rose-50 rounded-lg flex items-center justify-between text-rose-600 font-semibold"
-                      >
-                        <span>Switch / Reset Profile</span>
-                        <LogOut className="w-3.5 h-3.5" />
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
+              {/* Mobile Quick "Jobs" Button */}
+              <button
+                onClick={() => handleNavClick('jobs')}
+                className="md:hidden flex items-center gap-1.5 px-3 py-1.5 bg-slate-900 hover:bg-blue-600 text-white text-xs font-bold rounded-lg transition-colors shadow-xs"
+              >
+                <Briefcase className="w-3.5 h-3.5 text-slate-300" />
+                <span>Jobs</span>
+              </button>
 
               {/* Mobile Hamburger */}
-              <div className="flex md:hidden items-center gap-2">
+              <div className="flex md:hidden items-center">
                 <button
                   onClick={() => setMobileMenuOpen(true)}
-                  className="flex items-center gap-1.5 px-3 py-1.5 border border-slate-200 bg-slate-50 rounded-lg text-xs font-semibold text-slate-800"
-                  aria-label="Browse Countries"
-                >
-                  <Globe className="w-3.5 h-3.5 text-blue-600" />
-                  <span>Countries</span>
-                </button>
-                <button
-                  onClick={() => setMobileMenuOpen(true)}
-                  className="p-2 text-slate-800 hover:text-slate-900 rounded-lg hover:bg-slate-100 focus:outline-none"
+                  className="p-2 text-slate-800 hover:text-slate-900 rounded-lg hover:bg-slate-100 focus:outline-none cursor-pointer"
                   aria-label="Open mobile menu"
                 >
                   <Menu className="w-6 h-6" />
@@ -340,6 +308,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenD
               </div>
             </div>
           </div>
+        </div>
         </div>
 
         {/* Desktop Country Sections Dropdown Mega-Panel */}
@@ -393,11 +362,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenD
                     <button
                       key={country.code}
                       onClick={() => handleCountrySelect(country.name)}
-                      className={`text-left p-4.5 border rounded-xl transition-all group flex flex-col justify-between ${
-                        isSelected
+                      className={`text-left p-4.5 border rounded-xl transition-all group flex flex-col justify-between ${isSelected
                           ? 'border-blue-600 bg-blue-50/50 shadow-xs'
                           : 'border-slate-200 bg-white hover:border-slate-400 hover:bg-slate-50/60 shadow-xs'
-                      }`}
+                        }`}
                     >
                       <div className="flex items-start justify-between gap-3">
                         <div className="flex items-center gap-3">
@@ -517,8 +485,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenD
           </div>
 
           {/* Mobile Profile Card */}
-          <div className="mt-5 p-4 border border-slate-200 bg-slate-50 rounded-xl">
-            {hasProfile ? (
+          {hasProfile && (
+            <div className="mt-5 p-4 border border-slate-200 bg-slate-50 rounded-xl">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 text-white flex items-center justify-center font-bold text-sm uppercase">
@@ -529,96 +497,130 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenD
                     <p className="text-xs text-slate-500">{displayRole}</p>
                   </div>
                 </div>
-                <button
-                  onClick={() => handleNavClick('contact')}
-                  className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg shadow-xs"
-                >
-                  View Profile
-                </button>
               </div>
-            ) : (
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">
-                    <User className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-slate-900 text-xs">No profile yet</p>
-                    <p className="text-[10px] text-slate-500">Create profile to get hired</p>
-                  </div>
-                </div>
-                <button
-                  onClick={() => handleNavClick('contact')}
-                  className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg shadow-xs cursor-pointer"
-                >
-                  <UserPlus className="w-3.5 h-3.5 text-blue-100 shrink-0" />
-                  <span>Create Profile</span>
-                </button>
-              </div>
-            )}
-          </div>
+            </div>
+          )}
 
           {/* Main Nav Links */}
-          <div className="py-6 space-y-3">
-            {navLinks.map((item) => (
-              <button
-                key={item.page}
-                onClick={() => handleNavClick(item.page)}
-                className="group w-full flex items-center justify-between text-left p-3 rounded-lg hover:bg-slate-50 transition-colors"
-              >
-                <span className="font-sans text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                  {item.label}
-                </span>
-                <span className="text-xs font-semibold text-slate-400">
-                  {item.index}
-                </span>
-              </button>
-            ))}
-
+          <div className="py-4 space-y-1.5">
+            {navLinks.map((item) => {
+              const isActive = currentPage === item.page;
+              return (
+                <button
+                  key={item.page}
+                  onClick={() => handleNavClick(item.page)}
+                  className={`group w-full flex items-center justify-between text-left px-3.5 py-3 rounded-xl transition-all ${
+                    isActive
+                      ? 'bg-blue-50 border border-blue-200 text-blue-700 font-bold shadow-xs'
+                      : 'hover:bg-slate-50 text-slate-800'
+                  }`}
+                >
+                  <div className="flex items-center gap-2.5">
+                    <span className="font-sans text-base sm:text-lg font-bold">
+                      {item.label}
+                    </span>
+                    {item.badge && (
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">
+                        {item.badge}
+                      </span>
+                    )}
+                  </div>
+                  <span className={`text-xs font-semibold ${isActive ? 'text-blue-600' : 'text-slate-400'}`}>
+                    {item.index}
+                  </span>
+                </button>
+              );
+            })}
           </div>
 
-          {/* Dedicated Country Sections in Mobile Drawer */}
-          <div className="py-4 border-t border-slate-200">
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-xs font-sans uppercase tracking-wider text-slate-500 font-bold flex items-center gap-1.5">
-                <Globe className="w-4 h-4 text-blue-600" />
-                <span>Search Jobs By Country</span>
+          {/* Quick CTA button */}
+          <div className="pb-3">
+            <button
+              onClick={() => handleNavClick('jobs')}
+              className="w-full py-3 px-4 bg-slate-900 hover:bg-slate-800 text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-sm transition-all active:scale-[0.99]"
+            >
+              <span>Explore All 111+ Active Jobs</span>
+              <ArrowRight className="w-4 h-4 text-orange-400" />
+            </button>
+          </div>
+
+          {/* Dedicated Country Sections in Mobile Drawer with Real-Time Search */}
+          <div className="py-3 border-t border-slate-200">
+            <div className="flex items-center justify-between mb-2.5">
+              <span className="text-xs font-sans uppercase tracking-wider text-slate-600 font-bold flex items-center gap-1.5">
+                <Globe className="w-3.5 h-3.5 text-blue-600" />
+                <span>Browse by Location</span>
               </span>
               <button
                 onClick={() => {
                   setSelectedCountryName('');
+                  setMobileCountrySearch('');
                   setMobileMenuOpen(false);
                   onNavigate('jobs', { location: '' });
                 }}
-                className="text-xs font-bold text-blue-600 underline"
+                className="text-xs font-bold text-blue-600 hover:underline"
               >
-                All Jobs
+                Reset / All
               </button>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-[300px] overflow-y-auto pr-1">
-              {COUNTRY_SECTIONS.map((country) => (
+            {/* Mobile Country Search Input */}
+            <div className="relative mb-2.5">
+              <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <input
+                type="text"
+                value={mobileCountrySearch}
+                onChange={(e) => setMobileCountrySearch(e.target.value)}
+                placeholder="Search hub (e.g. London, Tokyo, Singapore)..."
+                className="w-full pl-8 pr-8 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-blue-600 focus:bg-white transition-all text-slate-900"
+              />
+              {mobileCountrySearch && (
                 <button
-                  key={country.code}
-                  onClick={() => handleCountrySelect(country.name)}
-                  className="flex items-center justify-between p-3 bg-slate-50 border border-slate-200 rounded-lg text-left hover:border-slate-400 hover:bg-slate-100 transition-colors text-xs"
+                  onClick={() => setMobileCountrySearch('')}
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-0.5"
+                  aria-label="Clear country search"
                 >
-                  <div className="flex items-center gap-2.5">
-                    <span className="text-xl">{country.flag}</span>
-                    <div>
-                      <p className="font-sans text-sm font-bold text-slate-900">
-                        {country.name}
-                      </p>
-                      <p className="text-[11px] text-slate-500 truncate max-w-[150px]">
-                        {country.cities[0]}
-                      </p>
-                    </div>
-                  </div>
-                  <span className="text-xs font-semibold px-2 py-0.5 bg-white text-slate-800 border border-slate-200 rounded">
-                    {country.mandatesCount}
-                  </span>
+                  <X className="w-3.5 h-3.5" />
                 </button>
-              ))}
+              )}
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-[220px] overflow-y-auto pr-1">
+              {filteredMobileCountries.length === 0 ? (
+                <div className="p-3 text-center text-xs text-slate-400 col-span-full">
+                  No matching countries or hubs found
+                </div>
+              ) : (
+                filteredMobileCountries.map((country) => (
+                  <button
+                    key={country.code}
+                    onClick={() => {
+                      setMobileCountrySearch('');
+                      handleCountrySelect(country.name);
+                    }}
+                    className={`flex items-center justify-between p-2.5 bg-slate-50 border rounded-lg text-left transition-colors text-xs ${
+                      selectedCountryName === country.name
+                        ? 'border-blue-500 bg-blue-50/50'
+                        : 'border-slate-200 hover:border-slate-300 hover:bg-slate-100'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2 min-w-0">
+                      <span className="text-lg shrink-0">{country.flag}</span>
+                      <div className="min-w-0">
+                        <p className="font-sans text-xs font-bold text-slate-900 truncate">
+                          {country.name}
+                        </p>
+                        <p className="text-[10px] text-slate-500 truncate">
+                          {country.cities.slice(0, 2).join(' · ')}
+                        </p>
+                      </div>
+                    </div>
+                    <span className="text-[11px] font-semibold px-2 py-0.5 bg-white text-slate-800 border border-slate-200 rounded shrink-0">
+                      {country.mandatesCount}
+                    </span>
+                  </button>
+                ))
+              )}
             </div>
           </div>
 

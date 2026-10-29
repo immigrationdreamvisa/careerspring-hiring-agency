@@ -16,7 +16,6 @@ import { JobDetailsPage } from './pages/JobDetailsPage.tsx';
 import { HireTalentPage } from './pages/HireTalentPage.tsx';
 import { IndustriesPage } from './pages/IndustriesPage.tsx';
 import { AboutPage } from './pages/AboutPage.tsx';
-import { ContactPage } from './pages/ContactPage.tsx';
 import { ApplicationsPage } from './pages/ApplicationsPage.tsx';
 
 function MainLayout() {
@@ -61,7 +60,7 @@ function MainLayout() {
     }
   }, []);
 
-  const [applicationsTab, setApplicationsTab] = useState<'all' | 'pending' | 'shortlisted' | 'notifications'>('all');
+  const [applicationsTab, setApplicationsTab] = useState<'all' | 'pending' | 'shortlisted'>('all');
 
   const handleNavigate = (page: PageView, params?: any) => {
     if (page === 'jobs' && params) {
@@ -140,10 +139,6 @@ function MainLayout() {
           <AboutPage onNavigate={handleNavigate} />
         )}
 
-        {currentPage === 'contact' && (
-          <ContactPage onNavigate={handleNavigate} />
-        )}
-
         {currentPage === 'applications' && (
           <ApplicationsPage
             onNavigate={handleNavigate}
@@ -165,7 +160,7 @@ function MainLayout() {
         }}
         onNavigateToApplications={() => {
           setApplyModalJob(null);
-          handleNavigate('applications', { tab: 'notifications' });
+          handleNavigate('applications', { tab: 'all' });
         }}
       />
 
@@ -175,7 +170,7 @@ function MainLayout() {
         onClose={() => setServiceModalData(null)}
         onNavigateToHire={() => {
           setServiceModalData(null);
-          handleNavigate('hire-talent');
+          handleNavigate('jobs');
         }}
       />
 

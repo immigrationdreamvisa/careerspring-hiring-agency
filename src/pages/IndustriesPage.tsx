@@ -30,10 +30,10 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
 
             <div className="lg:col-span-4 lg:text-right">
               <button
-                onClick={() => onNavigate('hire-talent')}
+                onClick={() => onNavigate('jobs')}
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-slate-900 hover:bg-blue-600 text-white text-xs uppercase tracking-wider font-bold rounded-xl transition-colors shadow-sm"
               >
-                <span>Initiate Practice Search</span>
+                <span>Browse Practice Roles</span>
                 <ArrowUpRight className="w-4 h-4" />
               </button>
             </div>
@@ -60,9 +60,17 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
 
                 {/* Name, Headline, Description */}
                 <div className="lg:col-span-4 space-y-2">
-                  <h2 className="font-bold text-2xl sm:text-3xl text-slate-900 group-hover:text-blue-600 transition-colors">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      onNavigate('jobs', {
+                        industry: ind.jobIndustry,
+                      })
+                    }
+                    className="text-left font-bold text-2xl sm:text-3xl text-slate-900 group-hover:text-blue-600 transition-colors cursor-pointer"
+                  >
                     {ind.name}
-                  </h2>
+                  </button>
                   <p className="text-xs uppercase tracking-wider text-blue-600 font-bold">
                     {ind.headline}
                   </p>
@@ -89,14 +97,15 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
                 {/* CTA Action */}
                 <div className="lg:col-span-3 lg:text-right pt-4 lg:pt-0">
                   <button
+                    type="button"
                     onClick={() =>
                       onNavigate('jobs', {
-                        industry: ind.name,
+                        industry: ind.jobIndustry,
                       })
                     }
-                    className="inline-flex items-center gap-1.5 px-5 py-2.5 border border-slate-200 group-hover:border-slate-900 group-hover:bg-slate-900 group-hover:text-white rounded-xl text-slate-800 text-xs font-bold transition-all shadow-xs"
+                    className="inline-flex items-center gap-1.5 px-5 py-2.5 border border-slate-200 group-hover:border-slate-900 group-hover:bg-slate-900 group-hover:text-white rounded-xl text-slate-800 text-xs font-bold transition-all shadow-xs cursor-pointer active:scale-95"
                   >
-                    <span>View Positions</span>
+                    <span>View {ind.jobIndustry} Roles</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -121,10 +130,10 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
           </p>
           <div className="pt-2">
             <button
-              onClick={() => onNavigate('hire-talent')}
+              onClick={() => onNavigate('jobs')}
               className="px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white text-xs uppercase tracking-wider font-bold rounded-xl transition-colors shadow-lg"
             >
-              Discuss a Mandate ↗
+              Explore All Open Positions ↗
             </button>
           </div>
         </div>

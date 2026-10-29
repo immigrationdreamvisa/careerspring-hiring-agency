@@ -104,8 +104,7 @@ export type PageView =
   | 'applications'
   | 'hire-talent'
   | 'industries'
-  | 'about'
-  | 'contact';
+  | 'about';
 
 export interface ServiceDetail {
   id: string;

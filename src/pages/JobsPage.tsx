@@ -28,6 +28,20 @@ interface JobsPageProps {
   onOpenApplyModal: (job: Job) => void;
 }
 
+const normalizeIndustry = (ind?: string): string => {
+  if (!ind || ind === 'All Industries') return 'All Industries';
+  const lower = ind.toLowerCase().trim();
+  if (lower.includes('tech') || lower.includes('software')) return 'Information Technology';
+  if (lower.includes('bank') || lower.includes('financ') || lower.includes('capital')) return 'Banking & Finance';
+  if (lower.includes('health') || lower.includes('medic') || lower.includes('pharma') || lower.includes('clinical') || lower.includes('science')) return 'Healthcare';
+  if (lower.includes('manufactur') || lower.includes('robot') || lower.includes('industri')) return 'Manufacturing';
+  if (lower.includes('retail') || lower.includes('commerce')) return 'Retail & E-commerce';
+  if (lower.includes('logist') || lower.includes('supply')) return 'Logistics & Supply Chain';
+  if (lower.includes('sale') || lower.includes('market')) return 'Sales & Marketing';
+  if (lower.includes('hospit')) return 'Hospitality';
+  return ind;
+};
+
 export const JobsPage: React.FC<JobsPageProps> = ({
   initialFilters,
   onOpenJobDetails,
@@ -40,7 +54,7 @@ export const JobsPage: React.FC<JobsPageProps> = ({
   // Filters
   const [keyword, setKeyword] = useState(initialFilters?.keyword || '');
   const [location, setLocation] = useState(initialFilters?.location || '');
-  const [industry, setIndustry] = useState(initialFilters?.industry || 'All Industries');
+  const [industry, setIndustry] = useState(normalizeIndustry(initialFilters?.industry));
   const [employmentType, setEmploymentType] = useState('All Types');
   const [workplaceType, setWorkplaceType] = useState('All');
   const [experienceLevel, setExperienceLevel] = useState('All Levels');
@@ -124,7 +138,14 @@ export const JobsPage: React.FC<JobsPageProps> = ({
           }
         }
 
-        // 3. Fallback to all active jobs
+        // 3. If an industry was selected, do NOT fall back to random jobs from other sectors!
+        if (industry !== 'All Industries') {
+          setJobs([]);
+          setFallbackNotice(`No active opportunities currently matching your filters in ${industry}.`);
+          return;
+        }
+
+        // Fallback to all active jobs only when searching across All Industries
         const allData = await api.getJobs({ status: 'Active', sort: sortBy });
         if (allData.jobs && allData.jobs.length > 0) {
           setJobs(allData.jobs);
@@ -145,9 +166,18 @@ export const JobsPage: React.FC<JobsPageProps> = ({
 
   useEffect(() => {
     if (initialFilters) {
-      if (initialFilters.location !== undefined) setLocation(initialFilters.location);
-      if (initialFilters.keyword !== undefined) setKeyword(initialFilters.keyword);
-      if (initialFilters.industry !== undefined) setIndustry(initialFilters.industry);
+      if (initialFilters.location !== undefined) {
+        setLocation(initialFilters.location);
+        setDebouncedLocation(initialFilters.location);
+      }
+      if (initialFilters.keyword !== undefined) {
+        setKeyword(initialFilters.keyword);
+        setDebouncedKeyword(initialFilters.keyword);
+      }
+      if (initialFilters.industry !== undefined) {
+        setIndustry(normalizeIndustry(initialFilters.industry));
+      }
+      setVisibleCount(10);
     }
   }, [initialFilters]);
 
@@ -773,7 +803,7 @@ export const JobsPage: React.FC<JobsPageProps> = ({
                         <div className="flex items-center gap-2 w-full sm:w-auto">
                           <button
                             onClick={() => onOpenJobDetails(job.id)}
-                            className="px-4 py-2 border border-slate-200 hover:border-slate-400 hover:bg-slate-50 text-slate-800 rounded-lg text-xs font-bold transition-colors inline-flex items-center gap-1.5"
+                            className="flex-1 sm:flex-initial justify-center px-3.5 sm:px-4 py-2.5 sm:py-2 border border-slate-200 hover:border-slate-400 hover:bg-slate-50 text-slate-800 rounded-lg text-xs font-bold transition-colors inline-flex items-center gap-1.5 active:scale-[0.98]"
                           >
                             <span>View Details</span>
                             <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
@@ -781,14 +811,14 @@ export const JobsPage: React.FC<JobsPageProps> = ({
 
                           <button
                             onClick={() => onOpenApplyModal(job)}
-                            className="px-5 py-2 bg-slate-900 hover:bg-blue-600 text-white rounded-lg text-xs font-bold transition-colors shadow-xs"
+                            className="flex-1 sm:flex-initial justify-center px-4 sm:px-5 py-2.5 sm:py-2 bg-slate-900 hover:bg-blue-600 text-white rounded-lg text-xs font-bold transition-colors shadow-xs active:scale-[0.98]"
                           >
                             Apply Now
                           </button>
 
                           <button
                             onClick={() => shareOnWhatsApp(job)}
-                            className="p-2 border border-slate-200 hover:border-[#25D366] hover:bg-[#25D366]/10 text-slate-500 hover:text-[#25D366] rounded-lg text-xs transition-colors"
+                            className="p-2.5 sm:p-2 border border-slate-200 hover:border-[#25D366] hover:bg-[#25D366]/10 text-slate-500 hover:text-[#25D366] rounded-lg text-xs transition-colors shrink-0"
                             title="Share on WhatsApp"
                             aria-label={`Share ${job.title} on WhatsApp`}
                           >

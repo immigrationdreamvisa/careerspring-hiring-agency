@@ -117,20 +117,20 @@ export const HomePage: React.FC<HomePageProps> = ({
               </div>
 
               {/* Action Buttons — Kept Centered in Middle */}
-              <div className="flex flex-wrap items-center justify-center w-full gap-4 pt-3 pb-1">
+              <div className="flex flex-col sm:flex-row items-center justify-center w-full gap-3 sm:gap-4 pt-3 pb-1">
                 <button
                   onClick={() => onNavigate('jobs')}
-                  className="px-8 py-3.5 bg-slate-900 hover:bg-blue-600 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 group"
+                  className="w-full sm:w-auto px-8 py-3.5 bg-slate-900 hover:bg-blue-600 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 group active:scale-[0.99]"
                 >
                   <span>Find Jobs</span>
                   <ArrowUpRight className="w-4 h-4 text-slate-300 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </button>
 
                 <button
-                  onClick={() => onNavigate('contact')}
-                  className="px-8 py-3.5 border border-slate-200 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-800 text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-xs flex items-center justify-center gap-2"
+                  onClick={() => onNavigate('about')}
+                  className="w-full sm:w-auto px-8 py-3.5 border border-slate-200 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-800 text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-xs flex items-center justify-center gap-2 active:scale-[0.99]"
                 >
-                  <span>Contact Us</span>
+                  <span>About Our Firm</span>
                   <ArrowRight className="w-4 h-4 text-slate-400" />
                 </button>
               </div>
@@ -651,10 +651,10 @@ export const HomePage: React.FC<HomePageProps> = ({
               <ArrowUpRight className="w-4 h-4 text-white" />
             </button>
             <button
-              onClick={() => onNavigate('contact')}
+              onClick={() => onNavigate('industries')}
               className="px-7 py-3.5 border border-slate-700 hover:border-slate-500 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-colors bg-slate-800/60"
             >
-              <span>Contact Advisory Team</span>
+              <span>Sector Practices</span>
             </button>
           </div>
         </div>
