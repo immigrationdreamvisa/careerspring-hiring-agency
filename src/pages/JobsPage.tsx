@@ -223,17 +223,31 @@ export const JobsPage: React.FC<JobsPageProps> = ({
   const employmentTypesList = ['All Types', 'Full-time', 'Contract', 'Part-time', 'Internship'];
   const experienceLevelsList = ['All Levels', 'Entry-level', 'Mid-level', 'Senior', 'Lead / Executive'];
 
-  const formatJobSalary = (min: number, max: number, currency: string = 'USD') => {
+  const formatJobSalary = (min: number, max: number, currency: string = 'CAD') => {
+    const curr = currency.toUpperCase();
     const symbol =
-      currency === 'AZN' ? '₼' :
-      currency === 'GBP' ? '£' :
-      currency === 'EUR' ? '€' :
-      currency === 'CAD' ? 'CAD $' :
-      currency === 'SGD' ? 'SGD $' :
-      currency === 'AUD' ? 'AUD $' : '$';
+      curr === 'AZN' ? '₼' :
+      curr === 'CAD' ? 'C$' :
+      curr === 'NZD' ? 'NZ$' :
+      curr === 'AUD' ? 'A$' :
+      curr === 'EUR' ? '€' :
+      curr === 'RSD' ? 'дин. ' :
+      curr === 'BGN' ? 'лв ' :
+      curr === 'GBP' ? '£' : '$';
+
     const minK = min >= 1000 ? `${(min / 1000).toFixed(min % 1000 === 0 ? 0 : 1)}k` : min.toLocaleString();
     const maxK = max >= 1000 ? `${(max / 1000).toFixed(max % 1000 === 0 ? 0 : 1)}k` : max.toLocaleString();
-    return `${symbol}${minK} – ${symbol}${maxK}${currency === 'AZN' ? ' AZN' : ''}`;
+
+    if (curr === 'AZN') {
+      return `₼${minK} – ₼${maxK} AZN`;
+    }
+    if (curr === 'RSD') {
+      return `${minK} – ${maxK} RSD (дин.)`;
+    }
+    if (curr === 'BGN') {
+      return `лв ${minK} – лв ${maxK} BGN`;
+    }
+    return `${symbol}${minK} – ${symbol}${maxK}`;
   };
 
   const displayedJobs = jobs.slice(0, visibleCount);
@@ -356,14 +370,13 @@ export const JobsPage: React.FC<JobsPageProps> = ({
           {COUNTRY_SECTIONS.map((c) => {
             const isMatch =
               location.toLowerCase() === c.name.toLowerCase() ||
-              (c.name === 'Remote / Global' && location.toLowerCase() === 'remote');
+              (c.alias && c.alias.some((a) => a.toLowerCase() === location.toLowerCase()));
             return (
               <button
                 key={c.code}
                 type="button"
                 onClick={() => {
-                  const target = c.name === 'Remote / Global' ? 'Remote' : c.name;
-                  setLocation(isMatch ? '' : target);
+                  setLocation(isMatch ? '' : c.name);
                   setVisibleCount(10);
                 }}
                 className={`px-3 py-1.5 text-xs rounded-lg whitespace-nowrap transition-colors border flex items-center gap-1.5 font-semibold cursor-pointer ${
@@ -613,7 +626,7 @@ export const JobsPage: React.FC<JobsPageProps> = ({
 
           {/* Right Column: Requisition Ledger with min-h to prevent footer jump */}
           <main className="col-span-1 lg:col-span-9 space-y-6 min-h-[850px] pb-16">
-            
+
             {/* Ledger Status Bar */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-200 gap-4">
               <div className="flex items-center gap-3">

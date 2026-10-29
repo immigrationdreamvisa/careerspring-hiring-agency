@@ -47,29 +47,44 @@ export const HomePage: React.FC<HomePageProps> = ({
   // Country Flag helper
   const getCountryFlag = (country?: string, location?: string) => {
     const text = `${country || ''} ${location || ''}`.toLowerCase();
-    if (text.includes('united kingdom') || text.includes('uk') || text.includes('london')) return '🇬🇧';
-    if (text.includes('united states') || text.includes('usa') || text.includes('sf') || text.includes('ny') || text.includes('ca') || text.includes('tx')) return '🇺🇸';
-    if (text.includes('germany') || text.includes('berlin') || text.includes('frankfurt') || text.includes('munich')) return '🇩🇪';
-    if (text.includes('canada') || text.includes('toronto') || text.includes('vancouver')) return '🇨🇦';
-    if (text.includes('emirates') || text.includes('uae') || text.includes('dubai')) return '🇦🇪';
-    if (text.includes('singapore')) return '🇸🇬';
-    if (text.includes('australia') || text.includes('sydney')) return '🇦🇺';
-    if (text.includes('azerbaijan') || text.includes('azerbaijani') || text.includes('baku')) return '🇦🇿';
+    if (text.includes('canada') || text.includes('toronto') || text.includes('vancouver') || text.includes('montreal') || text.includes('calgary') || text.includes('ottawa')) return '🇨🇦';
+    if (text.includes('new zealand') || text.includes('new zeland') || text.includes('auckland') || text.includes('wellington') || text.includes('christchurch') || text.includes('hamilton')) return '🇳🇿';
+    if (text.includes('australia') || text.includes('sydney') || text.includes('melbourne') || text.includes('brisbane') || text.includes('perth') || text.includes('adelaide')) return '🇦🇺';
+    if (text.includes('serbia') || text.includes('belgrade') || text.includes('novi sad') || text.includes('niš') || text.includes('nis') || text.includes('kragujevac')) return '🇷🇸';
+    if (text.includes('slovenia') || text.includes('ljubljana') || text.includes('maribor') || text.includes('kranj') || text.includes('celje')) return '🇸🇮';
+    if (text.includes('greece') || text.includes('athens') || text.includes('thessaloniki') || text.includes('patras') || text.includes('heraklion')) return '🇬🇷';
+    if (text.includes('latvia') || text.includes('latvania') || text.includes('riga') || text.includes('daugavpils') || text.includes('liepaja') || text.includes('jelgava')) return '🇱🇻';
+    if (text.includes('bulgaria') || text.includes('sofia') || text.includes('plovdiv') || text.includes('varna') || text.includes('burgas')) return '🇧🇬';
+    if (text.includes('azerbaijan') || text.includes('azerbaijani') || text.includes('baku') || text.includes('ganja') || text.includes('sumqayit')) return '🇦🇿';
     return '🌐';
   };
 
   // Currency formatted salary
   const formatSalary = (min: number, max: number, currency: string) => {
+    const curr = (currency || 'CAD').toUpperCase();
     const symbol =
-      currency === 'AZN' ? '₼' :
-      currency === 'GBP' ? '£' :
-      currency === 'EUR' ? '€' :
-      currency === 'CAD' ? 'CAD $' :
-      currency === 'SGD' ? 'SGD $' :
-      currency === 'AUD' ? 'AUD $' : '$';
+      curr === 'CAD' ? 'C$' :
+      curr === 'NZD' ? 'NZ$' :
+      curr === 'AUD' ? 'A$' :
+      curr === 'EUR' ? '€' :
+      curr === 'RSD' ? 'дин. ' :
+      curr === 'BGN' ? 'лв ' :
+      curr === 'AZN' ? '₼ ' :
+      curr === 'GBP' ? '£' : '$';
+
     const minK = min >= 1000 ? `${(min / 1000).toFixed(min % 1000 === 0 ? 0 : 1)}k` : min.toLocaleString();
     const maxK = max >= 1000 ? `${(max / 1000).toFixed(max % 1000 === 0 ? 0 : 1)}k` : max.toLocaleString();
-    return `${symbol}${minK} – ${symbol}${maxK}${currency === 'AZN' ? ' AZN' : ''} / yr`;
+
+    if (curr === 'AZN') {
+      return `₼ ${minK} – ₼ ${maxK} AZN / yr`;
+    }
+    if (curr === 'RSD') {
+      return `${minK} – ${maxK} RSD / yr`;
+    }
+    if (curr === 'BGN') {
+      return `лв ${minK} – лв ${maxK} BGN / yr`;
+    }
+    return `${symbol}${minK} – ${symbol}${maxK} / yr`;
   };
 
   // Filter jobs by selected category, workplace model, and search keyword
@@ -173,10 +188,10 @@ export const HomePage: React.FC<HomePageProps> = ({
                 <div>
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                    <p className="text-[11px] font-bold text-slate-900">Mandate Filled • London</p>
+                    <p className="text-[11px] font-bold text-slate-900">Mandate Filled • Toronto</p>
                   </div>
                   <p className="text-[10px] text-slate-500 font-medium">VP Engineering @ Vertex Dynamics</p>
-                  <p className="text-[10px] font-mono font-bold text-emerald-600">£185,000 / yr package</p>
+                  <p className="text-[10px] font-mono font-bold text-emerald-600">C$185,000 / yr package</p>
                 </div>
               </div>
 
@@ -191,7 +206,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     <p className="text-[11px] font-bold text-slate-900">Direct Employer Requisition</p>
                   </div>
                   <p className="text-[10px] text-slate-500 font-medium">Senior Quant Lead @ Meridian</p>
-                  <p className="text-[10px] font-mono font-bold text-blue-600">$245,000 Verified Compensation</p>
+                  <p className="text-[10px] font-mono font-bold text-blue-600">A$245,000 Verified Compensation</p>
                 </div>
               </div>
 

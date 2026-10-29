@@ -71,28 +71,31 @@ function filterClientJobs(filter?: {
       
       if (jobLoc.includes(loc) || jobCountry.includes(loc)) return true;
 
-      if (loc === 'uk' || loc === 'united kingdom' || loc === 'britain' || loc === 'great britain') {
-        return jobCountry.includes('united kingdom') || jobCountry.includes('uk') || jobLoc.includes('uk') || jobLoc.includes('london') || jobLoc.includes('manchester') || jobLoc.includes('edinburgh');
+      if (loc === 'canada' || loc === 'ca') {
+        return jobCountry.includes('canada') || jobLoc.includes('canada') || jobLoc.includes('toronto') || jobLoc.includes('vancouver') || jobLoc.includes('montreal') || jobLoc.includes('calgary') || jobLoc.includes('ottawa');
       }
-      if (loc === 'us' || loc === 'usa' || loc === 'united states' || loc === 'america') {
-        return jobCountry.includes('united states') || jobCountry.includes('usa') || jobCountry.includes('us') || jobLoc.includes('united states') || jobLoc.includes('usa') || /,\s*(ca|ny|tx|il|wa|ma|fl|co|ga)\b/i.test(jobLoc);
-      }
-      if (loc === 'uae' || loc === 'united arab emirates' || loc === 'dubai') {
-        return jobCountry.includes('emirates') || jobCountry.includes('uae') || jobLoc.includes('dubai') || jobLoc.includes('abu dhabi');
-      }
-      if (loc === 'germany' || loc === 'de') {
-        return jobCountry.includes('germany') || jobLoc.includes('germany') || jobLoc.includes('berlin') || jobLoc.includes('munich') || jobLoc.includes('frankfurt');
-      }
-      if (loc === 'canada') {
-        return jobCountry.includes('canada') || jobLoc.includes('canada') || jobLoc.includes('toronto') || jobLoc.includes('vancouver') || jobLoc.includes('montreal');
-      }
-      if (loc === 'singapore' || loc === 'sg') {
-        return jobCountry.includes('singapore') || jobLoc.includes('singapore');
+      if (loc === 'new zealand' || loc === 'nz' || loc === 'new zeland') {
+        return jobCountry.includes('new zealand') || jobCountry.includes('new zeland') || jobLoc.includes('auckland') || jobLoc.includes('wellington') || jobLoc.includes('christchurch') || jobLoc.includes('hamilton');
       }
       if (loc === 'australia' || loc === 'au') {
-        return jobCountry.includes('australia') || jobLoc.includes('australia') || jobLoc.includes('sydney') || jobLoc.includes('melbourne');
+        return jobCountry.includes('australia') || jobLoc.includes('australia') || jobLoc.includes('sydney') || jobLoc.includes('melbourne') || jobLoc.includes('brisbane') || jobLoc.includes('perth') || jobLoc.includes('adelaide');
       }
-      if (loc === 'azerbaijan' || loc === 'azerbaijani' || loc === 'az') {
+      if (loc === 'serbia' || loc === 'rs' || loc === 'serbian') {
+        return jobCountry.includes('serbia') || jobLoc.includes('serbia') || jobLoc.includes('belgrade') || jobLoc.includes('novi sad') || jobLoc.includes('niš') || jobLoc.includes('nis') || jobLoc.includes('kragujevac');
+      }
+      if (loc === 'slovenia' || loc === 'si' || loc === 'slovenian') {
+        return jobCountry.includes('slovenia') || jobLoc.includes('slovenia') || jobLoc.includes('ljubljana') || jobLoc.includes('maribor') || jobLoc.includes('kranj') || jobLoc.includes('celje');
+      }
+      if (loc === 'greece' || loc === 'gr' || loc === 'greek') {
+        return jobCountry.includes('greece') || jobLoc.includes('greece') || jobLoc.includes('athens') || jobLoc.includes('thessaloniki') || jobLoc.includes('patras') || jobLoc.includes('heraklion');
+      }
+      if (loc === 'latvia' || loc === 'latvania' || loc === 'lv' || loc === 'latvian' || loc === 'latvija') {
+        return jobCountry.includes('latvia') || jobCountry.includes('latvania') || jobLoc.includes('latvia') || jobLoc.includes('riga') || jobLoc.includes('daugavpils') || jobLoc.includes('liepaja') || jobLoc.includes('jelgava');
+      }
+      if (loc === 'bulgaria' || loc === 'bg' || loc === 'bulgarian') {
+        return jobCountry.includes('bulgaria') || jobLoc.includes('bulgaria') || jobLoc.includes('sofia') || jobLoc.includes('plovdiv') || jobLoc.includes('varna') || jobLoc.includes('burgas');
+      }
+      if (loc === 'azerbaijan' || loc === 'azerbaijani' || loc === 'az' || loc === 'baku') {
         return jobCountry.includes('azerbaijan') || jobCountry.includes('azerbaijani') || jobLoc.includes('baku') || jobLoc.includes('azerbaijan');
       }
       if (loc === 'remote' || loc === 'global') {

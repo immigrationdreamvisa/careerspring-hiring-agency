@@ -51,7 +51,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               Connecting exceptional talent with world-class opportunities.
             </p>
             <p className="text-xs font-sans text-slate-400 leading-relaxed">
-              Global hiring, specialized recruitment, and strategic talent advisory across North America, Europe, UAE, Singapore, and Australia.
+              Global hiring, specialized recruitment, and strategic talent advisory across Canada, New Zealand, Australia, Serbia, Slovenia, Greece, Latvia, Bulgaria, and Azerbaijan.
             </p>
           </div>
 

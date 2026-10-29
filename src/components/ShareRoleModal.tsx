@@ -34,17 +34,31 @@ export const ShareRoleModal: React.FC<ShareRoleModalProps> = ({
   // Build canonical share URL for this role
   const shareUrl = `${window.location.origin}/?jobId=${job.id}`;
 
-  const formatSalary = (min: number, max: number, currency: string = 'USD') => {
+  const formatSalary = (min: number, max: number, currency: string = 'CAD') => {
+    const curr = currency.toUpperCase();
     const symbol =
-      currency === 'AZN' ? '₼' :
-      currency === 'GBP' ? '£' :
-      currency === 'EUR' ? '€' :
-      currency === 'CAD' ? 'CAD $' :
-      currency === 'SGD' ? 'SGD $' :
-      currency === 'AUD' ? 'AUD $' : '$';
+      curr === 'CAD' ? 'C$' :
+      curr === 'NZD' ? 'NZ$' :
+      curr === 'AUD' ? 'A$' :
+      curr === 'EUR' ? '€' :
+      curr === 'RSD' ? 'дин. ' :
+      curr === 'BGN' ? 'лв ' :
+      curr === 'AZN' ? '₼ ' :
+      curr === 'GBP' ? '£' : '$';
+
     const minK = min >= 1000 ? `${(min / 1000).toFixed(min % 1000 === 0 ? 0 : 1)}k` : min.toLocaleString();
     const maxK = max >= 1000 ? `${(max / 1000).toFixed(max % 1000 === 0 ? 0 : 1)}k` : max.toLocaleString();
-    return `${symbol}${minK} – ${symbol}${maxK}${currency === 'AZN' ? ' AZN' : ''}`;
+
+    if (curr === 'AZN') {
+      return `₼ ${minK} – ₼ ${maxK} AZN`;
+    }
+    if (curr === 'RSD') {
+      return `${minK} – ${maxK} RSD (дин.)`;
+    }
+    if (curr === 'BGN') {
+      return `лв ${minK} – лв ${maxK} BGN`;
+    }
+    return `${symbol}${minK} – ${symbol}${maxK}`;
   };
 
   const referralPitch = `Hi! I found an executive opportunity at ${job.company} that might be a great fit: ${job.title} (${job.location}) — ${formatSalary(job.salaryMin, job.salaryMax, job.salaryCurrency)} base. Check it out and apply here: ${shareUrl}`;

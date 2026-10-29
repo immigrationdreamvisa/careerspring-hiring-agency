@@ -66,46 +66,72 @@ export const JobDetailsPage: React.FC<JobDetailsPageProps> = ({
 
   const getCountryFlag = (country?: string, location?: string) => {
     const text = `${country || ''} ${location || ''}`.toLowerCase();
-    if (text.includes('united kingdom') || text.includes('uk') || text.includes('london')) return '🇬🇧';
-    if (text.includes('united states') || text.includes('usa') || text.includes('sf') || text.includes('ny') || text.includes('ca') || text.includes('tx')) return '🇺🇸';
-    if (text.includes('germany') || text.includes('berlin') || text.includes('frankfurt') || text.includes('munich')) return '🇩🇪';
-    if (text.includes('canada') || text.includes('toronto') || text.includes('vancouver')) return '🇨🇦';
-    if (text.includes('emirates') || text.includes('uae') || text.includes('dubai')) return '🇦🇪';
-    if (text.includes('singapore')) return '🇸🇬';
-    if (text.includes('australia') || text.includes('sydney')) return '🇦🇺';
-    if (text.includes('france') || text.includes('paris')) return '🇫🇷';
-    if (text.includes('netherlands') || text.includes('amsterdam')) return '🇳🇱';
-    if (text.includes('switzerland') || text.includes('zurich')) return '🇨🇭';
     if (text.includes('azerbaijan') || text.includes('azerbaijani') || text.includes('baku')) return '🇦🇿';
+    if (text.includes('canada') || text.includes('toronto') || text.includes('vancouver') || text.includes('montreal') || text.includes('calgary') || text.includes('ottawa')) return '🇨🇦';
+    if (text.includes('new zealand') || text.includes('new zeland') || text.includes('auckland') || text.includes('wellington') || text.includes('christchurch') || text.includes('hamilton')) return '🇳🇿';
+    if (text.includes('australia') || text.includes('sydney') || text.includes('melbourne') || text.includes('brisbane') || text.includes('perth') || text.includes('adelaide')) return '🇦🇺';
+    if (text.includes('serbia') || text.includes('belgrade') || text.includes('novi sad') || text.includes('niš') || text.includes('nis') || text.includes('kragujevac')) return '🇷🇸';
+    if (text.includes('slovenia') || text.includes('ljubljana') || text.includes('maribor') || text.includes('kranj') || text.includes('celje')) return '🇸🇮';
+    if (text.includes('greece') || text.includes('athens') || text.includes('thessaloniki') || text.includes('patras') || text.includes('heraklion')) return '🇬🇷';
+    if (text.includes('latvia') || text.includes('latvania') || text.includes('riga') || text.includes('daugavpils') || text.includes('liepaja') || text.includes('jelgava')) return '🇱🇻';
+    if (text.includes('bulgaria') || text.includes('sofia') || text.includes('plovdiv') || text.includes('varna') || text.includes('burgas')) return '🇧🇬';
     return '🌐';
   };
 
-  const formatSalary = (min: number, max: number, currency: string = 'USD') => {
+  const formatSalary = (min: number, max: number, currency: string = 'CAD') => {
+    const curr = currency.toUpperCase();
     const symbol =
-      currency === 'AZN' ? '₼' :
-      currency === 'GBP' ? '£' :
-      currency === 'EUR' ? '€' :
-      currency === 'CAD' ? 'CAD $' :
-      currency === 'SGD' ? 'SGD $' :
-      currency === 'AUD' ? 'AUD $' : '$';
+      curr === 'AZN' ? '₼' :
+      curr === 'CAD' ? 'C$' :
+      curr === 'NZD' ? 'NZ$' :
+      curr === 'AUD' ? 'A$' :
+      curr === 'EUR' ? '€' :
+      curr === 'RSD' ? 'дин. ' :
+      curr === 'BGN' ? 'лв ' :
+      curr === 'GBP' ? '£' : '$';
+
     const minK = min >= 1000 ? `${(min / 1000).toFixed(min % 1000 === 0 ? 0 : 1)}k` : min.toLocaleString();
     const maxK = max >= 1000 ? `${(max / 1000).toFixed(max % 1000 === 0 ? 0 : 1)}k` : max.toLocaleString();
-    return `${symbol}${minK} – ${symbol}${maxK}${currency === 'AZN' ? ' AZN' : ''}`;
+
+    if (curr === 'AZN') {
+      return `₼${minK} – ₼${maxK} AZN`;
+    }
+    if (curr === 'RSD') {
+      return `${minK} – ${maxK} RSD (дин.)`;
+    }
+    if (curr === 'BGN') {
+      return `лв ${minK} – лв ${maxK} BGN`;
+    }
+    return `${symbol}${minK} – ${symbol}${maxK}`;
   };
 
-  const formatMonthlyEstimate = (min: number, max: number, currency: string = 'USD') => {
+  const formatMonthlyEstimate = (min: number, max: number, currency: string = 'CAD') => {
+    const curr = currency.toUpperCase();
     const symbol =
-      currency === 'AZN' ? '₼' :
-      currency === 'GBP' ? '£' :
-      currency === 'EUR' ? '€' :
-      currency === 'CAD' ? 'CAD $' :
-      currency === 'SGD' ? 'SGD $' :
-      currency === 'AUD' ? 'AUD $' : '$';
+      curr === 'AZN' ? '₼' :
+      curr === 'CAD' ? 'C$' :
+      curr === 'NZD' ? 'NZ$' :
+      curr === 'AUD' ? 'A$' :
+      curr === 'EUR' ? '€' :
+      curr === 'RSD' ? 'дин. ' :
+      curr === 'BGN' ? 'лв ' :
+      curr === 'GBP' ? '£' : '$';
+
     const minM = Math.round(min / 12);
     const maxM = Math.round(max / 12);
     const minMStr = minM >= 10000 ? `${(minM / 1000).toFixed(1)}k` : minM.toLocaleString();
     const maxMStr = maxM >= 10000 ? `${(maxM / 1000).toFixed(1)}k` : maxM.toLocaleString();
-    return `${symbol}${minMStr} – ${symbol}${maxMStr}${currency === 'AZN' ? ' AZN' : ''} / mo`;
+
+    if (curr === 'AZN') {
+      return `₼${minMStr} – ₼${maxMStr} AZN / mo`;
+    }
+    if (curr === 'RSD') {
+      return `${minMStr} – ${maxMStr} RSD / mo`;
+    }
+    if (curr === 'BGN') {
+      return `лв ${minMStr} – лв ${maxMStr} / mo`;
+    }
+    return `${symbol}${minMStr} – ${symbol}${maxMStr} / mo`;
   };
 
   if (loading) {

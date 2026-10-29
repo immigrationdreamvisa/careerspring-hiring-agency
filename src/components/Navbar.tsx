@@ -93,6 +93,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenD
     return (
       c.name.toLowerCase().includes(q) ||
       c.region.toLowerCase().includes(q) ||
+      c.currency.toLowerCase().includes(q) ||
+      c.currencyName.toLowerCase().includes(q) ||
+      c.currencySign.toLowerCase().includes(q) ||
+      (c.alias && c.alias.some((a) => a.toLowerCase().includes(q))) ||
       c.cities.some((city) => city.toLowerCase().includes(q))
     );
   });
@@ -103,6 +107,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenD
     return (
       c.name.toLowerCase().includes(q) ||
       c.region.toLowerCase().includes(q) ||
+      c.currency.toLowerCase().includes(q) ||
+      c.currencyName.toLowerCase().includes(q) ||
+      c.currencySign.toLowerCase().includes(q) ||
+      (c.alias && c.alias.some((a) => a.toLowerCase().includes(q))) ||
       c.cities.some((city) => city.toLowerCase().includes(q))
     );
   });
@@ -339,7 +347,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenD
                     type="text"
                     value={countrySearchQuery}
                     onChange={(e) => setCountrySearchQuery(e.target.value)}
-                    placeholder="Filter country or city (e.g. London, Germany, Dubai)..."
+                    placeholder="Filter country, currency, or city (e.g. Toronto, Belgrade, EUR, RSD)..."
                     className="w-full bg-slate-50 border border-slate-200 pl-10 pr-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 rounded-lg focus:outline-none focus:bg-white focus:border-slate-900 transition-colors"
                   />
                   {countrySearchQuery && (
@@ -354,7 +362,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenD
               </div>
 
               {/* Country Cards Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-6 max-h-[460px] overflow-y-auto pr-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-6 max-h-[480px] overflow-y-auto pr-1">
                 {filteredCountries.map((country) => {
                   const isSelected =
                     selectedCountryName.toLowerCase() === country.name.toLowerCase();
@@ -362,46 +370,48 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenD
                     <button
                       key={country.code}
                       onClick={() => handleCountrySelect(country.name)}
-                      className={`text-left p-4.5 border rounded-xl transition-all group flex flex-col justify-between ${isSelected
-                          ? 'border-blue-600 bg-blue-50/50 shadow-xs'
-                          : 'border-slate-200 bg-white hover:border-slate-400 hover:bg-slate-50/60 shadow-xs'
+                      className={`text-left p-4 border rounded-xl transition-all group flex flex-col justify-between cursor-pointer ${isSelected
+                          ? 'border-blue-600 bg-blue-50/50 shadow-xs ring-1 ring-blue-600'
+                          : 'border-slate-200 bg-white hover:border-slate-400 hover:bg-slate-50/70 shadow-xs'
                         }`}
                     >
-                      <div className="flex items-start justify-between gap-3">
-                        <div className="flex items-center gap-3">
-                          <span className="text-2xl" role="img" aria-label={country.name}>
-                            {country.flag}
-                          </span>
-                          <div>
-                            <div className="flex items-center gap-2">
-                              <span className="font-sans text-base text-slate-900 group-hover:text-blue-600 transition-colors font-bold">
-                                {country.name}
-                              </span>
-                              {isSelected && (
-                                <span className="inline-flex items-center text-[10px] text-blue-600 font-bold bg-blue-100/70 px-1.5 py-0.5 rounded">
-                                  <Check className="w-3 h-3 mr-0.5" /> Selected
-                                </span>
-                              )}
-                            </div>
-                            <span className="text-[11px] font-sans text-slate-500 font-medium">
-                              {country.badge}
+                      <div>
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="flex items-center gap-2.5">
+                            <span className="text-2xl" role="img" aria-label={country.name}>
+                              {country.flag}
                             </span>
+                            <div>
+                              <div className="flex items-center gap-1.5">
+                                <span className="font-sans text-sm text-slate-900 group-hover:text-blue-600 transition-colors font-bold">
+                                  {country.name}
+                                </span>
+                                {isSelected && (
+                                  <span className="inline-flex items-center text-[9px] text-blue-600 font-bold bg-blue-100/70 px-1 py-0.2 rounded">
+                                    <Check className="w-2.5 h-2.5 mr-0.5" />
+                                  </span>
+                                )}
+                              </div>
+                              <span className="text-[10px] font-sans text-slate-500 font-medium block">
+                                {country.badge}
+                              </span>
+                            </div>
                           </div>
-                        </div>
 
-                        <span className="px-2.5 py-1 text-xs font-semibold bg-slate-100 border border-slate-200 text-slate-800 rounded-md whitespace-nowrap">
-                          {country.mandatesCount} Roles
-                        </span>
+                          <span className="px-2 py-0.5 text-[11px] font-semibold bg-slate-100 border border-slate-200 text-slate-800 rounded-md whitespace-nowrap">
+                            {country.mandatesCount} Roles
+                          </span>
+                        </div>
                       </div>
 
                       {/* Cities & Quick Explore */}
-                      <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-sans text-slate-500">
-                        <span className="truncate max-w-[200px]">
-                          {country.cities.join(' · ')}
+                      <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] font-sans text-slate-500">
+                        <span className="truncate max-w-[150px]">
+                          {country.cities.slice(0, 3).join(' · ')}
                         </span>
-                        <span className="text-slate-900 text-xs font-semibold flex items-center gap-1 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all">
-                          <span>Search</span>
-                          <ArrowUpRight className="w-3.5 h-3.5" />
+                        <span className="text-slate-900 text-[11px] font-semibold flex items-center gap-1 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all shrink-0">
+                          <span>Explore</span>
+                          <ArrowUpRight className="w-3 h-3" />
                         </span>
                       </div>
                     </button>
@@ -413,7 +423,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenD
               <div className="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-xs font-sans">
                 <div className="flex items-center gap-2 text-slate-500">
                   <MapPin className="w-4 h-4 text-slate-400" />
-                  <span>Showing verified opportunities across 9 international economic hubs.</span>
+                  <span>Showing active mandates across 9 exclusive countries: Canada, New Zealand, Australia, Serbia, Slovenia, Greece, Latvia, Bulgaria, and Azerbaijan.</span>
                 </div>
 
                 <div className="flex items-center gap-3">
@@ -571,7 +581,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenD
                 type="text"
                 value={mobileCountrySearch}
                 onChange={(e) => setMobileCountrySearch(e.target.value)}
-                placeholder="Search hub (e.g. London, Tokyo, Singapore)..."
+                placeholder="Search hub or country (e.g. Auckland, Sofia, Baku)..."
                 className="w-full pl-8 pr-8 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-blue-600 focus:bg-white transition-all text-slate-900"
               />
               {mobileCountrySearch && (
@@ -627,7 +637,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenD
           {/* Footer of Mobile Menu */}
           <div className="pt-4 border-t border-slate-200 flex items-center justify-between text-xs font-sans">
             <span className="text-slate-500 font-medium">
-              CareerSpring Global
+              Canada · NZ · Australia · Europe
             </span>
 
             {user ? (
